@@ -8,56 +8,25 @@
         "env": []
     },
     {
-        "id": "6b2035a9.ca9f5c",
+        "id": "0ddac8ecfab2c47a",
         "type": "tab",
-        "label": "Pub/Sub Perf Test",
+        "label": "MQTT Client",
         "disabled": false,
         "info": "",
         "env": []
     },
     {
-        "id": "d3c4c932fa0ad433",
+        "id": "aa25562f7ee4e284",
         "type": "tab",
-        "label": "Command/Control",
+        "label": "Stat Update Service",
         "disabled": false,
         "info": "",
         "env": []
     },
     {
-        "id": "a033ecf7.19ef2",
+        "id": "8b7b9acc862a1e86",
         "type": "tab",
-        "label": "Client State",
-        "disabled": false,
-        "info": ""
-    },
-    {
-        "id": "401333b789844503",
-        "type": "tab",
-        "label": "webserver",
-        "disabled": false,
-        "info": "",
-        "env": []
-    },
-    {
-        "id": "e42fc4013df7b4d5",
-        "type": "tab",
-        "label": "dashboard",
-        "disabled": false,
-        "info": "",
-        "env": []
-    },
-    {
-        "id": "0bc909638714814e",
-        "type": "tab",
-        "label": "mqtt broker",
-        "disabled": false,
-        "info": "",
-        "env": []
-    },
-    {
-        "id": "f51fc5811b06d1db",
-        "type": "tab",
-        "label": "dashboard",
+        "label": "Dashboard",
         "disabled": false,
         "info": "",
         "env": []
@@ -76,17 +45,17 @@
         "protocolVersion": "4",
         "keepalive": "60",
         "cleansession": true,
-        "birthTopic": "demo/security/clientstate/connected",
+        "birthTopic": "demo/docker/clientstate/connect",
         "birthQos": "0",
         "birthRetain": "false",
         "birthPayload": "$(CLIENTID)",
         "birthMsg": {},
-        "closeTopic": "demo/security/clientstate/closed",
+        "closeTopic": "demo/docker/clientstate/close",
         "closeQos": "0",
         "closeRetain": "false",
         "closePayload": "$(CLIENTID)",
         "closeMsg": {},
-        "willTopic": "demo/security/clientstate/lastwill",
+        "willTopic": "demo/docker/clientstate/lastwill",
         "willQos": "0",
         "willRetain": "false",
         "willPayload": "$(CLIENTID)",
@@ -104,11 +73,10 @@
         "keyname": "",
         "caname": "",
         "servername": "demo-na.mqtttest.com",
-        "verifyservercert": false,
-        "alpnprotocol": ""
+        "verifyservercert": true
     },
     {
-        "id": "c7809b33.ca4548",
+        "id": "d27658548ed03cc8",
         "type": "ui_tab",
         "name": "Home",
         "icon": "dashboard",
@@ -116,18 +84,7 @@
         "hidden": false
     },
     {
-        "id": "6d919544.7af97c",
-        "type": "ui_group",
-        "name": "Security Masters Demo",
-        "tab": "c7809b33.ca4548",
-        "order": 1,
-        "disp": true,
-        "width": "20",
-        "collapse": false,
-        "className": ""
-    },
-    {
-        "id": "cb978cdcbb341010",
+        "id": "62ea9e0ebdde7be0",
         "type": "ui_base",
         "theme": {
             "name": "theme-light",
@@ -224,40 +181,44 @@
         }
     },
     {
-        "id": "fde17ba4e8f07cec",
-        "type": "gauth",
-        "name": "node-red@fluted-sentry-260301.iam.gserviceaccount.com"
-    },
-    {
-        "id": "791e80b3.11014",
+        "id": "be7086791d3659b4",
         "type": "ui_group",
-        "name": "Latency",
-        "tab": "a06ddef.76e0f2",
+        "name": "Score Update Demo",
+        "tab": "d27658548ed03cc8",
         "order": 1,
-        "disp": false,
-        "width": "18",
+        "disp": true,
+        "width": "20",
         "collapse": false
     },
     {
-        "id": "a4089a2e.e45d68",
-        "type": "tls-config",
-        "name": "demo-na.mqtttest.com",
-        "cert": "",
-        "key": "",
-        "ca": "",
-        "certname": "",
-        "keyname": "",
-        "caname": "",
-        "servername": "demo-na.mqtttest.com",
-        "verifyservercert": true
+        "id": "38f81b70b78167f7",
+        "type": "ui_spacer",
+        "z": "aa25562f7ee4e284",
+        "name": "spacer",
+        "group": "be7086791d3659b4",
+        "order": 2,
+        "width": 4,
+        "height": 1
     },
     {
-        "id": "a06ddef.76e0f2",
-        "type": "ui_tab",
-        "name": "Latency",
-        "icon": "dashboard",
-        "disabled": false,
-        "hidden": false
+        "id": "ae42f17ee5b17f9e",
+        "type": "ui_spacer",
+        "z": "aa25562f7ee4e284",
+        "name": "spacer",
+        "group": "be7086791d3659b4",
+        "order": 5,
+        "width": 4,
+        "height": 1
+    },
+    {
+        "id": "44d7baee0c563751",
+        "type": "ui_spacer",
+        "z": "aa25562f7ee4e284",
+        "name": "spacer",
+        "group": "be7086791d3659b4",
+        "order": 8,
+        "width": 4,
+        "height": 1
     },
     {
         "id": "2280f0fe.38e8e",
@@ -277,9 +238,7 @@
         "y": 140,
         "wires": [
             [
-                "6d6e68ee.4521e8",
-                "53fadfdcf2708014",
-                "aa72db81.297168"
+                "6d6e68ee.4521e8"
             ]
         ]
     },
@@ -447,45 +406,82 @@
         "wires": []
     },
     {
-        "id": "9f793fb6.e5e62",
-        "type": "GSheet",
-        "z": "5bd5e23aadd26b8d",
-        "creds": "fde17ba4e8f07cec",
-        "method": "append",
-        "action": "",
-        "sheet": "1FJCC7p_rZ7xT8hfc9NGfItQturn0tiPblKlAFc5-qc8",
-        "cells": "Sheet1!A1:A2",
-        "flatten": false,
-        "name": "Write node-RED URL to GSheet",
-        "x": 710,
-        "y": 240,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "aa72db81.297168",
-        "type": "template",
-        "z": "5bd5e23aadd26b8d",
-        "name": "Form URL for Node-Red",
-        "field": "payload",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "http://{{payload}}:1880",
-        "output": "str",
-        "x": 710,
+        "id": "0c79ec9d06955054",
+        "type": "mqtt in",
+        "z": "0ddac8ecfab2c47a",
+        "name": "Listen for Publish Messages",
+        "topic": "demo/mlb/game/+",
+        "qos": "2",
+        "datatype": "json",
+        "broker": "3c9fafa.7dd6a5",
+        "nl": false,
+        "rap": false,
+        "inputs": 0,
+        "x": 260,
         "y": 160,
         "wires": [
             [
-                "9f793fb6.e5e62"
+                "a3a5c7e4c1dafcb2"
             ]
         ]
     },
     {
-        "id": "53fadfdcf2708014",
+        "id": "a3a5c7e4c1dafcb2",
+        "type": "function",
+        "z": "0ddac8ecfab2c47a",
+        "name": "Calculate Time Difference ",
+        "func": "var now = Date.now();\nvar then = msg.payload.time;\nmsg.payload.latency = now - then;\nreturn msg",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 250,
+        "y": 220,
+        "wires": [
+            [
+                "3e7a37eb23e42ea9"
+            ]
+        ]
+    },
+    {
+        "id": "bbe21086ca9dbb7d",
+        "type": "mqtt out",
+        "z": "0ddac8ecfab2c47a",
+        "name": "publish results to Edge Connect",
+        "topic": "demo/mlb/analytics",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "3c9fafa.7dd6a5",
+        "x": 370,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "2e8ff2cae50e8433",
         "type": "debug",
-        "z": "5bd5e23aadd26b8d",
+        "z": "0ddac8ecfab2c47a",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 680,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "8b26836b21b842f0",
+        "type": "debug",
+        "z": "0ddac8ecfab2c47a",
         "name": "",
         "active": true,
         "tosidebar": true,
@@ -494,15 +490,35 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 480,
-        "y": 160,
+        "x": 650,
+        "y": 220,
         "wires": []
     },
     {
-        "id": "f26ca21.902e66",
+        "id": "3e7a37eb23e42ea9",
+        "type": "template",
+        "z": "0ddac8ecfab2c47a",
+        "name": "Extract Geo and Org info from global variables",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "{\"subregion\":\"{{global.regionName}}\",\"subcountry\":\"{{global.countryCode}}\",\"suborg\":\"{{global.org}}\",\"stat\":{{payload.stat}},\"latency\":{{payload.latency}}}",
+        "output": "json",
+        "x": 320,
+        "y": 300,
+        "wires": [
+            [
+                "2e8ff2cae50e8433",
+                "bbe21086ca9dbb7d"
+            ]
+        ]
+    },
+    {
+        "id": "80f010f5acee0e71",
         "type": "inject",
-        "z": "6b2035a9.ca9f5c",
-        "name": "Inject every 10 seconds",
+        "z": "aa25562f7ee4e284",
+        "name": "",
         "props": [
             {
                 "p": "payload"
@@ -512,44 +528,44 @@
                 "vt": "str"
             }
         ],
-        "repeat": "10",
+        "repeat": "",
         "crontab": "",
         "once": true,
         "onceDelay": 0.1,
-        "topic": "",
+        "topic": "demo/mlb/game/1",
         "payloadType": "date",
         "x": 170,
-        "y": 200,
+        "y": 180,
         "wires": [
-            [
-                "fab80017.7942b"
-            ]
+            []
         ]
     },
     {
-        "id": "6267bed2.9eb7e",
+        "id": "9691dc26c7919ac0",
         "type": "function",
-        "z": "6b2035a9.ca9f5c",
+        "z": "aa25562f7ee4e284",
         "name": "Add current epoch timestamp ",
-        "func": "msg.payload.time = Date.now() \nreturn msg;",
+        "func": "msg.time = Date.now() \nreturn msg;",
         "outputs": 1,
         "noerr": 0,
-        "x": 190,
-        "y": 280,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 290,
+        "y": 260,
         "wires": [
             [
-                "57e94275.f8172c",
-                "ca1558fd776c25f6"
+                "bd8d3d8a4026344a"
             ]
         ]
     },
     {
-        "id": "57e94275.f8172c",
+        "id": "7d71875fa89e20ee",
         "type": "mqtt out",
-        "z": "6b2035a9.ca9f5c",
-        "name": "publish to EdgeConnect",
-        "topic": "demo/security/latency/publish",
-        "qos": "",
+        "z": "aa25562f7ee4e284",
+        "name": "",
+        "topic": "",
+        "qos": "0",
         "retain": "",
         "respTopic": "",
         "contentType": "",
@@ -557,232 +573,324 @@
         "correl": "",
         "expiry": "",
         "broker": "3c9fafa.7dd6a5",
-        "x": 170,
-        "y": 320,
+        "x": 410,
+        "y": 480,
         "wires": []
     },
     {
-        "id": "648fdca2.9de5c4",
-        "type": "mqtt in",
-        "z": "6b2035a9.ca9f5c",
-        "name": "Listen for Publish Messages",
-        "topic": "demo/security/latency/publish",
-        "qos": "2",
-        "datatype": "json",
-        "broker": "3c9fafa.7dd6a5",
-        "nl": false,
-        "rap": false,
-        "inputs": 0,
-        "x": 180,
-        "y": 460,
-        "wires": [
-            [
-                "958e594e.3c2e08"
-            ]
-        ]
+        "id": "aeb0d191cf04bfdd",
+        "type": "debug",
+        "z": "aa25562f7ee4e284",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 690,
+        "y": 420,
+        "wires": []
     },
     {
-        "id": "958e594e.3c2e08",
-        "type": "function",
-        "z": "6b2035a9.ca9f5c",
-        "name": "Calculate Time Difference ",
-        "func": "var now = Date.now();\nvar then = msg.payload.time;\nmsg.payload.latency = now - then;\nreturn msg",
-        "outputs": 1,
-        "noerr": 0,
+        "id": "43de2bdde4065628",
+        "type": "inject",
+        "z": "aa25562f7ee4e284",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "demo/mlb/game/2",
+        "payloadType": "date",
         "x": 170,
-        "y": 520,
+        "y": 140,
         "wires": [
-            [
-                "4054b25f.85648c"
-            ]
+            []
         ]
     },
     {
-        "id": "fab80017.7942b",
+        "id": "bb7be3f88946493b",
+        "type": "inject",
+        "z": "aa25562f7ee4e284",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "demo/mlb/game/3",
+        "payloadType": "date",
+        "x": 170,
+        "y": 100,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "bd8d3d8a4026344a",
         "type": "template",
-        "z": "6b2035a9.ca9f5c",
-        "name": "Extract Geo and Org info from global variables",
+        "z": "aa25562f7ee4e284",
+        "name": "",
         "field": "payload",
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "{\"publishregion\":\"{{global.regionName}}\",\"publishcountry\":\"{{global.countryCode}}\",\"publishorg\":\"{{global.org}}\"}",
+        "template": "{\"stat\":{{payload}},\"time\":{{time}}}",
         "output": "json",
-        "x": 240,
-        "y": 240,
+        "x": 390,
+        "y": 320,
         "wires": [
             [
-                "6267bed2.9eb7e"
+                "7d71875fa89e20ee",
+                "aeb0d191cf04bfdd"
             ]
         ]
     },
     {
-        "id": "4054b25f.85648c",
-        "type": "change",
-        "z": "6b2035a9.ca9f5c",
-        "name": "Extract Geo Location from Global Variables",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload.regionName",
-                "pt": "msg",
-                "to": "regionName",
-                "tot": "global"
-            },
-            {
-                "t": "set",
-                "p": "payload.countryCode",
-                "pt": "msg",
-                "to": "countryCode",
-                "tot": "global"
-            },
-            {
-                "t": "set",
-                "p": "payload.org",
-                "pt": "msg",
-                "to": "org",
-                "tot": "global"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 230,
-        "y": 560,
+        "id": "cc977d26259d7d9e",
+        "type": "ui_button",
+        "z": "aa25562f7ee4e284",
+        "name": "",
+        "group": "be7086791d3659b4",
+        "order": 1,
+        "width": 10,
+        "height": 1,
+        "passthru": false,
+        "label": "Game 1 Update",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "demo/mlb/game/1",
+        "topicType": "str",
+        "x": 420,
+        "y": 60,
         "wires": [
             [
-                "e270e69d.557118",
-                "295f045faac12c46"
+                "e6adfc8e3af657cd"
             ]
         ]
     },
     {
-        "id": "dcfa11ab.24416",
-        "type": "comment",
-        "z": "6b2035a9.ca9f5c",
-        "name": "Publisher",
-        "info": "",
-        "x": 130,
+        "id": "03a6e0a305ed40b1",
+        "type": "ui_button",
+        "z": "aa25562f7ee4e284",
+        "name": "Game 2 Update",
+        "group": "be7086791d3659b4",
+        "order": 4,
+        "width": 10,
+        "height": 1,
+        "passthru": false,
+        "label": "Game 2 Update",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "demo/mlb/game/2",
+        "topicType": "str",
+        "x": 420,
+        "y": 100,
+        "wires": [
+            [
+                "40bec98906828f73"
+            ]
+        ]
+    },
+    {
+        "id": "02fb945cacabcf29",
+        "type": "ui_button",
+        "z": "aa25562f7ee4e284",
+        "name": "Game 3 Update",
+        "group": "be7086791d3659b4",
+        "order": 7,
+        "width": 10,
+        "height": 1,
+        "passthru": false,
+        "label": "Game 3 Update",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "demo/mlb/game/3",
+        "topicType": "str",
+        "x": 420,
+        "y": 140,
+        "wires": [
+            [
+                "d62b64a2c96bccfe"
+            ]
+        ]
+    },
+    {
+        "id": "956871717aee9a69",
+        "type": "ui_text",
+        "z": "aa25562f7ee4e284",
+        "group": "be7086791d3659b4",
+        "order": 3,
+        "width": 6,
+        "height": 1,
+        "name": "Game 1",
+        "label": "Game 1",
+        "format": "{{msg.payload}}",
+        "layout": "row-center",
+        "x": 960,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "e6adfc8e3af657cd",
+        "type": "random",
+        "z": "aa25562f7ee4e284",
+        "name": "",
+        "low": 1,
+        "high": "100",
+        "inte": "false",
+        "property": "payload",
+        "x": 760,
+        "y": 80,
+        "wires": [
+            [
+                "9691dc26c7919ac0",
+                "956871717aee9a69"
+            ]
+        ]
+    },
+    {
+        "id": "40bec98906828f73",
+        "type": "random",
+        "z": "aa25562f7ee4e284",
+        "name": "",
+        "low": 1,
+        "high": "100",
+        "inte": "false",
+        "property": "payload",
+        "x": 760,
+        "y": 120,
+        "wires": [
+            [
+                "9691dc26c7919ac0",
+                "e503c7adcfd244ca"
+            ]
+        ]
+    },
+    {
+        "id": "d62b64a2c96bccfe",
+        "type": "random",
+        "z": "aa25562f7ee4e284",
+        "name": "",
+        "low": 1,
+        "high": "100",
+        "inte": "false",
+        "property": "payload",
+        "x": 760,
+        "y": 160,
+        "wires": [
+            [
+                "9691dc26c7919ac0",
+                "e0f211382e7dc118"
+            ]
+        ]
+    },
+    {
+        "id": "e503c7adcfd244ca",
+        "type": "ui_text",
+        "z": "aa25562f7ee4e284",
+        "group": "be7086791d3659b4",
+        "order": 6,
+        "width": 6,
+        "height": 1,
+        "name": "Game 2",
+        "label": "Game 2",
+        "format": "{{msg.payload}}",
+        "layout": "row-center",
+        "x": 960,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "e0f211382e7dc118",
+        "type": "ui_text",
+        "z": "aa25562f7ee4e284",
+        "group": "be7086791d3659b4",
+        "order": 9,
+        "width": 6,
+        "height": 1,
+        "name": "Game 3",
+        "label": "Game 3",
+        "format": "{{msg.payload}}",
+        "layout": "row-center",
+        "x": 960,
         "y": 160,
         "wires": []
     },
     {
-        "id": "e270e69d.557118",
-        "type": "mqtt out",
-        "z": "6b2035a9.ca9f5c",
-        "name": "publish results to Edge Connect",
-        "topic": "demo/security/latency/results",
-        "qos": "",
-        "retain": "",
-        "respTopic": "",
-        "contentType": "",
-        "userProps": "",
-        "correl": "",
-        "expiry": "",
-        "broker": "3c9fafa.7dd6a5",
-        "x": 190,
-        "y": 600,
-        "wires": []
-    },
-    {
-        "id": "578b0ad2.ac3a24",
-        "type": "comment",
-        "z": "6b2035a9.ca9f5c",
-        "name": "Subscriber",
-        "info": "",
-        "x": 120,
-        "y": 380,
-        "wires": []
-    },
-    {
-        "id": "b62bd419.f083e8",
+        "id": "02c39b525a348f95",
         "type": "mqtt in",
-        "z": "6b2035a9.ca9f5c",
-        "name": "Listen for Results Messages",
-        "topic": "demo/security/latency/results",
+        "z": "8b7b9acc862a1e86",
+        "name": "",
+        "topic": "demo/mlb/analytics",
         "qos": "2",
         "datatype": "json",
         "broker": "3c9fafa.7dd6a5",
         "nl": false,
-        "rap": false,
+        "rap": true,
+        "rh": 0,
         "inputs": 0,
-        "x": 200,
-        "y": 700,
+        "x": 250,
+        "y": 160,
         "wires": [
             [
-                "ae619366.faae2"
+                "731e50a28cc7e0d7"
             ]
         ]
     },
     {
-        "id": "ae619366.faae2",
-        "type": "template",
-        "z": "6b2035a9.ca9f5c",
-        "name": "",
-        "field": "topic",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "\"{{payload.publishregion}} {{payload.publishcountry}} {{payload.publishorg}} to {{payload.regionName}} {{payload.countryCode}} {{payload.org}}\"",
-        "output": "str",
-        "x": 140,
-        "y": 780,
-        "wires": [
-            [
-                "c0115425.79ecf8"
-            ]
-        ]
-    },
-    {
-        "id": "c0115425.79ecf8",
-        "type": "change",
-        "z": "6b2035a9.ca9f5c",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "payload.latency",
-                "tot": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 160,
-        "y": 820,
-        "wires": [
-            [
-                "f6db8476.411bc8"
-            ]
-        ]
-    },
-    {
-        "id": "f6db8476.411bc8",
+        "id": "a627816b1dceaab4",
         "type": "ui_chart",
-        "z": "6b2035a9.ca9f5c",
-        "name": "Latency",
-        "group": "791e80b3.11014",
-        "order": 0,
-        "width": "18",
-        "height": "13",
-        "label": "Latency is ms",
+        "z": "8b7b9acc862a1e86",
+        "name": "Client Latency in millseconds ",
+        "group": "be7086791d3659b4",
+        "order": 10,
+        "width": 0,
+        "height": 0,
+        "label": "Client Latency in millseconds ",
         "chartType": "line",
         "legend": "true",
         "xformat": "HH:mm:ss",
-        "interpolate": "linear",
+        "interpolate": "bezier",
         "nodata": "",
         "dot": false,
-        "ymin": "0",
-        "ymax": "1000",
+        "ymin": "",
+        "ymax": "",
         "removeOlder": 1,
         "removeOlderPoints": "",
-        "removeOlderUnit": "60",
+        "removeOlderUnit": "3600",
         "cutout": 0,
         "useOneColor": false,
         "useUTC": false,
@@ -799,702 +907,43 @@
         ],
         "outputs": 1,
         "useDifferentColor": false,
-        "className": "",
-        "x": 340,
-        "y": 860,
+        "x": 620,
+        "y": 480,
         "wires": [
             []
         ]
     },
     {
-        "id": "295f045faac12c46",
-        "type": "debug",
-        "z": "6b2035a9.ca9f5c",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 600,
-        "y": 580,
-        "wires": []
-    },
-    {
-        "id": "ca1558fd776c25f6",
-        "type": "debug",
-        "z": "6b2035a9.ca9f5c",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 570,
-        "y": 300,
-        "wires": []
-    },
-    {
-        "id": "8b729069e4fae062",
-        "type": "mqtt in",
-        "z": "d3c4c932fa0ad433",
-        "name": "Listen on Control Topic ",
-        "topic": "demo/security/control",
-        "qos": "2",
-        "datatype": "json",
-        "broker": "3c9fafa.7dd6a5",
-        "nl": false,
-        "rap": true,
-        "rh": 0,
-        "inputs": 0,
-        "x": 160,
-        "y": 160,
-        "wires": [
-            [
-                "5872a3052b7c12d6"
-            ]
-        ]
-    },
-    {
-        "id": "5872a3052b7c12d6",
-        "type": "switch",
-        "z": "d3c4c932fa0ad433",
-        "name": "Check if clientid is self or all ",
-        "property": "payload.clientid",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "eq",
-                "v": "all",
-                "vt": "str"
-            },
-            {
-                "t": "eq",
-                "v": "CLIENTID",
-                "vt": "env"
-            },
-            {
-                "t": "else"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 3,
-        "x": 560,
-        "y": 160,
-        "wires": [
-            [
-                "94b449353b48ae65"
-            ],
-            [
-                "94b449353b48ae65"
-            ],
-            []
-        ]
-    },
-    {
-        "id": "358a9b79e77033f8",
-        "type": "comment",
-        "z": "d3c4c932fa0ad433",
-        "name": "Otherwise Ignore",
-        "info": "",
-        "x": 360,
-        "y": 220,
-        "wires": []
-    },
-    {
-        "id": "0e138ecc479f8138",
-        "type": "comment",
-        "z": "d3c4c932fa0ad433",
-        "name": "Process",
-        "info": "",
-        "x": 380,
-        "y": 120,
-        "wires": []
-    },
-    {
-        "id": "94b449353b48ae65",
-        "type": "switch",
-        "z": "d3c4c932fa0ad433",
-        "name": "Check Command Type",
-        "property": "payload.type",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "eq",
-                "v": "exec",
-                "vt": "str"
-            },
-            {
-                "t": "eq",
-                "v": "api",
-                "vt": "str"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 2,
-        "x": 560,
-        "y": 280,
-        "wires": [
-            [
-                "9bae47b5adc2d938"
-            ],
-            [
-                "3cb93eed8b48e5ec"
-            ]
-        ]
-    },
-    {
-        "id": "ef006acee64ad842",
-        "type": "http request",
-        "z": "d3c4c932fa0ad433",
-        "name": "API requests",
-        "method": "GET",
-        "ret": "txt",
-        "paytoqs": "body",
-        "url": "",
-        "tls": "",
-        "persist": false,
-        "proxy": "",
-        "authType": "",
-        "senderr": false,
-        "x": 70,
-        "y": 560,
-        "wires": [
-            [
-                "93cac3716a0dea8f"
-            ]
-        ]
-    },
-    {
-        "id": "3c85f295848674b8",
-        "type": "exec",
-        "z": "d3c4c932fa0ad433",
-        "command": "",
-        "addpay": "exec",
-        "append": "",
-        "useSpawn": "true",
-        "timer": "120",
-        "winHide": false,
-        "oldrc": false,
-        "name": "exec commands",
-        "x": 530,
-        "y": 560,
-        "wires": [
-            [
-                "7fa473161970a11b",
-                "93cac3716a0dea8f"
-            ],
-            [
-                "7fa473161970a11b",
-                "93cac3716a0dea8f"
-            ],
-            [
-                "7fa473161970a11b"
-            ]
-        ]
-    },
-    {
-        "id": "8d9439e40cfdfa9c",
-        "type": "comment",
-        "z": "d3c4c932fa0ad433",
-        "name": "node-red API requests",
-        "info": "",
-        "x": 100,
-        "y": 420,
-        "wires": []
-    },
-    {
-        "id": "80cb0f6bb7e13a3b",
-        "type": "comment",
-        "z": "d3c4c932fa0ad433",
-        "name": "exec commands",
-        "info": "",
-        "x": 400,
-        "y": 440,
-        "wires": []
-    },
-    {
-        "id": "59b30b22a270af21",
-        "type": "mqtt out",
-        "z": "d3c4c932fa0ad433",
-        "name": "",
-        "topic": "demo/security/control/response",
-        "qos": "",
-        "retain": "",
-        "respTopic": "",
-        "contentType": "",
-        "userProps": "",
-        "correl": "",
-        "expiry": "",
-        "broker": "3c9fafa.7dd6a5",
-        "x": 310,
-        "y": 780,
-        "wires": []
-    },
-    {
-        "id": "5b13ee680a0ab3a6",
-        "type": "change",
-        "z": "d3c4c932fa0ad433",
-        "name": "Set Client ID on Response",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload.clientid",
-                "pt": "msg",
-                "to": "CLIENTID",
-                "tot": "env"
-            },
-            {
-                "t": "set",
-                "p": "payload.command",
-                "pt": "msg",
-                "to": "exec",
-                "tot": "msg"
-            },
-            {
-                "t": "set",
-                "p": "payload.url",
-                "pt": "msg",
-                "to": "url",
-                "tot": "msg"
-            },
-            {
-                "t": "set",
-                "p": "payload.method",
-                "pt": "msg",
-                "to": "method",
-                "tot": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 340,
-        "y": 720,
-        "wires": [
-            [
-                "59b30b22a270af21",
-                "70f62d6557b93965"
-            ]
-        ]
-    },
-    {
-        "id": "70f62d6557b93965",
-        "type": "debug",
-        "z": "d3c4c932fa0ad433",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 710,
-        "y": 720,
-        "wires": []
-    },
-    {
-        "id": "7fa473161970a11b",
-        "type": "debug",
-        "z": "d3c4c932fa0ad433",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 750,
-        "y": 560,
-        "wires": []
-    },
-    {
-        "id": "78d7a80a5c27e572",
-        "type": "inject",
-        "z": "d3c4c932fa0ad433",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "{\"clientid\":\"all\",\"type\":\"exec\",\"exec\":\"curl http://127.0.0.1:1880/webserver\"}",
-        "payloadType": "json",
-        "x": 100,
-        "y": 60,
-        "wires": [
-            [
-                "5872a3052b7c12d6"
-            ]
-        ]
-    },
-    {
-        "id": "9bae47b5adc2d938",
-        "type": "change",
-        "z": "d3c4c932fa0ad433",
-        "name": "Normallze payload for input into exec node ",
-        "rules": [
-            {
-                "t": "set",
-                "p": "exec",
-                "pt": "msg",
-                "to": "payload.command",
-                "tot": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 610,
-        "y": 500,
-        "wires": [
-            [
-                "3c85f295848674b8"
-            ]
-        ]
-    },
-    {
-        "id": "3cb93eed8b48e5ec",
-        "type": "change",
-        "z": "d3c4c932fa0ad433",
-        "name": "normalize payload for input into http request node",
-        "rules": [
-            {
-                "t": "set",
-                "p": "url",
-                "pt": "msg",
-                "to": "payload.url",
-                "tot": "msg"
-            },
-            {
-                "t": "set",
-                "p": "method",
-                "pt": "msg",
-                "to": "payload.method",
-                "tot": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 190,
-        "y": 500,
-        "wires": [
-            [
-                "ef006acee64ad842"
-            ]
-        ]
-    },
-    {
-        "id": "93cac3716a0dea8f",
+        "id": "731e50a28cc7e0d7",
         "type": "template",
-        "z": "d3c4c932fa0ad433",
+        "z": "8b7b9acc862a1e86",
         "name": "",
-        "field": "payload",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "{\"result\":\"{{payload}}\"}",
-        "output": "json",
-        "x": 460,
-        "y": 660,
-        "wires": [
-            [
-                "5b13ee680a0ab3a6"
-            ]
-        ]
-    },
-    {
-        "id": "d51a6ce2141f1324",
-        "type": "inject",
-        "z": "d3c4c932fa0ad433",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "{\"clientid\":\"all\",\"type\":\"api\",\"url\":\"http://127.0.0.1:1880/flows\",\"method\":\"GET\"}",
-        "payloadType": "json",
-        "x": 250,
-        "y": 40,
-        "wires": [
-            [
-                "5872a3052b7c12d6"
-            ]
-        ]
-    },
-    {
-        "id": "436a1d6f.2315b4",
-        "type": "comment",
-        "z": "a033ecf7.19ef2",
-        "name": "Listen for Connect, Close, LWT messages",
-        "info": "",
-        "x": 230,
-        "y": 100,
-        "wires": []
-    },
-    {
-        "id": "cbd5949e.b2cba8",
-        "type": "mqtt in",
-        "z": "a033ecf7.19ef2",
-        "name": "Listen for Connect Messages",
-        "topic": "demo/security/clientstate/connected",
-        "qos": "2",
-        "datatype": "auto",
-        "broker": "3c9fafa.7dd6a5",
-        "nl": false,
-        "rap": false,
-        "inputs": 0,
-        "x": 180,
-        "y": 160,
-        "wires": [
-            [
-                "945a94ae.cd5268",
-                "325aebe7.dcf154"
-            ]
-        ]
-    },
-    {
-        "id": "8bfb700.f83579",
-        "type": "file",
-        "z": "a033ecf7.19ef2",
-        "name": "Write Client State File",
-        "filename": "",
-        "appendNewline": true,
-        "createDir": true,
-        "overwriteFile": "false",
-        "encoding": "none",
-        "x": 860,
-        "y": 160,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "945a94ae.cd5268",
-        "type": "template",
-        "z": "a033ecf7.19ef2",
-        "name": "Set Filename",
-        "field": "filename",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "/data/clientstate/{{payload}}",
-        "output": "str",
-        "x": 470,
-        "y": 160,
-        "wires": [
-            [
-                "8bfb700.f83579"
-            ]
-        ]
-    },
-    {
-        "id": "1fcead07.37b343",
-        "type": "mqtt in",
-        "z": "a033ecf7.19ef2",
-        "name": "Listen for Close Messages",
-        "topic": "demo/security/clientstate/closed",
-        "qos": "2",
-        "datatype": "auto",
-        "broker": "3c9fafa.7dd6a5",
-        "nl": false,
-        "rap": false,
-        "inputs": 0,
-        "x": 170,
-        "y": 220,
-        "wires": [
-            [
-                "ea39a6c3.717b98",
-                "325aebe7.dcf154"
-            ]
-        ]
-    },
-    {
-        "id": "ea39a6c3.717b98",
-        "type": "template",
-        "z": "a033ecf7.19ef2",
-        "name": "Set Filename",
-        "field": "filename",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "/data/clientstate/{{payload}}",
-        "output": "str",
-        "x": 470,
-        "y": 220,
-        "wires": [
-            [
-                "651f5e7f.0e76b"
-            ]
-        ]
-    },
-    {
-        "id": "b01f1e8c.20bff",
-        "type": "mqtt in",
-        "z": "a033ecf7.19ef2",
-        "name": "Listen for lwt Messages",
-        "topic": "demo/security/clientstate/lwt",
-        "qos": "2",
-        "datatype": "auto",
-        "broker": "3c9fafa.7dd6a5",
-        "nl": false,
-        "rap": false,
-        "inputs": 0,
-        "x": 160,
-        "y": 280,
-        "wires": [
-            [
-                "ea39a6c3.717b98",
-                "6dd181a3.29adf",
-                "325aebe7.dcf154"
-            ]
-        ]
-    },
-    {
-        "id": "651f5e7f.0e76b",
-        "type": "file",
-        "z": "a033ecf7.19ef2",
-        "name": "Delete Client State File",
-        "filename": "",
-        "appendNewline": true,
-        "createDir": false,
-        "overwriteFile": "delete",
-        "encoding": "none",
-        "x": 860,
-        "y": 220,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "d9853e19.30a3a",
-        "type": "file",
-        "z": "a033ecf7.19ef2",
-        "name": "Track LWT messages (Disconnect Monitor)",
-        "filename": "",
-        "appendNewline": true,
-        "createDir": true,
-        "overwriteFile": "true",
-        "encoding": "none",
-        "x": 930,
-        "y": 280,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "6dd181a3.29adf",
-        "type": "template",
-        "z": "a033ecf7.19ef2",
-        "name": "Set Filename",
-        "field": "filename",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "/data/disconnects/{{payload}}",
-        "output": "str",
-        "x": 470,
-        "y": 280,
-        "wires": [
-            [
-                "d9853e19.30a3a"
-            ]
-        ]
-    },
-    {
-        "id": "d5c7e4cc.057b48",
-        "type": "template",
-        "z": "a033ecf7.19ef2",
-        "name": "Set Topic to unique Client Topic",
         "field": "topic",
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "demo/ota/{{payload.title}}/state",
+        "template": "{{payload.subregion}} - {{payload.subcountry}} - {{payload.suborg}}",
         "output": "str",
-        "x": 190,
-        "y": 740,
+        "x": 410,
+        "y": 240,
         "wires": [
             [
-                "8edcff49.624cb"
+                "d5a9687167399cee"
             ]
         ]
     },
     {
-        "id": "44eb149a.69e63c",
-        "type": "template",
-        "z": "a033ecf7.19ef2",
-        "name": "Format Message",
-        "field": "payload",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "{\"url\": \"https://ota.mqtttest.com/100MB\",\"file\": \"100MB\",\"time\":\"{{timestamp}}\"}",
-        "output": "str",
-        "x": 150,
-        "y": 860,
-        "wires": [
-            [
-                "894d6631.3a7058"
-            ]
-        ]
-    },
-    {
-        "id": "894d6631.3a7058",
-        "type": "mqtt out",
-        "z": "a033ecf7.19ef2",
-        "name": "Send to Client",
-        "topic": "",
-        "qos": "",
-        "retain": "",
-        "respTopic": "",
-        "contentType": "",
-        "userProps": "",
-        "correl": "",
-        "expiry": "",
-        "broker": "3c9fafa.7dd6a5",
-        "x": 140,
-        "y": 920,
-        "wires": []
-    },
-    {
-        "id": "8edcff49.624cb",
+        "id": "d5a9687167399cee",
         "type": "change",
-        "z": "a033ecf7.19ef2",
-        "name": "place timestamp ",
+        "z": "8b7b9acc862a1e86",
+        "name": "",
         "rules": [
             {
                 "t": "set",
-                "p": "timestamp",
+                "p": "payload",
                 "pt": "msg",
-                "to": "",
-                "tot": "date"
+                "to": "payload.latency",
+                "tot": "msg"
             }
         ],
         "action": "",
@@ -1502,542 +951,21 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 150,
-        "y": 800,
-        "wires": [
-            [
-                "44eb149a.69e63c"
-            ]
-        ]
-    },
-    {
-        "id": "c65d3dd7.0b3cb",
-        "type": "template",
-        "z": "a033ecf7.19ef2",
-        "name": "form JSON of Active Clients",
-        "field": "payload",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "{\"title\":\"{{payload}}\",\"description\":\"Connected\",\"icon\":\"https://cdn1.iconfinder.com/data/icons/malware-and-threats/512/Botnet-01-512.png\"}",
-        "output": "json",
-        "x": 180,
-        "y": 540,
-        "wires": [
-            [
-                "1816a2a2.1671ed"
-            ]
-        ]
-    },
-    {
-        "id": "1816a2a2.1671ed",
-        "type": "join",
-        "z": "a033ecf7.19ef2",
-        "name": "Create Single Array of Active Clients",
-        "mode": "custom",
-        "build": "array",
-        "property": "payload",
-        "propertyType": "msg",
-        "key": "topic",
-        "joiner": "\\n",
-        "joinerType": "str",
-        "accumulate": false,
-        "timeout": "2",
-        "count": "",
-        "reduceRight": false,
-        "reduceExp": "",
-        "reduceInit": "",
-        "reduceInitType": "",
-        "reduceFixup": "",
-        "x": 210,
-        "y": 600,
-        "wires": [
-            [
-                "b1206115.740c"
-            ]
-        ]
-    },
-    {
-        "id": "5f577087.ad748",
-        "type": "comment",
-        "z": "a033ecf7.19ef2",
-        "name": "Build Client State Table",
-        "info": "",
-        "x": 160,
-        "y": 380,
-        "wires": []
-    },
-    {
-        "id": "9e8a5d8a.96e86",
-        "type": "comment",
-        "z": "a033ecf7.19ef2",
-        "name": "Individual Download (Action when user clicks on single state table entry)",
-        "info": "",
-        "x": 320,
-        "y": 700,
-        "wires": []
-    },
-    {
-        "id": "325aebe7.dcf154",
-        "type": "debug",
-        "z": "a033ecf7.19ef2",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 620,
-        "y": 400,
-        "wires": []
-    },
-    {
-        "id": "dc200233.9958a",
-        "type": "fs-file-lister",
-        "z": "a033ecf7.19ef2",
-        "name": "Build List of Active Clients",
-        "start": "/data/clientstate",
-        "pattern": "*bot",
-        "folders": "*",
-        "hidden": false,
-        "lstype": "files",
-        "path": false,
-        "single": false,
-        "depth": 0,
-        "stat": false,
-        "showWarnings": false,
-        "x": 180,
-        "y": 500,
-        "wires": [
-            [
-                "c65d3dd7.0b3cb"
-            ]
-        ]
-    },
-    {
-        "id": "b1206115.740c",
-        "type": "ui_list",
-        "z": "a033ecf7.19ef2",
-        "group": "6d919544.7af97c",
-        "name": "Client State Table",
-        "order": 2,
-        "width": 10,
-        "height": 15,
-        "lineType": "two",
-        "actionType": "click",
-        "allowHTML": false,
-        "outputs": 1,
-        "topic": "",
-        "x": 150,
-        "y": 660,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "14b4631ffc53e91e",
-        "type": "ui_button",
-        "z": "a033ecf7.19ef2",
-        "name": "Refresh Client State",
-        "group": "6d919544.7af97c",
-        "order": 3,
-        "width": 10,
-        "height": 1,
-        "passthru": false,
-        "label": "Refresh Client State",
-        "tooltip": "",
-        "color": "",
-        "bgcolor": "",
-        "className": "",
-        "icon": "",
-        "payload": "",
-        "payloadType": "str",
-        "topic": "topic",
-        "topicType": "msg",
-        "x": 170,
-        "y": 460,
-        "wires": [
-            [
-                "dc200233.9958a"
-            ]
-        ]
-    },
-    {
-        "id": "d951a21b122eca14",
-        "type": "http in",
-        "z": "401333b789844503",
-        "name": "",
-        "url": "/webserver",
-        "method": "get",
-        "upload": false,
-        "swaggerDoc": "",
-        "x": 250,
-        "y": 180,
-        "wires": [
-            [
-                "f429b80a7e7b202f",
-                "2deb4aa3caf0cc7d",
-                "924907bbeb084a1a"
-            ]
-        ]
-    },
-    {
-        "id": "f429b80a7e7b202f",
-        "type": "http response",
-        "z": "401333b789844503",
-        "name": "",
-        "statusCode": "",
-        "headers": {},
-        "x": 670,
-        "y": 180,
-        "wires": []
-    },
-    {
-        "id": "2deb4aa3caf0cc7d",
-        "type": "mqtt out",
-        "z": "401333b789844503",
-        "name": "",
-        "topic": "demo/security/webserver/hits",
-        "qos": "",
-        "retain": "",
-        "respTopic": "",
-        "contentType": "",
-        "userProps": "",
-        "correl": "",
-        "expiry": "",
-        "broker": "3c9fafa.7dd6a5",
         "x": 530,
-        "y": 300,
-        "wires": []
-    },
-    {
-        "id": "924907bbeb084a1a",
-        "type": "debug",
-        "z": "401333b789844503",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 540,
-        "y": 80,
-        "wires": []
-    },
-    {
-        "id": "8dea14f59b136983",
-        "type": "mqtt in",
-        "z": "e42fc4013df7b4d5",
-        "name": "",
-        "topic": "demo/security/webserver/hits",
-        "qos": "2",
-        "datatype": "auto",
-        "broker": "3c9fafa.7dd6a5",
-        "nl": false,
-        "rap": true,
-        "rh": 0,
-        "inputs": 0,
-        "x": 270,
-        "y": 200,
-        "wires": [
-            [
-                "1dd452bb39461eb1"
-            ]
-        ]
-    },
-    {
-        "id": "1dd452bb39461eb1",
-        "type": "debug",
-        "z": "e42fc4013df7b4d5",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 660,
-        "y": 220,
-        "wires": []
-    },
-    {
-        "id": "5bed910161c16d32",
-        "type": "ui_form",
-        "z": "f51fc5811b06d1db",
-        "name": "",
-        "label": "",
-        "group": "6d919544.7af97c",
-        "order": 1,
-        "width": 10,
-        "height": 7,
-        "options": [
-            {
-                "label": "ClientID",
-                "value": "clientid",
-                "type": "text",
-                "required": true,
-                "rows": null
-            },
-            {
-                "label": "command",
-                "value": "command",
-                "type": "text",
-                "required": true,
-                "rows": null
-            },
-            {
-                "label": "type",
-                "value": "type",
-                "type": "text",
-                "required": true,
-                "rows": null
-            }
-        ],
-        "formValue": {
-            "clientid": "",
-            "command": "",
-            "type": ""
-        },
-        "payload": "",
-        "submit": "submit",
-        "cancel": "cancel",
-        "topic": "topic",
-        "topicType": "msg",
-        "splitLayout": "",
-        "className": "",
-        "x": 190,
-        "y": 260,
-        "wires": [
-            [
-                "481d9e2ddf779b90",
-                "7572d3cf23634844"
-            ]
-        ]
-    },
-    {
-        "id": "481d9e2ddf779b90",
-        "type": "debug",
-        "z": "f51fc5811b06d1db",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 550,
-        "y": 260,
-        "wires": []
-    },
-    {
-        "id": "b3534f9cb61d9b4c",
-        "type": "mqtt out",
-        "z": "f51fc5811b06d1db",
-        "name": "",
-        "topic": "demo/security/control",
-        "qos": "",
-        "retain": "",
-        "respTopic": "",
-        "contentType": "",
-        "userProps": "",
-        "correl": "",
-        "expiry": "",
-        "broker": "3c9fafa.7dd6a5",
-        "x": 520,
-        "y": 360,
-        "wires": []
-    },
-    {
-        "id": "7572d3cf23634844",
-        "type": "json",
-        "z": "f51fc5811b06d1db",
-        "name": "",
-        "property": "payload",
-        "action": "",
-        "pretty": false,
-        "x": 300,
         "y": 320,
         "wires": [
             [
-                "b3534f9cb61d9b4c",
-                "481d9e2ddf779b90"
+                "a627816b1dceaab4",
+                "366d10629ae47e95"
             ]
         ]
     },
     {
-        "id": "93972954cd76e53d",
-        "type": "mqtt in",
-        "z": "f51fc5811b06d1db",
-        "name": "",
-        "topic": "demo/security/webserver/hits",
-        "qos": "2",
-        "datatype": "auto",
-        "broker": "3c9fafa.7dd6a5",
-        "nl": false,
-        "rap": true,
-        "rh": 0,
-        "inputs": 0,
-        "x": 230,
-        "y": 180,
-        "wires": [
-            [
-                "601996accad673a7"
-            ]
-        ]
-    },
-    {
-        "id": "33400ea77704797e",
-        "type": "ui_gauge",
-        "z": "f51fc5811b06d1db",
-        "name": "",
-        "group": "6d919544.7af97c",
-        "order": 5,
-        "width": 10,
-        "height": 6,
-        "gtype": "gage",
-        "title": "Webserver hits",
-        "label": "hits",
-        "format": "{{value}}",
-        "min": 0,
-        "max": "1000000",
-        "colors": [
-            "#00b500",
-            "#e6e600",
-            "#ca3838"
-        ],
-        "seg1": "",
-        "seg2": "",
-        "className": "",
-        "x": 740,
-        "y": 140,
-        "wires": []
-    },
-    {
-        "id": "601996accad673a7",
-        "type": "counter",
-        "z": "f51fc5811b06d1db",
-        "name": "",
-        "init": "0",
-        "step": "1",
-        "lower": "",
-        "upper": "",
-        "mode": "increment",
-        "outputs": 2,
-        "x": 440,
-        "y": 120,
-        "wires": [
-            [
-                "33400ea77704797e"
-            ],
-            []
-        ]
-    },
-    {
-        "id": "ed0b4580c98aa58e",
-        "type": "mqtt in",
-        "z": "f51fc5811b06d1db",
-        "name": "",
-        "topic": "demo/security/control/response",
-        "qos": "2",
-        "datatype": "auto",
-        "broker": "3c9fafa.7dd6a5",
-        "nl": false,
-        "rap": true,
-        "rh": 0,
-        "inputs": 0,
-        "x": 280,
-        "y": 420,
-        "wires": [
-            [
-                "ca5f016147a31f54"
-            ]
-        ]
-    },
-    {
-        "id": "ca5f016147a31f54",
+        "id": "366d10629ae47e95",
         "type": "debug",
-        "z": "f51fc5811b06d1db",
+        "z": "8b7b9acc862a1e86",
         "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 570,
-        "y": 420,
-        "wires": []
-    },
-    {
-        "id": "2a5ae016ce9a1292",
-        "type": "ui_button",
-        "z": "f51fc5811b06d1db",
-        "name": "",
-        "group": "6d919544.7af97c",
-        "order": 4,
-        "width": 10,
-        "height": 1,
-        "passthru": false,
-        "label": "Clear Web Counter",
-        "tooltip": "",
-        "color": "",
-        "bgcolor": "",
-        "className": "",
-        "icon": "",
-        "payload": "0",
-        "payloadType": "num",
-        "topic": "topic",
-        "topicType": "msg",
-        "x": 150,
-        "y": 60,
-        "wires": [
-            [
-                "406252c46f5ea664"
-            ]
-        ]
-    },
-    {
-        "id": "406252c46f5ea664",
-        "type": "change",
-        "z": "f51fc5811b06d1db",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "reset",
-                "pt": "msg",
-                "to": "0",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 360,
-        "y": 40,
-        "wires": [
-            [
-                "601996accad673a7",
-                "90259038cf9913ec"
-            ]
-        ]
-    },
-    {
-        "id": "90259038cf9913ec",
-        "type": "debug",
-        "z": "f51fc5811b06d1db",
-        "name": "",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -2045,8 +973,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 620,
-        "y": 40,
+        "x": 750,
+        "y": 340,
         "wires": []
     }
 ]
