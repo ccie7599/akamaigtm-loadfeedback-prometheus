@@ -1,32 +1,32 @@
 [
     {
-        "id": "5bd5e23aadd26b8d",
+        "id": "a033ecf7.19ef2",
         "type": "tab",
-        "label": "Set GeoIP ",
+        "label": "Publisher",
         "disabled": false,
         "info": "",
         "env": []
     },
     {
-        "id": "0ddac8ecfab2c47a",
+        "id": "91dfc3f3f10d7fc3",
         "type": "tab",
-        "label": "MQTT Client",
+        "label": "Update Geo Information",
         "disabled": false,
         "info": "",
         "env": []
     },
     {
-        "id": "aa25562f7ee4e284",
+        "id": "a4f2e7336814a302",
         "type": "tab",
-        "label": "Stat Update Service",
+        "label": "Subscriber",
         "disabled": false,
         "info": "",
         "env": []
     },
     {
-        "id": "8b7b9acc862a1e86",
+        "id": "af1e13a2798b2101",
         "type": "tab",
-        "label": "Dashboard",
+        "label": "reporter",
         "disabled": false,
         "info": "",
         "env": []
@@ -35,7 +35,7 @@
         "id": "3c9fafa.7dd6a5",
         "type": "mqtt-broker",
         "name": "",
-        "broker": "demo-na.mqtttest.com",
+        "broker": "demo.mqtttest.com",
         "port": "8883",
         "tls": "2d748829.2503d8",
         "clientid": "$(CLIENTID)",
@@ -45,17 +45,17 @@
         "protocolVersion": "4",
         "keepalive": "60",
         "cleansession": true,
-        "birthTopic": "demo/docker/clientstate/connect",
+        "birthTopic": "demo/security/clientstate/connected",
         "birthQos": "0",
         "birthRetain": "false",
         "birthPayload": "$(CLIENTID)",
         "birthMsg": {},
-        "closeTopic": "demo/docker/clientstate/close",
+        "closeTopic": "demo/security/clientstate/closed",
         "closeQos": "0",
         "closeRetain": "false",
         "closePayload": "$(CLIENTID)",
         "closeMsg": {},
-        "willTopic": "demo/docker/clientstate/lastwill",
+        "willTopic": "demo/security/clientstate/lastwill",
         "willQos": "0",
         "willRetain": "false",
         "willPayload": "$(CLIENTID)",
@@ -65,165 +65,148 @@
     {
         "id": "2d748829.2503d8",
         "type": "tls-config",
-        "name": "demo-na.mqtttest.com",
+        "name": "demo.mqtttest.com",
         "cert": "",
         "key": "",
         "ca": "",
         "certname": "",
         "keyname": "",
         "caname": "",
-        "servername": "demo-na.mqtttest.com",
-        "verifyservercert": true
+        "servername": "demo.mqtttest.com",
+        "verifyservercert": false,
+        "alpnprotocol": ""
     },
     {
-        "id": "d27658548ed03cc8",
+        "id": "791e80b3.11014",
+        "type": "ui_group",
+        "name": "Real Time Updates",
+        "tab": "3c3e20fe7358da21",
+        "order": 1,
+        "disp": true,
+        "width": "18",
+        "collapse": false
+    },
+    {
+        "id": "3c3e20fe7358da21",
         "type": "ui_tab",
-        "name": "Home",
+        "name": "Real Time Updates",
         "icon": "dashboard",
         "disabled": false,
         "hidden": false
     },
     {
-        "id": "62ea9e0ebdde7be0",
-        "type": "ui_base",
-        "theme": {
-            "name": "theme-light",
-            "lightTheme": {
-                "default": "#0094CE",
-                "baseColor": "#0094CE",
-                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
-                "edited": true,
-                "reset": false
-            },
-            "darkTheme": {
-                "default": "#097479",
-                "baseColor": "#097479",
-                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
-                "edited": false
-            },
-            "customTheme": {
-                "name": "Untitled Theme 1",
-                "default": "#4B7930",
-                "baseColor": "#4B7930",
-                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
-            },
-            "themeState": {
-                "base-color": {
-                    "default": "#0094CE",
-                    "value": "#0094CE",
-                    "edited": false
-                },
-                "page-titlebar-backgroundColor": {
-                    "value": "#0094CE",
-                    "edited": false
-                },
-                "page-backgroundColor": {
-                    "value": "#fafafa",
-                    "edited": false
-                },
-                "page-sidebar-backgroundColor": {
-                    "value": "#ffffff",
-                    "edited": false
-                },
-                "group-textColor": {
-                    "value": "#1bbfff",
-                    "edited": false
-                },
-                "group-borderColor": {
-                    "value": "#ffffff",
-                    "edited": false
-                },
-                "group-backgroundColor": {
-                    "value": "#ffffff",
-                    "edited": false
-                },
-                "widget-textColor": {
-                    "value": "#111111",
-                    "edited": false
-                },
-                "widget-backgroundColor": {
-                    "value": "#0094ce",
-                    "edited": false
-                },
-                "widget-borderColor": {
-                    "value": "#ffffff",
-                    "edited": false
-                },
-                "base-font": {
-                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
-                }
-            },
-            "angularTheme": {
-                "primary": "indigo",
-                "accents": "blue",
-                "warn": "red",
-                "background": "grey",
-                "palette": "light"
-            }
-        },
-        "site": {
-            "name": "Node-RED Dashboard",
-            "hideToolbar": "false",
-            "allowSwipe": "false",
-            "lockMenu": "false",
-            "allowTempTheme": "true",
-            "dateFormat": "DD/MM/YYYY",
-            "sizes": {
-                "sx": 48,
-                "sy": 48,
-                "gx": 6,
-                "gy": 6,
-                "cx": 6,
-                "cy": 6,
-                "px": 0,
-                "py": 0
-            }
-        }
+        "id": "9ec996f76bea83f4",
+        "type": "mqtt out",
+        "z": "a033ecf7.19ef2",
+        "name": "",
+        "topic": "demo/sky/service/update",
+        "qos": "0",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "3c9fafa.7dd6a5",
+        "x": 430,
+        "y": 480,
+        "wires": []
     },
     {
-        "id": "be7086791d3659b4",
-        "type": "ui_group",
-        "name": "Score Update Demo",
-        "tab": "d27658548ed03cc8",
+        "id": "b241657ecd94e4d5",
+        "type": "function",
+        "z": "a033ecf7.19ef2",
+        "name": "Add current epoch timestamp ",
+        "func": "msg.payload.time = Date.now() \nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 430,
+        "y": 420,
+        "wires": [
+            [
+                "9ec996f76bea83f4"
+            ]
+        ]
+    },
+    {
+        "id": "c3c65a1122f9097c",
+        "type": "template",
+        "z": "a033ecf7.19ef2",
+        "name": "Extract Geo and Org info from global variables",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "{\"publishregion\":\"{{global.regionName}}\",\"publishcountry\":\"{{global.countryCode}}\",\"publishorg\":\"{{global.org}}\"}",
+        "output": "json",
+        "x": 460,
+        "y": 360,
+        "wires": [
+            [
+                "b241657ecd94e4d5"
+            ]
+        ]
+    },
+    {
+        "id": "2cb76ed3b0d2050f",
+        "type": "ui_button",
+        "z": "a033ecf7.19ef2",
+        "name": "",
+        "group": "791e80b3.11014",
         "order": 1,
-        "disp": true,
-        "width": "20",
-        "collapse": false
-    },
-    {
-        "id": "38f81b70b78167f7",
-        "type": "ui_spacer",
-        "z": "aa25562f7ee4e284",
-        "name": "spacer",
-        "group": "be7086791d3659b4",
-        "order": 2,
         "width": 4,
-        "height": 1
+        "height": 1,
+        "passthru": false,
+        "label": "Send Update",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 210,
+        "y": 300,
+        "wires": [
+            [
+                "c3c65a1122f9097c"
+            ]
+        ]
     },
     {
-        "id": "ae42f17ee5b17f9e",
-        "type": "ui_spacer",
-        "z": "aa25562f7ee4e284",
-        "name": "spacer",
-        "group": "be7086791d3659b4",
-        "order": 5,
-        "width": 4,
-        "height": 1
+        "id": "4762d38c46b7cd97",
+        "type": "inject",
+        "z": "a033ecf7.19ef2",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 280,
+        "y": 240,
+        "wires": [
+            [
+                "c3c65a1122f9097c"
+            ]
+        ]
     },
     {
-        "id": "44d7baee0c563751",
-        "type": "ui_spacer",
-        "z": "aa25562f7ee4e284",
-        "name": "spacer",
-        "group": "be7086791d3659b4",
-        "order": 8,
-        "width": 4,
-        "height": 1
-    },
-    {
-        "id": "2280f0fe.38e8e",
+        "id": "0cec541ef6e031b1",
         "type": "http request",
-        "z": "5bd5e23aadd26b8d",
+        "z": "91dfc3f3f10d7fc3",
         "name": "Lookup public IP address",
         "method": "GET",
         "ret": "txt",
@@ -234,18 +217,18 @@
         "proxy": "",
         "authType": "",
         "senderr": false,
-        "x": 210,
-        "y": 140,
+        "x": 510,
+        "y": 260,
         "wires": [
             [
-                "6d6e68ee.4521e8"
+                "b637f7220dac651c"
             ]
         ]
     },
     {
-        "id": "6d6e68ee.4521e8",
+        "id": "b637f7220dac651c",
         "type": "template",
-        "z": "5bd5e23aadd26b8d",
+        "z": "91dfc3f3f10d7fc3",
         "name": "Format GeoIP Lookup",
         "field": "url",
         "fieldType": "msg",
@@ -253,18 +236,18 @@
         "syntax": "mustache",
         "template": "http://ip-api.com/json/{{payload}}",
         "output": "str",
-        "x": 200,
-        "y": 180,
+        "x": 500,
+        "y": 300,
         "wires": [
             [
-                "bec661d5.81376"
+                "8306208916e268ad"
             ]
         ]
     },
     {
-        "id": "bec661d5.81376",
+        "id": "8306208916e268ad",
         "type": "http request",
-        "z": "5bd5e23aadd26b8d",
+        "z": "91dfc3f3f10d7fc3",
         "name": "GeoIP Lookup",
         "method": "GET",
         "ret": "obj",
@@ -275,18 +258,18 @@
         "proxy": "",
         "authType": "",
         "senderr": false,
-        "x": 180,
-        "y": 220,
+        "x": 480,
+        "y": 340,
         "wires": [
             [
-                "fff7a75a.2f5218"
+                "456f6c80b80c1b93"
             ]
         ]
     },
     {
-        "id": "fff7a75a.2f5218",
+        "id": "456f6c80b80c1b93",
         "type": "change",
-        "z": "5bd5e23aadd26b8d",
+        "z": "91dfc3f3f10d7fc3",
         "name": "Set Global Variables ",
         "rules": [
             {
@@ -316,55 +299,16 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 200,
-        "y": 260,
+        "x": 500,
+        "y": 380,
         "wires": [
-            [
-                "84073e45.1a5"
-            ]
+            []
         ]
     },
     {
-        "id": "84073e45.1a5",
-        "type": "template",
-        "z": "5bd5e23aadd26b8d",
-        "name": "Format iplocation file",
-        "field": "payload",
-        "fieldType": "msg",
-        "format": "json",
-        "syntax": "mustache",
-        "template": "{\"regionName\":\"{{payload.regionName}}\",\"countryCode\":\"{{payload.countryCode}}\",\"org\":\"{{payload.org}}\"}",
-        "output": "str",
-        "x": 200,
-        "y": 300,
-        "wires": [
-            [
-                "d6e714be.cc9d48"
-            ]
-        ]
-    },
-    {
-        "id": "d6e714be.cc9d48",
-        "type": "file",
-        "z": "5bd5e23aadd26b8d",
-        "name": "write iplocation file to disk ",
-        "filename": "/data/iplocation",
-        "appendNewline": true,
-        "createDir": false,
-        "overwriteFile": "true",
-        "encoding": "none",
-        "x": 210,
-        "y": 340,
-        "wires": [
-            [
-                "316b8d06d6a87ed8"
-            ]
-        ]
-    },
-    {
-        "id": "27622c68909fd703",
+        "id": "524613bfa505fb5b",
         "type": "inject",
-        "z": "5bd5e23aadd26b8d",
+        "z": "91dfc3f3f10d7fc3",
         "name": "",
         "props": [
             {
@@ -375,486 +319,26 @@
                 "vt": "str"
             }
         ],
-        "repeat": "",
+        "repeat": "60",
         "crontab": "",
         "once": true,
         "onceDelay": 0.1,
         "topic": "",
         "payloadType": "date",
-        "x": 180,
-        "y": 80,
+        "x": 480,
+        "y": 200,
         "wires": [
             [
-                "2280f0fe.38e8e"
+                "0cec541ef6e031b1"
             ]
         ]
     },
     {
-        "id": "316b8d06d6a87ed8",
-        "type": "debug",
-        "z": "5bd5e23aadd26b8d",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 520,
-        "y": 340,
-        "wires": []
-    },
-    {
-        "id": "0c79ec9d06955054",
+        "id": "51ca4744ae568901",
         "type": "mqtt in",
-        "z": "0ddac8ecfab2c47a",
-        "name": "Listen for Publish Messages",
-        "topic": "demo/mlb/game/+",
-        "qos": "2",
-        "datatype": "json",
-        "broker": "3c9fafa.7dd6a5",
-        "nl": false,
-        "rap": false,
-        "inputs": 0,
-        "x": 260,
-        "y": 160,
-        "wires": [
-            [
-                "a3a5c7e4c1dafcb2"
-            ]
-        ]
-    },
-    {
-        "id": "a3a5c7e4c1dafcb2",
-        "type": "function",
-        "z": "0ddac8ecfab2c47a",
-        "name": "Calculate Time Difference ",
-        "func": "var now = Date.now();\nvar then = msg.payload.time;\nmsg.payload.latency = now - then;\nreturn msg",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 250,
-        "y": 220,
-        "wires": [
-            [
-                "3e7a37eb23e42ea9"
-            ]
-        ]
-    },
-    {
-        "id": "bbe21086ca9dbb7d",
-        "type": "mqtt out",
-        "z": "0ddac8ecfab2c47a",
-        "name": "publish results to Edge Connect",
-        "topic": "demo/mlb/analytics",
-        "qos": "",
-        "retain": "",
-        "respTopic": "",
-        "contentType": "",
-        "userProps": "",
-        "correl": "",
-        "expiry": "",
-        "broker": "3c9fafa.7dd6a5",
-        "x": 370,
-        "y": 440,
-        "wires": []
-    },
-    {
-        "id": "2e8ff2cae50e8433",
-        "type": "debug",
-        "z": "0ddac8ecfab2c47a",
+        "z": "a4f2e7336814a302",
         "name": "",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 680,
-        "y": 340,
-        "wires": []
-    },
-    {
-        "id": "8b26836b21b842f0",
-        "type": "debug",
-        "z": "0ddac8ecfab2c47a",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 650,
-        "y": 220,
-        "wires": []
-    },
-    {
-        "id": "3e7a37eb23e42ea9",
-        "type": "template",
-        "z": "0ddac8ecfab2c47a",
-        "name": "Extract Geo and Org info from global variables",
-        "field": "payload",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "{\"subregion\":\"{{global.regionName}}\",\"subcountry\":\"{{global.countryCode}}\",\"suborg\":\"{{global.org}}\",\"stat\":{{payload.stat}},\"latency\":{{payload.latency}}}",
-        "output": "json",
-        "x": 320,
-        "y": 300,
-        "wires": [
-            [
-                "2e8ff2cae50e8433",
-                "bbe21086ca9dbb7d"
-            ]
-        ]
-    },
-    {
-        "id": "80f010f5acee0e71",
-        "type": "inject",
-        "z": "aa25562f7ee4e284",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": true,
-        "onceDelay": 0.1,
-        "topic": "demo/mlb/game/1",
-        "payloadType": "date",
-        "x": 170,
-        "y": 180,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "9691dc26c7919ac0",
-        "type": "function",
-        "z": "aa25562f7ee4e284",
-        "name": "Add current epoch timestamp ",
-        "func": "msg.time = Date.now() \nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 290,
-        "y": 260,
-        "wires": [
-            [
-                "bd8d3d8a4026344a"
-            ]
-        ]
-    },
-    {
-        "id": "7d71875fa89e20ee",
-        "type": "mqtt out",
-        "z": "aa25562f7ee4e284",
-        "name": "",
-        "topic": "",
-        "qos": "0",
-        "retain": "",
-        "respTopic": "",
-        "contentType": "",
-        "userProps": "",
-        "correl": "",
-        "expiry": "",
-        "broker": "3c9fafa.7dd6a5",
-        "x": 410,
-        "y": 480,
-        "wires": []
-    },
-    {
-        "id": "aeb0d191cf04bfdd",
-        "type": "debug",
-        "z": "aa25562f7ee4e284",
-        "name": "",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 690,
-        "y": 420,
-        "wires": []
-    },
-    {
-        "id": "43de2bdde4065628",
-        "type": "inject",
-        "z": "aa25562f7ee4e284",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": true,
-        "onceDelay": 0.1,
-        "topic": "demo/mlb/game/2",
-        "payloadType": "date",
-        "x": 170,
-        "y": 140,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "bb7be3f88946493b",
-        "type": "inject",
-        "z": "aa25562f7ee4e284",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": true,
-        "onceDelay": 0.1,
-        "topic": "demo/mlb/game/3",
-        "payloadType": "date",
-        "x": 170,
-        "y": 100,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "bd8d3d8a4026344a",
-        "type": "template",
-        "z": "aa25562f7ee4e284",
-        "name": "",
-        "field": "payload",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "{\"stat\":{{payload}},\"time\":{{time}}}",
-        "output": "json",
-        "x": 390,
-        "y": 320,
-        "wires": [
-            [
-                "7d71875fa89e20ee",
-                "aeb0d191cf04bfdd"
-            ]
-        ]
-    },
-    {
-        "id": "cc977d26259d7d9e",
-        "type": "ui_button",
-        "z": "aa25562f7ee4e284",
-        "name": "",
-        "group": "be7086791d3659b4",
-        "order": 1,
-        "width": 10,
-        "height": 1,
-        "passthru": false,
-        "label": "Game 1 Update",
-        "tooltip": "",
-        "color": "",
-        "bgcolor": "",
-        "icon": "",
-        "payload": "",
-        "payloadType": "str",
-        "topic": "demo/mlb/game/1",
-        "topicType": "str",
-        "x": 420,
-        "y": 60,
-        "wires": [
-            [
-                "e6adfc8e3af657cd"
-            ]
-        ]
-    },
-    {
-        "id": "03a6e0a305ed40b1",
-        "type": "ui_button",
-        "z": "aa25562f7ee4e284",
-        "name": "Game 2 Update",
-        "group": "be7086791d3659b4",
-        "order": 4,
-        "width": 10,
-        "height": 1,
-        "passthru": false,
-        "label": "Game 2 Update",
-        "tooltip": "",
-        "color": "",
-        "bgcolor": "",
-        "icon": "",
-        "payload": "",
-        "payloadType": "str",
-        "topic": "demo/mlb/game/2",
-        "topicType": "str",
-        "x": 420,
-        "y": 100,
-        "wires": [
-            [
-                "40bec98906828f73"
-            ]
-        ]
-    },
-    {
-        "id": "02fb945cacabcf29",
-        "type": "ui_button",
-        "z": "aa25562f7ee4e284",
-        "name": "Game 3 Update",
-        "group": "be7086791d3659b4",
-        "order": 7,
-        "width": 10,
-        "height": 1,
-        "passthru": false,
-        "label": "Game 3 Update",
-        "tooltip": "",
-        "color": "",
-        "bgcolor": "",
-        "icon": "",
-        "payload": "",
-        "payloadType": "str",
-        "topic": "demo/mlb/game/3",
-        "topicType": "str",
-        "x": 420,
-        "y": 140,
-        "wires": [
-            [
-                "d62b64a2c96bccfe"
-            ]
-        ]
-    },
-    {
-        "id": "956871717aee9a69",
-        "type": "ui_text",
-        "z": "aa25562f7ee4e284",
-        "group": "be7086791d3659b4",
-        "order": 3,
-        "width": 6,
-        "height": 1,
-        "name": "Game 1",
-        "label": "Game 1",
-        "format": "{{msg.payload}}",
-        "layout": "row-center",
-        "x": 960,
-        "y": 80,
-        "wires": []
-    },
-    {
-        "id": "e6adfc8e3af657cd",
-        "type": "random",
-        "z": "aa25562f7ee4e284",
-        "name": "",
-        "low": 1,
-        "high": "100",
-        "inte": "false",
-        "property": "payload",
-        "x": 760,
-        "y": 80,
-        "wires": [
-            [
-                "9691dc26c7919ac0",
-                "956871717aee9a69"
-            ]
-        ]
-    },
-    {
-        "id": "40bec98906828f73",
-        "type": "random",
-        "z": "aa25562f7ee4e284",
-        "name": "",
-        "low": 1,
-        "high": "100",
-        "inte": "false",
-        "property": "payload",
-        "x": 760,
-        "y": 120,
-        "wires": [
-            [
-                "9691dc26c7919ac0",
-                "e503c7adcfd244ca"
-            ]
-        ]
-    },
-    {
-        "id": "d62b64a2c96bccfe",
-        "type": "random",
-        "z": "aa25562f7ee4e284",
-        "name": "",
-        "low": 1,
-        "high": "100",
-        "inte": "false",
-        "property": "payload",
-        "x": 760,
-        "y": 160,
-        "wires": [
-            [
-                "9691dc26c7919ac0",
-                "e0f211382e7dc118"
-            ]
-        ]
-    },
-    {
-        "id": "e503c7adcfd244ca",
-        "type": "ui_text",
-        "z": "aa25562f7ee4e284",
-        "group": "be7086791d3659b4",
-        "order": 6,
-        "width": 6,
-        "height": 1,
-        "name": "Game 2",
-        "label": "Game 2",
-        "format": "{{msg.payload}}",
-        "layout": "row-center",
-        "x": 960,
-        "y": 120,
-        "wires": []
-    },
-    {
-        "id": "e0f211382e7dc118",
-        "type": "ui_text",
-        "z": "aa25562f7ee4e284",
-        "group": "be7086791d3659b4",
-        "order": 9,
-        "width": 6,
-        "height": 1,
-        "name": "Game 3",
-        "label": "Game 3",
-        "format": "{{msg.payload}}",
-        "layout": "row-center",
-        "x": 960,
-        "y": 160,
-        "wires": []
-    },
-    {
-        "id": "02c39b525a348f95",
-        "type": "mqtt in",
-        "z": "8b7b9acc862a1e86",
-        "name": "",
-        "topic": "demo/mlb/analytics",
+        "topic": "demo/sky/service/update",
         "qos": "2",
         "datatype": "json",
         "broker": "3c9fafa.7dd6a5",
@@ -862,32 +346,211 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 250,
-        "y": 160,
+        "x": 230,
+        "y": 140,
         "wires": [
             [
-                "731e50a28cc7e0d7"
+                "2b614b4690cd74cb"
             ]
         ]
     },
     {
-        "id": "a627816b1dceaab4",
+        "id": "2b614b4690cd74cb",
+        "type": "function",
+        "z": "a4f2e7336814a302",
+        "name": "calculate latency",
+        "func": "var now = Date.now();\nvar then = msg.payload.time;\nmsg.payload.latency = now - then;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 350,
+        "y": 200,
+        "wires": [
+            [
+                "4054b25f.85648c"
+            ]
+        ]
+    },
+    {
+        "id": "4054b25f.85648c",
+        "type": "change",
+        "z": "a4f2e7336814a302",
+        "name": "Extract Geo Location from Global Variables",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload.regionName",
+                "pt": "msg",
+                "to": "regionName",
+                "tot": "global"
+            },
+            {
+                "t": "set",
+                "p": "payload.countryCode",
+                "pt": "msg",
+                "to": "countryCode",
+                "tot": "global"
+            },
+            {
+                "t": "set",
+                "p": "payload.org",
+                "pt": "msg",
+                "to": "org",
+                "tot": "global"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 350,
+        "y": 260,
+        "wires": [
+            [
+                "5b176287c336a3f9"
+            ]
+        ]
+    },
+    {
+        "id": "5b176287c336a3f9",
+        "type": "mqtt out",
+        "z": "a4f2e7336814a302",
+        "name": "",
+        "topic": "demo/sky/service/latency",
+        "qos": "1",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "3c9fafa.7dd6a5",
+        "x": 380,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "14d64fb78f7bc949",
+        "type": "mqtt in",
+        "z": "af1e13a2798b2101",
+        "name": "",
+        "topic": "demo/sky/service/latency",
+        "qos": "2",
+        "datatype": "json",
+        "broker": "3c9fafa.7dd6a5",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 220,
+        "y": 140,
+        "wires": [
+            [
+                "95b4a32e3a172f4d",
+                "6f412825bfd47442"
+            ]
+        ]
+    },
+    {
+        "id": "95b4a32e3a172f4d",
+        "type": "debug",
+        "z": "af1e13a2798b2101",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 560,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "6f412825bfd47442",
+        "type": "template",
+        "z": "af1e13a2798b2101",
+        "name": "Sort Messages by Country ",
+        "field": "topic",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "{{payload.countryCode}}",
+        "output": "str",
+        "x": 420,
+        "y": 280,
+        "wires": [
+            [
+                "5e04e0a0669ad8d6",
+                "510b2c8bf11781b6"
+            ]
+        ]
+    },
+    {
+        "id": "125449c3b7842986",
+        "type": "moving-average",
+        "z": "af1e13a2798b2101",
+        "name": "",
+        "amount": "1000",
+        "weight": "cumulative",
+        "x": 720,
+        "y": 340,
+        "wires": [
+            [
+                "b05134aa96b6bfaf"
+            ]
+        ]
+    },
+    {
+        "id": "5e04e0a0669ad8d6",
+        "type": "change",
+        "z": "af1e13a2798b2101",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.latency",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 290,
+        "y": 400,
+        "wires": [
+            [
+                "125449c3b7842986"
+            ]
+        ]
+    },
+    {
+        "id": "b05134aa96b6bfaf",
         "type": "ui_chart",
-        "z": "8b7b9acc862a1e86",
-        "name": "Client Latency in millseconds ",
-        "group": "be7086791d3659b4",
-        "order": 10,
-        "width": 0,
-        "height": 0,
-        "label": "Client Latency in millseconds ",
-        "chartType": "line",
+        "z": "af1e13a2798b2101",
+        "name": "",
+        "group": "791e80b3.11014",
+        "order": 3,
+        "width": 10,
+        "height": 8,
+        "label": "Latency per region in ms",
+        "chartType": "bar",
         "legend": "true",
         "xformat": "HH:mm:ss",
-        "interpolate": "bezier",
+        "interpolate": "linear",
         "nodata": "",
         "dot": false,
-        "ymin": "",
-        "ymax": "",
+        "ymin": "0",
+        "ymax": "1000",
         "removeOlder": 1,
         "removeOlderPoints": "",
         "removeOlderUnit": "3600",
@@ -907,65 +570,81 @@
         ],
         "outputs": 1,
         "useDifferentColor": false,
-        "x": 620,
-        "y": 480,
+        "x": 930,
+        "y": 460,
         "wires": [
             []
         ]
     },
     {
-        "id": "731e50a28cc7e0d7",
-        "type": "template",
-        "z": "8b7b9acc862a1e86",
+        "id": "ecf977a0fec504b5",
+        "type": "ui_chart",
+        "z": "af1e13a2798b2101",
         "name": "",
-        "field": "topic",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "{{payload.subregion}} - {{payload.subcountry}} - {{payload.suborg}}",
-        "output": "str",
-        "x": 410,
+        "group": "791e80b3.11014",
+        "order": 6,
+        "width": 8,
+        "height": 6,
+        "label": "messages received",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": true,
+        "ymin": "0",
+        "ymax": "1000",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "x": 970,
         "y": 240,
         "wires": [
-            [
-                "d5a9687167399cee"
-            ]
+            []
         ]
     },
     {
-        "id": "d5a9687167399cee",
-        "type": "change",
-        "z": "8b7b9acc862a1e86",
+        "id": "510b2c8bf11781b6",
+        "type": "counter",
+        "z": "af1e13a2798b2101",
         "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "payload.latency",
-                "tot": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 530,
-        "y": 320,
+        "init": "0",
+        "step": "1",
+        "lower": null,
+        "upper": null,
+        "mode": "increment",
+        "outputs": "1",
+        "x": 640,
+        "y": 220,
         "wires": [
             [
-                "a627816b1dceaab4",
-                "366d10629ae47e95"
+                "ecf977a0fec504b5",
+                "ee4affe7f245e50d"
             ]
         ]
     },
     {
-        "id": "366d10629ae47e95",
+        "id": "ee4affe7f245e50d",
         "type": "debug",
-        "z": "8b7b9acc862a1e86",
+        "z": "af1e13a2798b2101",
         "name": "",
-        "active": false,
+        "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -973,8 +652,87 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 750,
-        "y": 340,
+        "x": 950,
+        "y": 160,
         "wires": []
+    },
+    {
+        "id": "ae01a06ca9fa41bd",
+        "type": "ui_button",
+        "z": "af1e13a2798b2101",
+        "name": "",
+        "group": "791e80b3.11014",
+        "order": 4,
+        "width": 4,
+        "height": 1,
+        "passthru": false,
+        "label": "reset",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 590,
+        "y": 80,
+        "wires": [
+            [
+                "177de29b13203363"
+            ]
+        ]
+    },
+    {
+        "id": "a29e78efbdfbde77",
+        "type": "change",
+        "z": "af1e13a2798b2101",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 280,
+        "y": 300,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "177de29b13203363",
+        "type": "change",
+        "z": "af1e13a2798b2101",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "reset",
+                "pt": "msg",
+                "to": "0",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 760,
+        "y": 120,
+        "wires": [
+            [
+                "510b2c8bf11781b6"
+            ]
+        ]
     }
 ]
