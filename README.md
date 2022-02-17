@@ -7,6 +7,8 @@ Source for a docker container for a node-red based MQTT Election result demo.
 
 repo is synced with docker hub at brianapley/election-result-demo.
 
+The publisher container can be found at brianapley/election-result-demo:publisher
+
 ## Launching via docker hub (example)
 
 ```
