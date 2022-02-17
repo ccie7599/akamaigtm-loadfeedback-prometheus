@@ -77,22 +77,119 @@
         "alpnprotocol": ""
     },
     {
-        "id": "791e80b3.11014",
+        "id": "cb2f7c9a2ceaaf2c",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "6230bf36a9b3038f",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "54f7ecc644f21e27",
         "type": "ui_group",
-        "name": "Real Time Updates",
-        "tab": "3c3e20fe7358da21",
+        "name": "Home",
+        "tab": "cb2f7c9a2ceaaf2c",
         "order": 1,
         "disp": true,
         "width": "18",
         "collapse": false
-    },
-    {
-        "id": "3c3e20fe7358da21",
-        "type": "ui_tab",
-        "name": "Real Time Updates",
-        "icon": "dashboard",
-        "disabled": false,
-        "hidden": false
     },
     {
         "id": "9ec996f76bea83f4",
@@ -144,33 +241,6 @@
         "wires": [
             [
                 "b241657ecd94e4d5"
-            ]
-        ]
-    },
-    {
-        "id": "2cb76ed3b0d2050f",
-        "type": "ui_button",
-        "z": "a033ecf7.19ef2",
-        "name": "",
-        "group": "791e80b3.11014",
-        "order": 1,
-        "width": 4,
-        "height": 1,
-        "passthru": false,
-        "label": "Send Update",
-        "tooltip": "",
-        "color": "",
-        "bgcolor": "",
-        "icon": "",
-        "payload": "",
-        "payloadType": "str",
-        "topic": "topic",
-        "topicType": "msg",
-        "x": 210,
-        "y": 300,
-        "wires": [
-            [
-                "c3c65a1122f9097c"
             ]
         ]
     },
@@ -436,6 +506,7 @@
         "id": "14d64fb78f7bc949",
         "type": "mqtt in",
         "z": "af1e13a2798b2101",
+        "d": true,
         "name": "",
         "topic": "demo/sky/service/latency",
         "qos": "2",
@@ -498,12 +569,10 @@
         "name": "",
         "amount": "1000",
         "weight": "cumulative",
-        "x": 720,
-        "y": 340,
+        "x": 840,
+        "y": 400,
         "wires": [
-            [
-                "b05134aa96b6bfaf"
-            ]
+            []
         ]
     },
     {
@@ -534,92 +603,6 @@
         ]
     },
     {
-        "id": "b05134aa96b6bfaf",
-        "type": "ui_chart",
-        "z": "af1e13a2798b2101",
-        "name": "",
-        "group": "791e80b3.11014",
-        "order": 3,
-        "width": 10,
-        "height": 8,
-        "label": "Latency per region in ms",
-        "chartType": "bar",
-        "legend": "true",
-        "xformat": "HH:mm:ss",
-        "interpolate": "linear",
-        "nodata": "",
-        "dot": false,
-        "ymin": "0",
-        "ymax": "1000",
-        "removeOlder": 1,
-        "removeOlderPoints": "",
-        "removeOlderUnit": "3600",
-        "cutout": 0,
-        "useOneColor": false,
-        "useUTC": false,
-        "colors": [
-            "#1f77b4",
-            "#aec7e8",
-            "#ff7f0e",
-            "#2ca02c",
-            "#98df8a",
-            "#d62728",
-            "#ff9896",
-            "#9467bd",
-            "#c5b0d5"
-        ],
-        "outputs": 1,
-        "useDifferentColor": false,
-        "x": 930,
-        "y": 460,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "ecf977a0fec504b5",
-        "type": "ui_chart",
-        "z": "af1e13a2798b2101",
-        "name": "",
-        "group": "791e80b3.11014",
-        "order": 6,
-        "width": 8,
-        "height": 6,
-        "label": "messages received",
-        "chartType": "line",
-        "legend": "false",
-        "xformat": "HH:mm:ss",
-        "interpolate": "linear",
-        "nodata": "",
-        "dot": true,
-        "ymin": "0",
-        "ymax": "1000",
-        "removeOlder": 1,
-        "removeOlderPoints": "",
-        "removeOlderUnit": "60",
-        "cutout": 0,
-        "useOneColor": false,
-        "useUTC": false,
-        "colors": [
-            "#1f77b4",
-            "#aec7e8",
-            "#ff7f0e",
-            "#2ca02c",
-            "#98df8a",
-            "#d62728",
-            "#ff9896",
-            "#9467bd",
-            "#c5b0d5"
-        ],
-        "outputs": 1,
-        "useDifferentColor": false,
-        "x": 970,
-        "y": 240,
-        "wires": [
-            []
-        ]
-    },
-    {
         "id": "510b2c8bf11781b6",
         "type": "counter",
         "z": "af1e13a2798b2101",
@@ -634,7 +617,6 @@
         "y": 220,
         "wires": [
             [
-                "ecf977a0fec504b5",
                 "ee4affe7f245e50d"
             ]
         ]
@@ -655,33 +637,6 @@
         "x": 950,
         "y": 160,
         "wires": []
-    },
-    {
-        "id": "ae01a06ca9fa41bd",
-        "type": "ui_button",
-        "z": "af1e13a2798b2101",
-        "name": "",
-        "group": "791e80b3.11014",
-        "order": 4,
-        "width": 4,
-        "height": 1,
-        "passthru": false,
-        "label": "reset",
-        "tooltip": "",
-        "color": "",
-        "bgcolor": "",
-        "icon": "",
-        "payload": "",
-        "payloadType": "str",
-        "topic": "topic",
-        "topicType": "msg",
-        "x": 590,
-        "y": 80,
-        "wires": [
-            [
-                "177de29b13203363"
-            ]
-        ]
     },
     {
         "id": "a29e78efbdfbde77",
