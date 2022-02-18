@@ -11,7 +11,12 @@
         "node-red-contrib-counter": "~0.1.6",
         "dashboard-evi": "~1.0.2",
         "node-red-node-random": "~0.4.0",
-        "node-red-contrib-moving-average": "~1.3.0"
+        "node-red-contrib-moving-average": "~1.3.0",
+        "node-red-contrib-kafka-client": "0.0.10",
+        "node-red-contrib-kafka-node": "~0.1.7",
+        "node-red-contrib-mqtt-dynamicsub": "0.0.9",
+        "node-red-contrib-redis": "~1.3.9",
+        "node-red-node-redis": "0.0.5"
     },
         "scripts": {
         "start": "node $NODE_OPTIONS node_modules/node-red/red.js $FLOWS",
