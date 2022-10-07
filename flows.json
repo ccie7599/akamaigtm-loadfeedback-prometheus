@@ -1,11 +1,72 @@
 [
     {
-        "id": "8975569f1e06ceb0",
+        "id": "7a02b2e08f8601a0",
         "type": "tab",
-        "label": "Flow 2",
+        "label": "Auth API ",
         "disabled": false,
         "info": "",
         "env": []
+    },
+    {
+        "id": "8a2e636b056d7f63",
+        "type": "tab",
+        "label": "Control API",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "0225c433e7d5e8e7",
+        "type": "tab",
+        "label": "pubsub integration",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "3c9fafa.7dd6a5",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "demo.mqtttest.com",
+        "port": "8883",
+        "tls": "2d748829.2503d8",
+        "clientid": "$(CLIENTID)",
+        "autoConnect": true,
+        "usetls": true,
+        "compatmode": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": false,
+        "birthTopic": "demo/sie/clientstate/connected",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "$(CLIENTID)",
+        "birthMsg": {},
+        "closeTopic": "demo/sie/clientstate/closed",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "$(CLIENTID)",
+        "closeMsg": {},
+        "willTopic": "demo/sie/clientstate/lastwill",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "$(CLIENTID)",
+        "willMsg": {},
+        "sessionExpiry": ""
+    },
+    {
+        "id": "2d748829.2503d8",
+        "type": "tls-config",
+        "name": "demo.mqtttest.com",
+        "cert": "",
+        "key": "",
+        "ca": "",
+        "certname": "",
+        "keyname": "",
+        "caname": "",
+        "servername": "demo.mqtttest.com",
+        "verifyservercert": false,
+        "alpnprotocol": ""
     },
     {
         "id": "81fc7724bb1fd349",
@@ -22,107 +83,22 @@
         "alpnprotocol": ""
     },
     {
-        "id": "042ec98e80223783",
-        "type": "ui_base",
-        "theme": {
-            "name": "theme-dark",
-            "lightTheme": {
-                "default": "#0094CE",
-                "baseColor": "#0094CE",
-                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
-                "edited": true,
-                "reset": false
-            },
-            "darkTheme": {
-                "default": "#097479",
-                "baseColor": "#097479",
-                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
-                "edited": true,
-                "reset": false
-            },
-            "customTheme": {
-                "name": "Untitled Theme 1",
-                "default": "#4B7930",
-                "baseColor": "#4B7930",
-                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
-            },
-            "themeState": {
-                "base-color": {
-                    "default": "#097479",
-                    "value": "#097479",
-                    "edited": false
-                },
-                "page-titlebar-backgroundColor": {
-                    "value": "#097479",
-                    "edited": false
-                },
-                "page-backgroundColor": {
-                    "value": "#111111",
-                    "edited": false
-                },
-                "page-sidebar-backgroundColor": {
-                    "value": "#333333",
-                    "edited": false
-                },
-                "group-textColor": {
-                    "value": "#0eb8c0",
-                    "edited": false
-                },
-                "group-borderColor": {
-                    "value": "#555555",
-                    "edited": false
-                },
-                "group-backgroundColor": {
-                    "value": "#333333",
-                    "edited": false
-                },
-                "widget-textColor": {
-                    "value": "#eeeeee",
-                    "edited": false
-                },
-                "widget-backgroundColor": {
-                    "value": "#097479",
-                    "edited": false
-                },
-                "widget-borderColor": {
-                    "value": "#333333",
-                    "edited": false
-                },
-                "base-font": {
-                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
-                }
-            },
-            "angularTheme": {
-                "primary": "indigo",
-                "accents": "blue",
-                "warn": "red",
-                "background": "grey",
-                "palette": "light"
-            }
-        },
-        "site": {
-            "name": "",
-            "hideToolbar": "true",
-            "allowSwipe": "false",
-            "lockMenu": "false",
-            "allowTempTheme": "true",
-            "dateFormat": "DD/MM/YYYY",
-            "sizes": {
-                "sx": 48,
-                "sy": 48,
-                "gx": 6,
-                "gy": 6,
-                "cx": 6,
-                "cy": 6,
-                "px": 0,
-                "py": 0
-            }
-        }
+        "id": "353bb6547d30ac52",
+        "type": "tls-config",
+        "name": "demo.mqtttest.com",
+        "cert": "",
+        "key": "",
+        "ca": "",
+        "certname": "",
+        "keyname": "",
+        "caname": "",
+        "servername": "demo.mqtttest.com",
+        "verifyservercert": true
     },
     {
-        "id": "75511dec1fbf8da9",
+        "id": "9ac16ede16b78cb8",
         "type": "ui_spacer",
-        "z": "8975569f1e06ceb0",
+        "z": "7a02b2e08f8601a0",
         "name": "spacer",
         "group": "",
         "order": 2,
@@ -130,9 +106,9 @@
         "height": 1
     },
     {
-        "id": "e0034b3e036143a8",
+        "id": "ec2ead69f0bfb3a7",
         "type": "ui_spacer",
-        "z": "8975569f1e06ceb0",
+        "z": "7a02b2e08f8601a0",
         "name": "spacer",
         "group": "",
         "order": 3,
@@ -140,9 +116,9 @@
         "height": 1
     },
     {
-        "id": "7dd1872d69f72988",
+        "id": "f77f1a8f05d39808",
         "type": "ui_spacer",
-        "z": "8975569f1e06ceb0",
+        "z": "7a02b2e08f8601a0",
         "name": "spacer",
         "group": "",
         "order": 4,
@@ -150,9 +126,9 @@
         "height": 1
     },
     {
-        "id": "31e99107e9300610",
+        "id": "b5d17401d2070703",
         "type": "ui_spacer",
-        "z": "8975569f1e06ceb0",
+        "z": "7a02b2e08f8601a0",
         "name": "spacer",
         "group": "",
         "order": 5,
@@ -160,9 +136,9 @@
         "height": 1
     },
     {
-        "id": "b01e30704c6d3f6e",
+        "id": "a941cc757be9b2f2",
         "type": "ui_spacer",
-        "z": "8975569f1e06ceb0",
+        "z": "7a02b2e08f8601a0",
         "name": "spacer",
         "group": "",
         "order": 6,
@@ -170,9 +146,9 @@
         "height": 1
     },
     {
-        "id": "682971ecaf7f87aa",
+        "id": "b9d464653085fb2d",
         "type": "ui_spacer",
-        "z": "8975569f1e06ceb0",
+        "z": "7a02b2e08f8601a0",
         "name": "spacer",
         "group": "",
         "order": 7,
@@ -180,9 +156,9 @@
         "height": 1
     },
     {
-        "id": "2eb22e199fd85f2b",
+        "id": "dc1bcb8c1519dca8",
         "type": "ui_spacer",
-        "z": "8975569f1e06ceb0",
+        "z": "7a02b2e08f8601a0",
         "name": "spacer",
         "group": "",
         "order": 8,
@@ -190,9 +166,9 @@
         "height": 1
     },
     {
-        "id": "f335cdd7f19d79ae",
+        "id": "f95602f1457f3aa0",
         "type": "ui_spacer",
-        "z": "8975569f1e06ceb0",
+        "z": "7a02b2e08f8601a0",
         "name": "spacer",
         "group": "",
         "order": 9,
@@ -200,9 +176,9 @@
         "height": 1
     },
     {
-        "id": "805b2d449195304f",
+        "id": "c57b691aa43d7493",
         "type": "ui_spacer",
-        "z": "8975569f1e06ceb0",
+        "z": "7a02b2e08f8601a0",
         "name": "spacer",
         "group": "",
         "order": 11,
@@ -210,9 +186,9 @@
         "height": 1
     },
     {
-        "id": "07747fbed196ade4",
+        "id": "065727e2a08eaa50",
         "type": "ui_spacer",
-        "z": "8975569f1e06ceb0",
+        "z": "7a02b2e08f8601a0",
         "name": "spacer",
         "group": "",
         "order": 12,
@@ -220,9 +196,9 @@
         "height": 1
     },
     {
-        "id": "a506377c6c39e6d1",
+        "id": "c4ba7a82cbeaf05a",
         "type": "ui_spacer",
-        "z": "8975569f1e06ceb0",
+        "z": "7a02b2e08f8601a0",
         "name": "spacer",
         "group": "",
         "order": 13,
@@ -230,9 +206,9 @@
         "height": 1
     },
     {
-        "id": "23df397cf68d8c76",
+        "id": "835c7ecddc1ec6a6",
         "type": "ui_spacer",
-        "z": "8975569f1e06ceb0",
+        "z": "7a02b2e08f8601a0",
         "name": "spacer",
         "group": "",
         "order": 14,
@@ -240,9 +216,9 @@
         "height": 1
     },
     {
-        "id": "7e7ad190f568c230",
+        "id": "422aad85c65516af",
         "type": "ui_spacer",
-        "z": "8975569f1e06ceb0",
+        "z": "7a02b2e08f8601a0",
         "name": "spacer",
         "group": "",
         "order": 15,
@@ -250,9 +226,9 @@
         "height": 1
     },
     {
-        "id": "e93749f6a164b8c3",
+        "id": "55d1f8d05dc774f2",
         "type": "ui_spacer",
-        "z": "8975569f1e06ceb0",
+        "z": "7a02b2e08f8601a0",
         "name": "spacer",
         "group": "",
         "order": 16,
@@ -260,9 +236,9 @@
         "height": 1
     },
     {
-        "id": "d12d6750724cc015",
+        "id": "274f21c757e85f9b",
         "type": "ui_spacer",
-        "z": "8975569f1e06ceb0",
+        "z": "7a02b2e08f8601a0",
         "name": "spacer",
         "group": "",
         "order": 17,
@@ -270,9 +246,9 @@
         "height": 1
     },
     {
-        "id": "89720b6c5b863a7b",
+        "id": "a34fc0889e3516a4",
         "type": "ui_spacer",
-        "z": "8975569f1e06ceb0",
+        "z": "7a02b2e08f8601a0",
         "name": "spacer",
         "group": "",
         "order": 18,
@@ -280,9 +256,9 @@
         "height": 1
     },
     {
-        "id": "d77d2bdb1c131a21",
+        "id": "079662224b01d162",
         "type": "ui_spacer",
-        "z": "8975569f1e06ceb0",
+        "z": "7a02b2e08f8601a0",
         "name": "spacer",
         "group": "",
         "order": 19,
@@ -290,9 +266,9 @@
         "height": 1
     },
     {
-        "id": "38abee94c427d335",
+        "id": "a236d9c10f68bb49",
         "type": "ui_spacer",
-        "z": "8975569f1e06ceb0",
+        "z": "7a02b2e08f8601a0",
         "name": "spacer",
         "group": "",
         "order": 20,
@@ -300,9 +276,9 @@
         "height": 1
     },
     {
-        "id": "6571882577108323",
+        "id": "ae03ade141a4ebd7",
         "type": "ui_spacer",
-        "z": "8975569f1e06ceb0",
+        "z": "7a02b2e08f8601a0",
         "name": "spacer",
         "group": "",
         "order": 21,
@@ -310,9 +286,9 @@
         "height": 1
     },
     {
-        "id": "2634675b2a29c3a9",
+        "id": "1fc84ae2ce9f2933",
         "type": "ui_spacer",
-        "z": "8975569f1e06ceb0",
+        "z": "7a02b2e08f8601a0",
         "name": "spacer",
         "group": "",
         "order": 22,
@@ -320,9 +296,9 @@
         "height": 1
     },
     {
-        "id": "5d915bc02b72b426",
+        "id": "7a99256869af8c05",
         "type": "ui_spacer",
-        "z": "8975569f1e06ceb0",
+        "z": "7a02b2e08f8601a0",
         "name": "spacer",
         "group": "",
         "order": 23,
@@ -330,9 +306,9 @@
         "height": 1
     },
     {
-        "id": "8cb2d37fc223bbbb",
+        "id": "b398e45472e952d1",
         "type": "ui_spacer",
-        "z": "8975569f1e06ceb0",
+        "z": "7a02b2e08f8601a0",
         "name": "spacer",
         "group": "",
         "order": 24,
@@ -340,9 +316,9 @@
         "height": 1
     },
     {
-        "id": "a1f334da0b14a57c",
+        "id": "e4127bf3294d6a07",
         "type": "ui_spacer",
-        "z": "8975569f1e06ceb0",
+        "z": "7a02b2e08f8601a0",
         "name": "spacer",
         "group": "",
         "order": 25,
@@ -350,9 +326,9 @@
         "height": 1
     },
     {
-        "id": "3c6791ccda211b38",
+        "id": "3e07e547282240fd",
         "type": "ui_spacer",
-        "z": "8975569f1e06ceb0",
+        "z": "7a02b2e08f8601a0",
         "name": "spacer",
         "group": "",
         "order": 26,
@@ -360,9 +336,9 @@
         "height": 1
     },
     {
-        "id": "66b4fa5270a7d4e7",
+        "id": "22277fb83dfd8b34",
         "type": "ui_spacer",
-        "z": "8975569f1e06ceb0",
+        "z": "7a02b2e08f8601a0",
         "name": "spacer",
         "group": "",
         "order": 27,
@@ -370,9 +346,9 @@
         "height": 1
     },
     {
-        "id": "b593cf0e2341d029",
+        "id": "af0983a3f8034bb6",
         "type": "ui_spacer",
-        "z": "8975569f1e06ceb0",
+        "z": "7a02b2e08f8601a0",
         "name": "spacer",
         "group": "",
         "order": 28,
@@ -380,9 +356,9 @@
         "height": 1
     },
     {
-        "id": "2c176a3a6e7a8f71",
+        "id": "d63ecf2e72fbfc9e",
         "type": "ui_spacer",
-        "z": "8975569f1e06ceb0",
+        "z": "7a02b2e08f8601a0",
         "name": "spacer",
         "group": "",
         "order": 29,
@@ -390,9 +366,9 @@
         "height": 1
     },
     {
-        "id": "42537f8db38444f1",
+        "id": "2d5fd96f04d9c263",
         "type": "ui_spacer",
-        "z": "8975569f1e06ceb0",
+        "z": "7a02b2e08f8601a0",
         "name": "spacer",
         "group": "",
         "order": 30,
@@ -400,9 +376,9 @@
         "height": 1
     },
     {
-        "id": "53601b34903c5d06",
+        "id": "86c8056551efae0f",
         "type": "ui_spacer",
-        "z": "8975569f1e06ceb0",
+        "z": "7a02b2e08f8601a0",
         "name": "spacer",
         "group": "",
         "order": 31,
@@ -410,9 +386,9 @@
         "height": 1
     },
     {
-        "id": "2e61a6dc1cd0cc4e",
+        "id": "f8b54a79163c123d",
         "type": "ui_spacer",
-        "z": "8975569f1e06ceb0",
+        "z": "7a02b2e08f8601a0",
         "name": "spacer",
         "group": "",
         "order": 32,
@@ -420,9 +396,9 @@
         "height": 1
     },
     {
-        "id": "706abad8d6926382",
+        "id": "3b729db2c7055f20",
         "type": "ui_spacer",
-        "z": "8975569f1e06ceb0",
+        "z": "7a02b2e08f8601a0",
         "name": "spacer",
         "group": "",
         "order": 33,
@@ -430,9 +406,9 @@
         "height": 1
     },
     {
-        "id": "d9ca275476898586",
+        "id": "3657efb672cde8fb",
         "type": "ui_spacer",
-        "z": "8975569f1e06ceb0",
+        "z": "7a02b2e08f8601a0",
         "name": "spacer",
         "group": "",
         "order": 34,
@@ -440,9 +416,9 @@
         "height": 1
     },
     {
-        "id": "55ca28cb8d5a152a",
+        "id": "2875a73740a4a3e2",
         "type": "ui_spacer",
-        "z": "8975569f1e06ceb0",
+        "z": "7a02b2e08f8601a0",
         "name": "spacer",
         "group": "",
         "order": 35,
@@ -450,17 +426,17 @@
         "height": 1
     },
     {
-        "id": "f75f3bff9d05695e",
+        "id": "9114a8cd7f9ef2a8",
         "type": "ui_group",
         "name": "Sonos",
-        "tab": "67d4c11e476a5408",
+        "tab": "cf1dddcd115f6799",
         "order": 1,
         "disp": false,
         "width": "14",
         "collapse": false
     },
     {
-        "id": "67d4c11e476a5408",
+        "id": "cf1dddcd115f6799",
         "type": "ui_tab",
         "name": "Sonos",
         "icon": "dashboard",
@@ -468,27 +444,9 @@
         "hidden": false
     },
     {
-        "id": "f9c2acc6a5c0bdfa",
-        "type": "ui_tab",
-        "name": "Home",
-        "icon": "dashboard",
-        "disabled": false,
-        "hidden": false
-    },
-    {
-        "id": "72638c028843b2f0",
-        "type": "ui_group",
-        "name": "Default",
-        "tab": "f9c2acc6a5c0bdfa",
-        "order": 1,
-        "disp": true,
-        "width": "6",
-        "collapse": false
-    },
-    {
-        "id": "d41cb57443dd41f0",
+        "id": "4b616cb4411bfd75",
         "type": "inject",
-        "z": "8975569f1e06ceb0",
+        "z": "7a02b2e08f8601a0",
         "name": "",
         "props": [
             {
@@ -531,48 +489,34 @@
         "y": 40,
         "wires": [
             [
-                "06402e993db87c2b"
+                "7eb74d1be30f1c31",
+                "8bae6008255f4552"
             ]
         ]
     },
     {
-        "id": "06402e993db87c2b",
+        "id": "7eb74d1be30f1c31",
         "type": "template",
-        "z": "8975569f1e06ceb0",
+        "z": "7a02b2e08f8601a0",
         "name": "",
         "field": "payload",
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "https://api.sonos.com/login/v3/oauth?response_type={{payload.response_type}}&client_id={{payload.client_id}}&state={{payload.state}}&redirect_uri={{payload.redirect_uri}}&scope={{payload.scope}}",
+        "template": "https://api.sonos.com/login/v3/oauth?response_type={{payload.response_type}}&client_id={{global.client_id}}&state={{global.state}}&redirect_uri={{global.redirect_uri}}&scope={{global.scope}}",
         "output": "str",
         "x": 100,
         "y": 160,
         "wires": [
             [
-                "189cc3cedd22762d"
+                "7d7a3a9770c76f50"
             ]
         ]
     },
     {
-        "id": "e3c2cd3577002ca5",
-        "type": "base64",
-        "z": "8975569f1e06ceb0",
-        "name": "",
-        "action": "",
-        "property": "payload",
-        "x": 660,
-        "y": 520,
-        "wires": [
-            [
-                "9e0dbad19738d4e3"
-            ]
-        ]
-    },
-    {
-        "id": "fac501947f195406",
+        "id": "8253a76aa81ad766",
         "type": "template",
-        "z": "8975569f1e06ceb0",
+        "z": "7a02b2e08f8601a0",
         "name": "",
         "field": "payload",
         "fieldType": "msg",
@@ -583,15 +527,13 @@
         "x": 420,
         "y": 540,
         "wires": [
-            [
-                "e3c2cd3577002ca5"
-            ]
+            []
         ]
     },
     {
-        "id": "9e0dbad19738d4e3",
+        "id": "1f8db9ad03401b94",
         "type": "debug",
-        "z": "8975569f1e06ceb0",
+        "z": "7a02b2e08f8601a0",
         "name": "",
         "active": true,
         "tosidebar": true,
@@ -600,14 +542,14 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 730,
-        "y": 400,
+        "x": 610,
+        "y": 160,
         "wires": []
     },
     {
-        "id": "7cd49e14b3a30d36",
+        "id": "75e73678601eaab1",
         "type": "inject",
-        "z": "8975569f1e06ceb0",
+        "z": "7a02b2e08f8601a0",
         "name": "",
         "props": [
             {
@@ -625,14 +567,14 @@
         "y": 520,
         "wires": [
             [
-                "fac501947f195406"
+                "8253a76aa81ad766"
             ]
         ]
     },
     {
-        "id": "b306fe66ebcf60d7",
+        "id": "b46bf0e3befa5aec",
         "type": "exec",
-        "z": "8975569f1e06ceb0",
+        "z": "7a02b2e08f8601a0",
         "command": "",
         "addpay": "payload",
         "append": "",
@@ -641,39 +583,40 @@
         "winHide": false,
         "oldrc": false,
         "name": "",
-        "x": 450,
-        "y": 700,
+        "x": 390,
+        "y": 680,
         "wires": [
             [
-                "135ad9e2a4dde5fd"
+                "e8cb74abccca20a6"
             ],
             [],
             []
         ]
     },
     {
-        "id": "8e708b0504a8aaf0",
+        "id": "f916928d946bad51",
         "type": "template",
-        "z": "8975569f1e06ceb0",
+        "z": "7a02b2e08f8601a0",
         "name": "",
         "field": "payload",
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "curl -X POST -H \"Content-Type: application/x-www-form-urlencoded;charset=utf-8\" -H \"Authorization: Basic MWEzZDQxMTAtNzBiNi00YWY0LWE2MGEtNTI4ZWY2NTI2MDg3Ojg4YjM2NGZjLWU1YzAtNDFkNS1hMTlkLWUyOTFkMTgzODMwZg==\" \"https://api.sonos.com/login/v3/oauth/access\" -d \"grant_type=authorization_code&code={{payload.code}}&redirect_uri={{payload.redirect_uri}}\"",
+        "template": "curl -X POST -H \"Content-Type: application/x-www-form-urlencoded;charset=utf-8\" -H \"Authorization: Basic {{{global.b64}}}\" \"https://api.sonos.com/login/v3/oauth/access\" -d \"grant_type=authorization_code&code={{payload.code}}&redirect_uri={{global.redirect_uri}}\"",
         "output": "str",
-        "x": 260,
-        "y": 680,
+        "x": 540,
+        "y": 280,
         "wires": [
             [
-                "b306fe66ebcf60d7"
+                "b46bf0e3befa5aec",
+                "1f8db9ad03401b94"
             ]
         ]
     },
     {
-        "id": "4d13c3cc43f8fa49",
+        "id": "868a74517fd2bbed",
         "type": "inject",
-        "z": "8975569f1e06ceb0",
+        "z": "7a02b2e08f8601a0",
         "name": "",
         "props": [
             {
@@ -702,18 +645,17 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
+        "payloadType": "str",
         "x": 130,
         "y": 620,
         "wires": [
-            [
-                "8e708b0504a8aaf0"
-            ]
+            []
         ]
     },
     {
-        "id": "8191043720628972",
+        "id": "9369fd66472305cf",
         "type": "debug",
-        "z": "8975569f1e06ceb0",
+        "z": "7a02b2e08f8601a0",
         "name": "",
         "active": true,
         "tosidebar": true,
@@ -727,43 +669,45 @@
         "wires": []
     },
     {
-        "id": "135ad9e2a4dde5fd",
+        "id": "e8cb74abccca20a6",
         "type": "json",
-        "z": "8975569f1e06ceb0",
+        "z": "7a02b2e08f8601a0",
         "name": "",
         "property": "payload",
         "action": "",
         "pretty": false,
-        "x": 580,
-        "y": 680,
+        "x": 470,
+        "y": 600,
         "wires": [
             [
-                "8191043720628972"
+                "9369fd66472305cf",
+                "45715554f0ee26bb",
+                "38d40a22084bde1f"
             ]
         ]
     },
     {
-        "id": "ebde20edc29f14dc",
+        "id": "e2384507ce8847a7",
         "type": "http in",
-        "z": "8975569f1e06ceb0",
+        "z": "7a02b2e08f8601a0",
         "name": "code",
         "url": "/code",
         "method": "get",
         "upload": false,
         "swaggerDoc": "",
-        "x": 90,
-        "y": 280,
+        "x": 210,
+        "y": 440,
         "wires": [
             [
-                "614c72c4d49d7ccc",
-                "38299133135e9427"
+                "f1d1a3e797fe9c89",
+                "99eae1cfa999b1ed"
             ]
         ]
     },
     {
-        "id": "614c72c4d49d7ccc",
+        "id": "f1d1a3e797fe9c89",
         "type": "debug",
-        "z": "8975569f1e06ceb0",
+        "z": "7a02b2e08f8601a0",
         "name": "",
         "active": true,
         "tosidebar": true,
@@ -773,58 +717,42 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 270,
-        "y": 280,
+        "x": 530,
+        "y": 400,
         "wires": []
     },
     {
-        "id": "38299133135e9427",
+        "id": "99eae1cfa999b1ed",
         "type": "http response",
-        "z": "8975569f1e06ceb0",
+        "z": "7a02b2e08f8601a0",
         "name": "",
         "statusCode": "",
         "headers": {},
-        "x": 270,
-        "y": 360,
+        "x": 410,
+        "y": 460,
         "wires": []
     },
     {
-        "id": "a89e16e71b5da704",
+        "id": "c8d71fca3da4dcfc",
         "type": "ui_form",
-        "z": "8975569f1e06ceb0",
+        "z": "7a02b2e08f8601a0",
         "name": "",
-        "label": "Sonos API Token ",
-        "group": "72638c028843b2f0",
-        "order": 35,
-        "width": 0,
-        "height": 0,
+        "label": "1. Obtain Sonos Auth Code for Integration",
+        "group": "9114a8cd7f9ef2a8",
+        "order": 1,
+        "width": 10,
+        "height": 1,
         "options": [
             {
-                "label": "Client Key",
-                "value": "payload.client_id",
-                "type": "text",
-                "required": true,
-                "rows": null
-            },
-            {
-                "label": "Client Secret",
-                "value": "payload.secret",
-                "type": "text",
-                "required": true,
-                "rows": null
-            },
-            {
                 "label": "State",
-                "value": "payload.state",
+                "value": "state",
                 "type": "text",
                 "required": true,
                 "rows": null
             }
         ],
         "formValue": {
-            "payload.client_id": "",
-            "payload.secret": "",
-            "payload.state": ""
+            "state": ""
         },
         "payload": "",
         "submit": "submit",
@@ -832,24 +760,25 @@
         "topic": "topic",
         "topicType": "msg",
         "splitLayout": "",
-        "x": 130,
+        "x": 200,
         "y": 80,
         "wires": [
             [
-                "19e341d2107c434b"
+                "d4ecc658e4e457fd",
+                "8bae6008255f4552"
             ]
         ]
     },
     {
-        "id": "19e341d2107c434b",
+        "id": "d4ecc658e4e457fd",
         "type": "change",
-        "z": "8975569f1e06ceb0",
+        "z": "7a02b2e08f8601a0",
         "name": "",
         "rules": [
             {
                 "t": "set",
-                "p": "payload.scope",
-                "pt": "msg",
+                "p": "scope",
+                "pt": "global",
                 "to": "playback-control-all",
                 "tot": "str"
             },
@@ -866,6 +795,34 @@
                 "pt": "msg",
                 "to": "code",
                 "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "client_id",
+                "pt": "global",
+                "to": "1a3d4110-70b6-4af4-a60a-528ef6526087",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "state",
+                "pt": "global",
+                "to": "payload.state",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "secret",
+                "pt": "global",
+                "to": "88b364fc-e5c0-41d5-a19d-e291d183830f",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "redirect_uri",
+                "pt": "global",
+                "to": "https%3A%2F%2F45.79.245.132%2Fcode",
+                "tot": "str"
             }
         ],
         "action": "",
@@ -877,24 +834,797 @@
         "y": 120,
         "wires": [
             [
-                "06402e993db87c2b"
+                "7eb74d1be30f1c31"
             ]
         ]
     },
     {
-        "id": "189cc3cedd22762d",
+        "id": "7d7a3a9770c76f50",
         "type": "ui_text",
-        "z": "8975569f1e06ceb0",
-        "group": "f75f3bff9d05695e",
-        "order": 1,
+        "z": "7a02b2e08f8601a0",
+        "group": "9114a8cd7f9ef2a8",
+        "order": 2,
+        "width": 10,
+        "height": 6,
+        "name": "",
+        "label": "",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "x": 90,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "7eeef7ffd996f0cf",
+        "type": "ui_form",
+        "z": "7a02b2e08f8601a0",
+        "name": "",
+        "label": "2. Enter Sonos Auth code and request API token ",
+        "group": "9114a8cd7f9ef2a8",
+        "order": 3,
+        "width": 10,
+        "height": 1,
+        "options": [
+            {
+                "label": "Auth Code ",
+                "value": "code",
+                "type": "text",
+                "required": true,
+                "rows": null
+            }
+        ],
+        "formValue": {
+            "code": ""
+        },
+        "payload": "",
+        "submit": "submit",
+        "cancel": "cancel",
+        "topic": "topic",
+        "topicType": "msg",
+        "splitLayout": "",
+        "x": 220,
+        "y": 300,
+        "wires": [
+            [
+                "f916928d946bad51"
+            ]
+        ]
+    },
+    {
+        "id": "8bae6008255f4552",
+        "type": "change",
+        "z": "7a02b2e08f8601a0",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "b64",
+                "pt": "global",
+                "to": "MWEzZDQxMTAtNzBiNi00YWY0LWE2MGEtNTI4ZWY2NTI2MDg3Ojg4YjM2NGZjLWU1YzAtNDFkNS1hMTlkLWUyOTFkMTgzODMwZg==",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 560,
+        "y": 40,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "45715554f0ee26bb",
+        "type": "ui_text",
+        "z": "7a02b2e08f8601a0",
+        "group": "9114a8cd7f9ef2a8",
+        "order": 4,
+        "width": 10,
+        "height": 6,
+        "name": "",
+        "label": "",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "x": 630,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "38d40a22084bde1f",
+        "type": "change",
+        "z": "7a02b2e08f8601a0",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "token",
+                "pt": "global",
+                "to": "payload.access_token",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "refresh_token",
+                "pt": "global",
+                "to": "payload.refresh_token",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 620,
+        "y": 720,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "45a625d35fd66423",
+        "type": "template",
+        "z": "8a2e636b056d7f63",
+        "name": "Add Auth Header",
+        "field": "headers[\"Authorization\"]",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Bearer {{global.token}}",
+        "output": "str",
+        "x": 350,
+        "y": 340,
+        "wires": [
+            [
+                "76d82da4e1b0dad3"
+            ]
+        ]
+    },
+    {
+        "id": "76d82da4e1b0dad3",
+        "type": "http request",
+        "z": "8a2e636b056d7f63",
+        "name": "",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "81fc7724bb1fd349",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "senderr": false,
+        "x": 490,
+        "y": 440,
+        "wires": [
+            [
+                "ccdb32f7bb0a891d",
+                "7a45eb087b1c3fb4"
+            ]
+        ]
+    },
+    {
+        "id": "ecd8b9b299f31226",
+        "type": "template",
+        "z": "8a2e636b056d7f63",
+        "name": "Format URL",
+        "field": "url",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "https://api.ws.sonos.com/control/api/v1/{{{command}}}",
+        "output": "str",
+        "x": 350,
+        "y": 240,
+        "wires": [
+            [
+                "45a625d35fd66423"
+            ]
+        ]
+    },
+    {
+        "id": "ea785eba52dd9dd6",
+        "type": "inject",
+        "z": "8a2e636b056d7f63",
+        "name": "Households",
+        "props": [
+            {
+                "p": "command",
+                "v": "households",
+                "vt": "str"
+            },
+            {
+                "p": "cmd",
+                "v": "households_src",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 150,
+        "y": 80,
+        "wires": [
+            [
+                "ecd8b9b299f31226"
+            ]
+        ]
+    },
+    {
+        "id": "7a45eb087b1c3fb4",
+        "type": "change",
+        "z": "8a2e636b056d7f63",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "households[0].id",
+                "pt": "global",
+                "to": "payload.households[0].id",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 620,
+        "y": 360,
+        "wires": [
+            [
+                "828d3c8faa5161c8"
+            ]
+        ]
+    },
+    {
+        "id": "07912d9c350d930c",
+        "type": "inject",
+        "z": "8a2e636b056d7f63",
+        "name": "Groups",
+        "props": [
+            {
+                "p": "cmd",
+                "v": "groups_src",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 130,
+        "y": 120,
+        "wires": [
+            [
+                "5189c087377e4bc4"
+            ]
+        ]
+    },
+    {
+        "id": "5189c087377e4bc4",
+        "type": "template",
+        "z": "8a2e636b056d7f63",
+        "name": "Format URL",
+        "field": "command",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "/households/{{global.households[\"0\"].id}}/groups",
+        "output": "str",
+        "x": 130,
+        "y": 220,
+        "wires": [
+            [
+                "ecd8b9b299f31226"
+            ]
+        ]
+    },
+    {
+        "id": "ccdb32f7bb0a891d",
+        "type": "debug",
+        "z": "8a2e636b056d7f63",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 590,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "a4df467ed163cc51",
+        "type": "file",
+        "z": "8a2e636b056d7f63",
+        "name": "",
+        "filename": "",
+        "appendNewline": true,
+        "createDir": false,
+        "overwriteFile": "true",
+        "encoding": "none",
+        "x": 720,
+        "y": 240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "828d3c8faa5161c8",
+        "type": "template",
+        "z": "8a2e636b056d7f63",
+        "name": "change filename",
+        "field": "filename",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "/data/{{cmd}}",
+        "output": "str",
+        "x": 700,
+        "y": 300,
+        "wires": [
+            [
+                "a4df467ed163cc51"
+            ]
+        ]
+    },
+    {
+        "id": "a8d41f8d34a24f91",
+        "type": "file in",
+        "z": "8a2e636b056d7f63",
+        "name": "",
+        "filename": "/data/groups_src",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 390,
+        "y": 500,
+        "wires": [
+            [
+                "1fc1c4f152bbf21e"
+            ]
+        ]
+    },
+    {
+        "id": "6d8a6cd22423cd30",
+        "type": "inject",
+        "z": "8a2e636b056d7f63",
+        "name": "Read Groups",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 200,
+        "y": 460,
+        "wires": [
+            [
+                "a8d41f8d34a24f91"
+            ]
+        ]
+    },
+    {
+        "id": "1fc1c4f152bbf21e",
+        "type": "json",
+        "z": "8a2e636b056d7f63",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 350,
+        "y": 760,
+        "wires": [
+            [
+                "083da296982993ea"
+            ]
+        ]
+    },
+    {
+        "id": "13475a03a3dadf48",
+        "type": "inject",
+        "z": "8a2e636b056d7f63",
+        "name": "Read Households",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 230,
+        "y": 580,
+        "wires": [
+            [
+                "a02b5601e6e8b823"
+            ]
+        ]
+    },
+    {
+        "id": "a02b5601e6e8b823",
+        "type": "file in",
+        "z": "8a2e636b056d7f63",
+        "name": "",
+        "filename": "/data/households_src",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 480,
+        "y": 580,
+        "wires": [
+            [
+                "27c0cec820c5038f"
+            ]
+        ]
+    },
+    {
+        "id": "27c0cec820c5038f",
+        "type": "json",
+        "z": "8a2e636b056d7f63",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 530,
+        "y": 660,
+        "wires": [
+            [
+                "402dc0ad1cce0949"
+            ]
+        ]
+    },
+    {
+        "id": "402dc0ad1cce0949",
+        "type": "debug",
+        "z": "8a2e636b056d7f63",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 790,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "083da296982993ea",
+        "type": "split",
+        "z": "8a2e636b056d7f63",
+        "name": "",
+        "splt": "\\n",
+        "spltType": "str",
+        "arraySplt": "1",
+        "arraySpltType": "len",
+        "stream": true,
+        "addname": "",
+        "x": 490,
+        "y": 760,
+        "wires": [
+            [
+                "0cbecbb9df06f2d8"
+            ]
+        ]
+    },
+    {
+        "id": "0cbecbb9df06f2d8",
+        "type": "split",
+        "z": "8a2e636b056d7f63",
+        "name": "",
+        "splt": "\\n",
+        "spltType": "str",
+        "arraySplt": "1",
+        "arraySpltType": "len",
+        "stream": true,
+        "addname": "",
+        "x": 630,
+        "y": 760,
+        "wires": [
+            [
+                "aecd34828e2acd0e"
+            ]
+        ]
+    },
+    {
+        "id": "0cfb92e92157d561",
+        "type": "file",
+        "z": "8a2e636b056d7f63",
+        "name": "",
+        "filename": "",
+        "appendNewline": false,
+        "createDir": true,
+        "overwriteFile": "true",
+        "encoding": "none",
+        "x": 780,
+        "y": 620,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "aecd34828e2acd0e",
+        "type": "template",
+        "z": "8a2e636b056d7f63",
+        "name": "",
+        "field": "filename",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "/data/{{parts.parts.key}}/{{payload.name}}",
+        "output": "str",
+        "x": 700,
+        "y": 700,
+        "wires": [
+            [
+                "0cfb92e92157d561"
+            ]
+        ]
+    },
+    {
+        "id": "79b68772fb174a66",
+        "type": "fs-file-lister",
+        "z": "8a2e636b056d7f63",
+        "name": "",
+        "start": "/data/players",
+        "pattern": "*",
+        "folders": "*",
+        "hidden": false,
+        "lstype": "both",
+        "path": true,
+        "single": true,
+        "depth": 0,
+        "stat": true,
+        "showWarnings": true,
+        "x": 360,
+        "y": 860,
+        "wires": [
+            [
+                "bd0ee8608d686928"
+            ]
+        ]
+    },
+    {
+        "id": "a74287fd96104d1c",
+        "type": "inject",
+        "z": "8a2e636b056d7f63",
+        "name": "",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 160,
+        "y": 860,
+        "wires": [
+            [
+                "79b68772fb174a66"
+            ]
+        ]
+    },
+    {
+        "id": "bd0ee8608d686928",
+        "type": "debug",
+        "z": "8a2e636b056d7f63",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 580,
+        "y": 880,
+        "wires": []
+    },
+    {
+        "id": "07347e6565694ead",
+        "type": "exec",
+        "z": "8a2e636b056d7f63",
+        "command": "ls ",
+        "addpay": "cmd",
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "winHide": false,
+        "oldrc": false,
+        "name": "",
+        "x": 210,
+        "y": 1020,
+        "wires": [
+            [
+                "d62fd60606019b37"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "4c0c4f1da1c315ac",
+        "type": "actionflows",
+        "z": "8a2e636b056d7f63",
+        "info": "Describe your action API here.",
+        "untilproptype": "num",
+        "proptype": "msg",
+        "name": "action",
+        "prop": "loop",
+        "untilprop": 0,
+        "until": "gt",
+        "loop": "none",
+        "scope": "global",
+        "perf": false,
+        "seq": false,
+        "x": 140,
+        "y": 400,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "aaca78c058a7c7db",
+        "type": "actionflows_in",
+        "z": "8a2e636b056d7f63",
+        "name": "action in",
+        "priority": "50",
+        "links": [],
+        "scope": "global",
+        "x": 130,
+        "y": 360,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "7b636dbf2fe596e6",
+        "type": "inject",
+        "z": "8a2e636b056d7f63",
+        "name": "List players",
+        "props": [
+            {
+                "p": "cmd",
+                "v": "/data/players",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 150,
+        "y": 940,
+        "wires": [
+            [
+                "07347e6565694ead"
+            ]
+        ]
+    },
+    {
+        "id": "a7a8cc8780ea4af0",
+        "type": "debug",
+        "z": "8a2e636b056d7f63",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 610,
+        "y": 1000,
+        "wires": []
+    },
+    {
+        "id": "d62fd60606019b37",
+        "type": "split",
+        "z": "8a2e636b056d7f63",
+        "name": "",
+        "splt": "\\n",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": true,
+        "addname": "",
+        "x": 390,
+        "y": 1020,
+        "wires": [
+            [
+                "a7a8cc8780ea4af0",
+                "6e59ccde2d233e69"
+            ]
+        ]
+    },
+    {
+        "id": "f0622c6828311f5a",
+        "type": "debug",
+        "z": "8a2e636b056d7f63",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 610,
+        "y": 1040,
+        "wires": []
+    },
+    {
+        "id": "6e59ccde2d233e69",
+        "type": "template",
+        "z": "8a2e636b056d7f63",
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "{\"title\":\"{{payload}}\"}",
+        "output": "json",
+        "x": 320,
+        "y": 1100,
+        "wires": [
+            [
+                "f0622c6828311f5a",
+                "5ee6cd5a83a82509"
+            ]
+        ]
+    },
+    {
+        "id": "5ee6cd5a83a82509",
+        "type": "ui_list",
+        "z": "8a2e636b056d7f63",
+        "group": "9114a8cd7f9ef2a8",
+        "name": "",
+        "order": 4,
         "width": 0,
         "height": 0,
+        "lineType": "one",
+        "actionType": "click",
+        "allowHTML": false,
+        "outputs": 1,
+        "topic": "",
+        "x": 480,
+        "y": 1160,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "96f3e8a81673bc87",
+        "type": "split",
+        "z": "0225c433e7d5e8e7",
         "name": "",
-        "label": "text",
-        "format": "{{msg.payload}}",
-        "layout": "row-spread",
-        "x": 90,
-        "y": 200,
-        "wires": []
+        "splt": "\\n",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "x": 200,
+        "y": 320,
+        "wires": [
+            []
+        ]
     }
 ]
