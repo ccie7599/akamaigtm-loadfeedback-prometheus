@@ -1,78 +1,31 @@
 [
     {
-        "id": "ca825459.08851",
+        "id": "8975569f1e06ceb0",
         "type": "tab",
-        "label": "Distributed Transaction Event Log",
+        "label": "Flow 2",
         "disabled": false,
         "info": "",
         "env": []
     },
     {
-        "id": "48b4356fe2e4f9db",
-        "type": "tab",
-        "label": "Stock API",
-        "disabled": false,
-        "info": "",
-        "env": []
-    },
-    {
-        "id": "3c9fafa.7dd6a5",
-        "type": "mqtt-broker",
-        "name": "",
-        "broker": "demo.mqtttest.com",
-        "port": "8883",
-        "tls": "2d748829.2503d8",
-        "clientid": "$(CLIENTID)",
-        "autoConnect": true,
-        "usetls": true,
-        "compatmode": false,
-        "protocolVersion": "4",
-        "keepalive": "60",
-        "cleansession": true,
-        "birthTopic": "demo/security/clientstate/connected",
-        "birthQos": "0",
-        "birthRetain": "false",
-        "birthPayload": "$(CLIENTID)",
-        "birthMsg": {},
-        "closeTopic": "demo/security/clientstate/closed",
-        "closeQos": "0",
-        "closeRetain": "false",
-        "closePayload": "$(CLIENTID)",
-        "closeMsg": {},
-        "willTopic": "demo/security/clientstate/lastwill",
-        "willQos": "0",
-        "willRetain": "false",
-        "willPayload": "$(CLIENTID)",
-        "willMsg": {},
-        "sessionExpiry": ""
-    },
-    {
-        "id": "2d748829.2503d8",
+        "id": "81fc7724bb1fd349",
         "type": "tls-config",
-        "name": "demo.mqtttest.com",
+        "name": "",
         "cert": "",
         "key": "",
         "ca": "",
         "certname": "",
         "keyname": "",
         "caname": "",
-        "servername": "demo.mqtttest.com",
+        "servername": "",
         "verifyservercert": false,
         "alpnprotocol": ""
     },
     {
-        "id": "cb2f7c9a2ceaaf2c",
-        "type": "ui_tab",
-        "name": "Home",
-        "icon": "dashboard",
-        "disabled": false,
-        "hidden": false
-    },
-    {
-        "id": "6230bf36a9b3038f",
+        "id": "042ec98e80223783",
         "type": "ui_base",
         "theme": {
-            "name": "theme-light",
+            "name": "theme-dark",
             "lightTheme": {
                 "default": "#0094CE",
                 "baseColor": "#0094CE",
@@ -84,7 +37,8 @@
                 "default": "#097479",
                 "baseColor": "#097479",
                 "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
-                "edited": false
+                "edited": true,
+                "reset": false
             },
             "customTheme": {
                 "name": "Untitled Theme 1",
@@ -94,44 +48,44 @@
             },
             "themeState": {
                 "base-color": {
-                    "default": "#0094CE",
-                    "value": "#0094CE",
+                    "default": "#097479",
+                    "value": "#097479",
                     "edited": false
                 },
                 "page-titlebar-backgroundColor": {
-                    "value": "#0094CE",
+                    "value": "#097479",
                     "edited": false
                 },
                 "page-backgroundColor": {
-                    "value": "#fafafa",
-                    "edited": false
-                },
-                "page-sidebar-backgroundColor": {
-                    "value": "#ffffff",
-                    "edited": false
-                },
-                "group-textColor": {
-                    "value": "#1bbfff",
-                    "edited": false
-                },
-                "group-borderColor": {
-                    "value": "#ffffff",
-                    "edited": false
-                },
-                "group-backgroundColor": {
-                    "value": "#ffffff",
-                    "edited": false
-                },
-                "widget-textColor": {
                     "value": "#111111",
                     "edited": false
                 },
+                "page-sidebar-backgroundColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#0eb8c0",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#555555",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#eeeeee",
+                    "edited": false
+                },
                 "widget-backgroundColor": {
-                    "value": "#0094ce",
+                    "value": "#097479",
                     "edited": false
                 },
                 "widget-borderColor": {
-                    "value": "#ffffff",
+                    "value": "#333333",
                     "edited": false
                 },
                 "base-font": {
@@ -147,8 +101,8 @@
             }
         },
         "site": {
-            "name": "Node-RED Dashboard",
-            "hideToolbar": "false",
+            "name": "",
+            "hideToolbar": "true",
             "allowSwipe": "false",
             "lockMenu": "false",
             "allowTempTheme": "true",
@@ -166,120 +120,496 @@
         }
     },
     {
-        "id": "54f7ecc644f21e27",
+        "id": "75511dec1fbf8da9",
+        "type": "ui_spacer",
+        "z": "8975569f1e06ceb0",
+        "name": "spacer",
+        "group": "",
+        "order": 2,
+        "width": 20,
+        "height": 1
+    },
+    {
+        "id": "e0034b3e036143a8",
+        "type": "ui_spacer",
+        "z": "8975569f1e06ceb0",
+        "name": "spacer",
+        "group": "",
+        "order": 3,
+        "width": 20,
+        "height": 1
+    },
+    {
+        "id": "7dd1872d69f72988",
+        "type": "ui_spacer",
+        "z": "8975569f1e06ceb0",
+        "name": "spacer",
+        "group": "",
+        "order": 4,
+        "width": 20,
+        "height": 1
+    },
+    {
+        "id": "31e99107e9300610",
+        "type": "ui_spacer",
+        "z": "8975569f1e06ceb0",
+        "name": "spacer",
+        "group": "",
+        "order": 5,
+        "width": 20,
+        "height": 1
+    },
+    {
+        "id": "b01e30704c6d3f6e",
+        "type": "ui_spacer",
+        "z": "8975569f1e06ceb0",
+        "name": "spacer",
+        "group": "",
+        "order": 6,
+        "width": 20,
+        "height": 1
+    },
+    {
+        "id": "682971ecaf7f87aa",
+        "type": "ui_spacer",
+        "z": "8975569f1e06ceb0",
+        "name": "spacer",
+        "group": "",
+        "order": 7,
+        "width": 20,
+        "height": 1
+    },
+    {
+        "id": "2eb22e199fd85f2b",
+        "type": "ui_spacer",
+        "z": "8975569f1e06ceb0",
+        "name": "spacer",
+        "group": "",
+        "order": 8,
+        "width": 20,
+        "height": 1
+    },
+    {
+        "id": "f335cdd7f19d79ae",
+        "type": "ui_spacer",
+        "z": "8975569f1e06ceb0",
+        "name": "spacer",
+        "group": "",
+        "order": 9,
+        "width": 2,
+        "height": 1
+    },
+    {
+        "id": "805b2d449195304f",
+        "type": "ui_spacer",
+        "z": "8975569f1e06ceb0",
+        "name": "spacer",
+        "group": "",
+        "order": 11,
+        "width": 8,
+        "height": 1
+    },
+    {
+        "id": "07747fbed196ade4",
+        "type": "ui_spacer",
+        "z": "8975569f1e06ceb0",
+        "name": "spacer",
+        "group": "",
+        "order": 12,
+        "width": 2,
+        "height": 1
+    },
+    {
+        "id": "a506377c6c39e6d1",
+        "type": "ui_spacer",
+        "z": "8975569f1e06ceb0",
+        "name": "spacer",
+        "group": "",
+        "order": 13,
+        "width": 8,
+        "height": 1
+    },
+    {
+        "id": "23df397cf68d8c76",
+        "type": "ui_spacer",
+        "z": "8975569f1e06ceb0",
+        "name": "spacer",
+        "group": "",
+        "order": 14,
+        "width": 2,
+        "height": 1
+    },
+    {
+        "id": "7e7ad190f568c230",
+        "type": "ui_spacer",
+        "z": "8975569f1e06ceb0",
+        "name": "spacer",
+        "group": "",
+        "order": 15,
+        "width": 8,
+        "height": 1
+    },
+    {
+        "id": "e93749f6a164b8c3",
+        "type": "ui_spacer",
+        "z": "8975569f1e06ceb0",
+        "name": "spacer",
+        "group": "",
+        "order": 16,
+        "width": 2,
+        "height": 1
+    },
+    {
+        "id": "d12d6750724cc015",
+        "type": "ui_spacer",
+        "z": "8975569f1e06ceb0",
+        "name": "spacer",
+        "group": "",
+        "order": 17,
+        "width": 8,
+        "height": 1
+    },
+    {
+        "id": "89720b6c5b863a7b",
+        "type": "ui_spacer",
+        "z": "8975569f1e06ceb0",
+        "name": "spacer",
+        "group": "",
+        "order": 18,
+        "width": 2,
+        "height": 1
+    },
+    {
+        "id": "d77d2bdb1c131a21",
+        "type": "ui_spacer",
+        "z": "8975569f1e06ceb0",
+        "name": "spacer",
+        "group": "",
+        "order": 19,
+        "width": 8,
+        "height": 1
+    },
+    {
+        "id": "38abee94c427d335",
+        "type": "ui_spacer",
+        "z": "8975569f1e06ceb0",
+        "name": "spacer",
+        "group": "",
+        "order": 20,
+        "width": 2,
+        "height": 1
+    },
+    {
+        "id": "6571882577108323",
+        "type": "ui_spacer",
+        "z": "8975569f1e06ceb0",
+        "name": "spacer",
+        "group": "",
+        "order": 21,
+        "width": 8,
+        "height": 1
+    },
+    {
+        "id": "2634675b2a29c3a9",
+        "type": "ui_spacer",
+        "z": "8975569f1e06ceb0",
+        "name": "spacer",
+        "group": "",
+        "order": 22,
+        "width": 2,
+        "height": 1
+    },
+    {
+        "id": "5d915bc02b72b426",
+        "type": "ui_spacer",
+        "z": "8975569f1e06ceb0",
+        "name": "spacer",
+        "group": "",
+        "order": 23,
+        "width": 8,
+        "height": 1
+    },
+    {
+        "id": "8cb2d37fc223bbbb",
+        "type": "ui_spacer",
+        "z": "8975569f1e06ceb0",
+        "name": "spacer",
+        "group": "",
+        "order": 24,
+        "width": 2,
+        "height": 1
+    },
+    {
+        "id": "a1f334da0b14a57c",
+        "type": "ui_spacer",
+        "z": "8975569f1e06ceb0",
+        "name": "spacer",
+        "group": "",
+        "order": 25,
+        "width": 8,
+        "height": 1
+    },
+    {
+        "id": "3c6791ccda211b38",
+        "type": "ui_spacer",
+        "z": "8975569f1e06ceb0",
+        "name": "spacer",
+        "group": "",
+        "order": 26,
+        "width": 2,
+        "height": 1
+    },
+    {
+        "id": "66b4fa5270a7d4e7",
+        "type": "ui_spacer",
+        "z": "8975569f1e06ceb0",
+        "name": "spacer",
+        "group": "",
+        "order": 27,
+        "width": 8,
+        "height": 1
+    },
+    {
+        "id": "b593cf0e2341d029",
+        "type": "ui_spacer",
+        "z": "8975569f1e06ceb0",
+        "name": "spacer",
+        "group": "",
+        "order": 28,
+        "width": 2,
+        "height": 1
+    },
+    {
+        "id": "2c176a3a6e7a8f71",
+        "type": "ui_spacer",
+        "z": "8975569f1e06ceb0",
+        "name": "spacer",
+        "group": "",
+        "order": 29,
+        "width": 8,
+        "height": 1
+    },
+    {
+        "id": "42537f8db38444f1",
+        "type": "ui_spacer",
+        "z": "8975569f1e06ceb0",
+        "name": "spacer",
+        "group": "",
+        "order": 30,
+        "width": 2,
+        "height": 1
+    },
+    {
+        "id": "53601b34903c5d06",
+        "type": "ui_spacer",
+        "z": "8975569f1e06ceb0",
+        "name": "spacer",
+        "group": "",
+        "order": 31,
+        "width": 8,
+        "height": 1
+    },
+    {
+        "id": "2e61a6dc1cd0cc4e",
+        "type": "ui_spacer",
+        "z": "8975569f1e06ceb0",
+        "name": "spacer",
+        "group": "",
+        "order": 32,
+        "width": 2,
+        "height": 1
+    },
+    {
+        "id": "706abad8d6926382",
+        "type": "ui_spacer",
+        "z": "8975569f1e06ceb0",
+        "name": "spacer",
+        "group": "",
+        "order": 33,
+        "width": 8,
+        "height": 1
+    },
+    {
+        "id": "d9ca275476898586",
+        "type": "ui_spacer",
+        "z": "8975569f1e06ceb0",
+        "name": "spacer",
+        "group": "",
+        "order": 34,
+        "width": 2,
+        "height": 1
+    },
+    {
+        "id": "55ca28cb8d5a152a",
+        "type": "ui_spacer",
+        "z": "8975569f1e06ceb0",
+        "name": "spacer",
+        "group": "",
+        "order": 35,
+        "width": 8,
+        "height": 1
+    },
+    {
+        "id": "f75f3bff9d05695e",
         "type": "ui_group",
-        "name": "Home",
-        "tab": "cb2f7c9a2ceaaf2c",
+        "name": "Sonos",
+        "tab": "67d4c11e476a5408",
         "order": 1,
-        "disp": true,
-        "width": "18",
+        "disp": false,
+        "width": "14",
         "collapse": false
     },
     {
-        "id": "a5ecdab7.7197d8",
-        "type": "ui_group",
-        "name": "Discover and Announce Application",
-        "tab": "16e47346.ac956d",
-        "order": 1,
-        "disp": true,
-        "width": "16",
-        "collapse": false
-    },
-    {
-        "id": "dc90f3d0.71392",
-        "type": "tls-config",
-        "name": "demo-na.mqtttest.com",
-        "cert": "",
-        "key": "",
-        "ca": "",
-        "certname": "",
-        "keyname": "",
-        "caname": "",
-        "servername": "demo-na.mqtttest.com",
-        "verifyservercert": true
-    },
-    {
-        "id": "16e47346.ac956d",
+        "id": "67d4c11e476a5408",
         "type": "ui_tab",
-        "name": "Discover and Announce",
+        "name": "Sonos",
         "icon": "dashboard",
         "disabled": false,
         "hidden": false
     },
     {
-        "id": "2f6f0988.fc9d46",
-        "type": "comment",
-        "z": "ca825459.08851",
-        "name": "transaction service",
-        "info": "",
-        "x": 340,
-        "y": 80,
-        "wires": []
+        "id": "f9c2acc6a5c0bdfa",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
     },
     {
-        "id": "55cc638.a53099c",
-        "type": "http in",
-        "z": "ca825459.08851",
-        "name": "service endpoint for transactions - /meijer",
-        "url": "/meijer",
-        "method": "get",
-        "upload": false,
-        "swaggerDoc": "",
-        "x": 270,
-        "y": 160,
+        "id": "72638c028843b2f0",
+        "type": "ui_group",
+        "name": "Default",
+        "tab": "f9c2acc6a5c0bdfa",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "d41cb57443dd41f0",
+        "type": "inject",
+        "z": "8975569f1e06ceb0",
+        "name": "",
+        "props": [
+            {
+                "p": "payload.client_id",
+                "v": "1a3d4110-70b6-4af4-a60a-528ef6526087",
+                "vt": "str"
+            },
+            {
+                "p": "payload.state",
+                "v": "Teststate",
+                "vt": "str"
+            },
+            {
+                "p": "payload.scope",
+                "v": "playback-control-all",
+                "vt": "str"
+            },
+            {
+                "p": "payload.redirect_uri",
+                "v": "https%3A%2F%2F45.79.245.132%2Fcode",
+                "vt": "str"
+            },
+            {
+                "p": "payload.response_type",
+                "v": "code",
+                "vt": "str"
+            },
+            {
+                "p": "payload.secret",
+                "v": "88b364fc-e5c0-41d5-a19d-e291d183830f",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 110,
+        "y": 40,
         "wires": [
             [
-                "787f2393.eca254"
+                "06402e993db87c2b"
             ]
         ]
     },
     {
-        "id": "787f2393.eca254",
-        "type": "mqtt out",
-        "z": "ca825459.08851",
-        "name": "Endpoint publishes message to Edge Connnect - topic transaction_log",
-        "topic": "demo/meijer/transaction_log",
-        "qos": "",
-        "retain": "",
-        "respTopic": "",
-        "contentType": "",
-        "userProps": "",
-        "correl": "",
-        "expiry": "",
-        "broker": "3c9fafa.7dd6a5",
-        "x": 750,
+        "id": "06402e993db87c2b",
+        "type": "template",
+        "z": "8975569f1e06ceb0",
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "https://api.sonos.com/login/v3/oauth?response_type={{payload.response_type}}&client_id={{payload.client_id}}&state={{payload.state}}&redirect_uri={{payload.redirect_uri}}&scope={{payload.scope}}",
+        "output": "str",
+        "x": 100,
         "y": 160,
+        "wires": [
+            [
+                "189cc3cedd22762d"
+            ]
+        ]
+    },
+    {
+        "id": "e3c2cd3577002ca5",
+        "type": "base64",
+        "z": "8975569f1e06ceb0",
+        "name": "",
+        "action": "",
+        "property": "payload",
+        "x": 660,
+        "y": 520,
+        "wires": [
+            [
+                "9e0dbad19738d4e3"
+            ]
+        ]
+    },
+    {
+        "id": "fac501947f195406",
+        "type": "template",
+        "z": "8975569f1e06ceb0",
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "1a3d4110-70b6-4af4-a60a-528ef6526087:88b364fc-e5c0-41d5-a19d-e291d183830f",
+        "output": "str",
+        "x": 420,
+        "y": 540,
+        "wires": [
+            [
+                "e3c2cd3577002ca5"
+            ]
+        ]
+    },
+    {
+        "id": "9e0dbad19738d4e3",
+        "type": "debug",
+        "z": "8975569f1e06ceb0",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 730,
+        "y": 400,
         "wires": []
     },
     {
-        "id": "91bd0254.b85a1",
-        "type": "comment",
-        "z": "ca825459.08851",
-        "name": "Option - HTTP endpoint for transactions",
-        "info": "",
-        "x": 260,
-        "y": 120,
-        "wires": []
-    },
-    {
-        "id": "7a734432.89fe44",
-        "type": "comment",
-        "z": "ca825459.08851",
-        "name": "Option - Client connects directly via MQTT",
-        "info": "",
-        "x": 270,
-        "y": 220,
-        "wires": []
-    },
-    {
-        "id": "711730ff.16818",
+        "id": "7cd49e14b3a30d36",
         "type": "inject",
-        "z": "ca825459.08851",
-        "name": "Simulated Client Transaction",
+        "z": "8975569f1e06ceb0",
+        "name": "",
         "props": [
-            {
-                "p": "payload"
-            },
             {
                 "p": "topic",
                 "vt": "str"
@@ -290,358 +620,281 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 250,
-        "y": 280,
+        "payloadType": "str",
+        "x": 150,
+        "y": 520,
         "wires": [
             [
-                "3f858eb8.c338f2"
+                "fac501947f195406"
             ]
         ]
     },
     {
-        "id": "3f858eb8.c338f2",
-        "type": "mqtt out",
-        "z": "ca825459.08851",
-        "name": "Client publishes message to Edge Connect, topic transaction_log",
-        "topic": "demo/meijer/transaction_log",
-        "qos": "",
-        "retain": "",
-        "respTopic": "",
-        "contentType": "",
-        "userProps": "",
-        "correl": "",
-        "expiry": "",
-        "broker": "3c9fafa.7dd6a5",
-        "x": 770,
-        "y": 280,
-        "wires": []
-    },
-    {
-        "id": "2ac6380b.9d6338",
-        "type": "comment",
-        "z": "ca825459.08851",
-        "name": "Transaction Consumers",
-        "info": "",
-        "x": 350,
-        "y": 400,
-        "wires": []
-    },
-    {
-        "id": "7f84285a.5f11a8",
-        "type": "mqtt in",
-        "z": "ca825459.08851",
-        "name": "Listen on Edge Connect for events to transaction_log",
-        "topic": "demo/meijer/transaction_log",
-        "qos": "2",
-        "datatype": "auto",
-        "broker": "3c9fafa.7dd6a5",
-        "nl": false,
-        "rap": false,
-        "inputs": 0,
-        "x": 300,
-        "y": 500,
-        "wires": [
-            [
-                "b1134181e07f5d30"
-            ]
-        ]
-    },
-    {
-        "id": "6b43e0c5.aaf19",
-        "type": "comment",
-        "z": "ca825459.08851",
-        "name": "Transaction Consumer - cloud 1",
-        "info": "",
-        "x": 240,
-        "y": 460,
-        "wires": []
-    },
-    {
-        "id": "f547f763.cf4fb8",
-        "type": "mqtt in",
-        "z": "ca825459.08851",
-        "name": "Listen on Edge Connect for events to transaction_log",
-        "topic": "demo/meijer/transaction_log",
-        "qos": "2",
-        "datatype": "auto",
-        "broker": "3c9fafa.7dd6a5",
-        "nl": false,
-        "rap": false,
-        "inputs": 0,
-        "x": 300,
-        "y": 620,
-        "wires": [
-            [
-                "46eea3bbf3b9bd2f"
-            ]
-        ]
-    },
-    {
-        "id": "13ba0f13.ac6e29",
-        "type": "comment",
-        "z": "ca825459.08851",
-        "name": "Transaction Consumer - cloud 2",
-        "info": "",
-        "x": 240,
-        "y": 580,
-        "wires": []
-    },
-    {
-        "id": "e20c8813.f55048",
-        "type": "comment",
-        "z": "ca825459.08851",
-        "name": "Transaction Consumer - cloud 3",
-        "info": "",
-        "x": 230,
-        "y": 700,
-        "wires": []
-    },
-    {
-        "id": "c2621511.278748",
-        "type": "http request",
-        "z": "ca825459.08851",
-        "name": "HTTPS Request to Edge Connect API for message block",
-        "method": "GET",
-        "ret": "txt",
-        "paytoqs": "ignore",
-        "url": "",
-        "tls": "",
-        "persist": false,
-        "proxy": "",
-        "authType": "",
-        "x": 790,
-        "y": 740,
-        "wires": [
-            [
-                "6d1e5edc63131161"
-            ]
-        ]
-    },
-    {
-        "id": "637dd7ce.112b68",
-        "type": "comment",
-        "z": "ca825459.08851",
-        "name": "Note- this consumer method allows for log replay, and for multi-consumer log processing",
-        "info": "",
-        "x": 410,
-        "y": 780,
-        "wires": []
-    },
-    {
-        "id": "e0ccaf23.85c08",
-        "type": "mqtt in",
-        "z": "ca825459.08851",
-        "name": "Listen on Edge Connect for message block assignment",
-        "topic": "demo/meijer/transaction_log",
-        "qos": "2",
-        "datatype": "auto",
-        "broker": "3c9fafa.7dd6a5",
-        "nl": false,
-        "rap": false,
-        "inputs": 0,
-        "x": 300,
-        "y": 740,
-        "wires": [
-            [
-                "c2621511.278748"
-            ]
-        ]
-    },
-    {
-        "id": "b1134181e07f5d30",
-        "type": "kafka-producer",
-        "z": "ca825459.08851",
-        "requireAcks": 1,
-        "ackTimeoutMs": 100,
-        "attributes": 0,
-        "x": 860,
-        "y": 500,
-        "wires": []
-    },
-    {
-        "id": "46eea3bbf3b9bd2f",
-        "type": "kafka-producer",
-        "z": "ca825459.08851",
-        "requireAcks": 1,
-        "ackTimeoutMs": 100,
-        "attributes": 0,
-        "x": 860,
-        "y": 620,
-        "wires": []
-    },
-    {
-        "id": "6d1e5edc63131161",
-        "type": "kafka-producer",
-        "z": "ca825459.08851",
-        "requireAcks": 1,
-        "ackTimeoutMs": 100,
-        "attributes": 0,
-        "x": 840,
-        "y": 780,
-        "wires": []
-    },
-    {
-        "id": "97d39296a11ceace",
-        "type": "comment",
-        "z": "48b4356fe2e4f9db",
-        "name": "Stock Broadcast",
-        "info": "",
-        "x": 260,
-        "y": 60,
-        "wires": []
-    },
-    {
-        "id": "983edb0322301693",
-        "type": "mqtt out",
-        "z": "48b4356fe2e4f9db",
-        "name": "Publish Real-time stock updates to Edge Connect, topic {sku}",
-        "topic": "demo/meijer/sku",
-        "qos": "",
-        "retain": "",
-        "respTopic": "",
-        "contentType": "",
-        "userProps": "",
-        "correl": "",
-        "expiry": "",
-        "broker": "3c9fafa.7dd6a5",
-        "x": 670,
-        "y": 160,
-        "wires": []
-    },
-    {
-        "id": "92cb9a80c7443662",
-        "type": "mqtt in",
-        "z": "48b4356fe2e4f9db",
-        "name": "Listen on Edge Connect for Events on topic {sku}",
-        "topic": "demo/meijer/sku",
-        "qos": "2",
-        "datatype": "auto",
-        "broker": "3c9fafa.7dd6a5",
-        "nl": false,
-        "rap": false,
-        "inputs": 0,
-        "x": 200,
-        "y": 300,
-        "wires": [
-            [
-                "782d67378e988492"
-            ]
-        ]
-    },
-    {
-        "id": "091ca0c2b41342be",
-        "type": "comment",
-        "z": "48b4356fe2e4f9db",
-        "name": "Stock Consumer (Web, App, Signage)",
-        "info": "",
-        "x": 330,
-        "y": 260,
-        "wires": []
-    },
-    {
-        "id": "782d67378e988492",
-        "type": "ui_text",
-        "z": "48b4356fe2e4f9db",
-        "group": "a5ecdab7.7197d8",
-        "order": 3,
-        "width": 0,
-        "height": 0,
+        "id": "b306fe66ebcf60d7",
+        "type": "exec",
+        "z": "8975569f1e06ceb0",
+        "command": "",
+        "addpay": "payload",
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "winHide": false,
+        "oldrc": false,
         "name": "",
-        "label": "Display Stock (Web, App, Signage with MQTT Client)",
-        "format": "{{msg.payload}}",
-        "layout": "row-spread",
-        "x": 760,
-        "y": 300,
+        "x": 450,
+        "y": 700,
+        "wires": [
+            [
+                "135ad9e2a4dde5fd"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "8e708b0504a8aaf0",
+        "type": "template",
+        "z": "8975569f1e06ceb0",
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "curl -X POST -H \"Content-Type: application/x-www-form-urlencoded;charset=utf-8\" -H \"Authorization: Basic MWEzZDQxMTAtNzBiNi00YWY0LWE2MGEtNTI4ZWY2NTI2MDg3Ojg4YjM2NGZjLWU1YzAtNDFkNS1hMTlkLWUyOTFkMTgzODMwZg==\" \"https://api.sonos.com/login/v3/oauth/access\" -d \"grant_type=authorization_code&code={{payload.code}}&redirect_uri={{payload.redirect_uri}}\"",
+        "output": "str",
+        "x": 260,
+        "y": 680,
+        "wires": [
+            [
+                "b306fe66ebcf60d7"
+            ]
+        ]
+    },
+    {
+        "id": "4d13c3cc43f8fa49",
+        "type": "inject",
+        "z": "8975569f1e06ceb0",
+        "name": "",
+        "props": [
+            {
+                "p": "payload.code",
+                "v": "c1zGlKKp",
+                "vt": "str"
+            },
+            {
+                "p": "payload.redirect_uri",
+                "v": "https%3A%2F%2F45.79.245.132%2Fcode",
+                "vt": "str"
+            },
+            {
+                "p": "headers[\"Content-Type\"]",
+                "v": "application/x-www-form-urlencoded;charset=utf-8",
+                "vt": "str"
+            },
+            {
+                "p": "headers[\"Authorization\"]",
+                "v": "Basic MWEzZDQxMTAtNzBiNi00YWY0LWE2MGEtNTI4ZWY2NTI2MDg3Ojg4YjM2NGZjLWU1YzAtNDFkNS1hMTlkLWUyOTFkMTgzODMwZg==",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 130,
+        "y": 620,
+        "wires": [
+            [
+                "8e708b0504a8aaf0"
+            ]
+        ]
+    },
+    {
+        "id": "8191043720628972",
+        "type": "debug",
+        "z": "8975569f1e06ceb0",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 730,
+        "y": 660,
         "wires": []
     },
     {
-        "id": "23c6e371ea7b1245",
-        "type": "comment",
-        "z": "48b4356fe2e4f9db",
-        "name": "Stock Consumer- Scaleable API Endpoint",
-        "info": "",
-        "x": 340,
+        "id": "135ad9e2a4dde5fd",
+        "type": "json",
+        "z": "8975569f1e06ceb0",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 580,
+        "y": 680,
+        "wires": [
+            [
+                "8191043720628972"
+            ]
+        ]
+    },
+    {
+        "id": "ebde20edc29f14dc",
+        "type": "http in",
+        "z": "8975569f1e06ceb0",
+        "name": "code",
+        "url": "/code",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 90,
+        "y": 280,
+        "wires": [
+            [
+                "614c72c4d49d7ccc",
+                "38299133135e9427"
+            ]
+        ]
+    },
+    {
+        "id": "614c72c4d49d7ccc",
+        "type": "debug",
+        "z": "8975569f1e06ceb0",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 270,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "38299133135e9427",
+        "type": "http response",
+        "z": "8975569f1e06ceb0",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 270,
         "y": 360,
         "wires": []
     },
     {
-        "id": "7fd7ee0be984bd15",
-        "type": "http in",
-        "z": "48b4356fe2e4f9db",
+        "id": "a89e16e71b5da704",
+        "type": "ui_form",
+        "z": "8975569f1e06ceb0",
         "name": "",
-        "url": "/meijerstock",
-        "method": "get",
-        "upload": false,
-        "swaggerDoc": "",
-        "x": 100,
-        "y": 400,
+        "label": "Sonos API Token ",
+        "group": "72638c028843b2f0",
+        "order": 35,
+        "width": 0,
+        "height": 0,
+        "options": [
+            {
+                "label": "Client Key",
+                "value": "payload.client_id",
+                "type": "text",
+                "required": true,
+                "rows": null
+            },
+            {
+                "label": "Client Secret",
+                "value": "payload.secret",
+                "type": "text",
+                "required": true,
+                "rows": null
+            },
+            {
+                "label": "State",
+                "value": "payload.state",
+                "type": "text",
+                "required": true,
+                "rows": null
+            }
+        ],
+        "formValue": {
+            "payload.client_id": "",
+            "payload.secret": "",
+            "payload.state": ""
+        },
+        "payload": "",
+        "submit": "submit",
+        "cancel": "cancel",
+        "topic": "topic",
+        "topicType": "msg",
+        "splitLayout": "",
+        "x": 130,
+        "y": 80,
         "wires": [
             [
-                "38c6c5856d08bd4a"
+                "19e341d2107c434b"
             ]
         ]
     },
     {
-        "id": "067a9ae216cf5cb1",
-        "type": "http response",
-        "z": "48b4356fe2e4f9db",
-        "name": "Return Retained message on {sku} topic to API consumer",
-        "statusCode": "",
-        "headers": {},
-        "x": 750,
-        "y": 460,
-        "wires": []
-    },
-    {
-        "id": "38c6c5856d08bd4a",
-        "type": "mqtt-in-dynamicsub",
-        "z": "48b4356fe2e4f9db",
-        "name": "Query Edge Connect for last message on topic {sku}",
-        "qos": "2",
-        "datatype": "auto",
-        "unsubscribe-after-first-msg-recv": false,
-        "debug-subscribe": false,
-        "broker": "3c9fafa.7dd6a5",
-        "x": 480,
-        "y": 400,
+        "id": "19e341d2107c434b",
+        "type": "change",
+        "z": "8975569f1e06ceb0",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload.scope",
+                "pt": "msg",
+                "to": "playback-control-all",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload.redirect_uri",
+                "pt": "msg",
+                "to": "https%3A%2F%2F45.79.245.132%2Fcode",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload.response_type",
+                "pt": "msg",
+                "to": "code",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 120,
+        "y": 120,
         "wires": [
             [
-                "067a9ae216cf5cb1"
+                "06402e993db87c2b"
             ]
         ]
     },
     {
-        "id": "25504fbf2326c7b2",
-        "type": "redis-in",
-        "z": "48b4356fe2e4f9db",
-        "server": "",
-        "command": "blpop",
-        "name": "Push from DB",
-        "topic": "",
-        "obj": true,
-        "timeout": 0,
+        "id": "189cc3cedd22762d",
+        "type": "ui_text",
+        "z": "8975569f1e06ceb0",
+        "group": "f75f3bff9d05695e",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "text",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
         "x": 90,
-        "y": 140,
-        "wires": [
-            [
-                "983edb0322301693"
-            ]
-        ]
-    },
-    {
-        "id": "b18f9b365e5175c1",
-        "type": "kafka-consumer",
-        "z": "48b4356fe2e4f9db",
-        "outOfRangeOffset": "earliest",
-        "fromOffset": "latest",
-        "x": 100,
-        "y": 180,
-        "wires": [
-            [
-                "983edb0322301693"
-            ]
-        ]
+        "y": 200,
+        "wires": []
     }
 ]
