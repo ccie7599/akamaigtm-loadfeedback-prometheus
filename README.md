@@ -1,18 +1,16 @@
-election-result-demo
+sonos-api-nocode
 ======================
 
 ### About
 
-Source for a docker container for a node-red based MQTT Election result demo.
+Source for a nodejs no-code flow-based palette for Sonos APIs. API Code and Token generator tools and sample applications included. Built in pub-sub data broker to connect event-based programming with Sonos API actions. 
 
-repo is synced with docker hub at brianapley/election-result-demo.
+repo is synced with docker hub at brianapley/sonos-api-nocode.
 
-The publisher container can be found at brianapley/election-result-demo:publisher
-
-## Launching via docker hub (example)
+## Launching via docker (example)
 
 ```
-docker run -it -p 1880:1880 -v nrdata:/data --name node-red-election-result brianapley/election-result-demo
+docker run -it -p 1880:1880 -v nrdata:/data --name sonos-api-nocode brianapley/sonos-api-nocode
 ```
 
 Once launched, UI can be accessed via http://host:1880/.
