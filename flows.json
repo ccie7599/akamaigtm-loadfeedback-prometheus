@@ -1,27 +1,5 @@
 [
     {
-        "id": "947a0edef36b62a9",
-        "type": "tab",
-        "label": "Set GeoIP ",
-        "disabled": false,
-        "info": ""
-    },
-    {
-        "id": "d50d4fe4528fdecf",
-        "type": "tab",
-        "label": "Latency",
-        "disabled": false,
-        "info": "",
-        "env": []
-    },
-    {
-        "id": "d4c99f8432f4320d",
-        "type": "tab",
-        "label": "Client State",
-        "disabled": false,
-        "info": ""
-    },
-    {
         "id": "7a02b2e08f8601a0",
         "type": "tab",
         "label": "Auth API ",
@@ -36,6 +14,36 @@
         "disabled": false,
         "info": "",
         "env": []
+    },
+    {
+        "id": "06ced7b1ad4ad468",
+        "type": "tab",
+        "label": "Pub Sub Integration",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "d4c99f8432f4320d",
+        "type": "tab",
+        "label": "Client State",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "d50d4fe4528fdecf",
+        "type": "tab",
+        "label": "Latency",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "947a0edef36b62a9",
+        "type": "tab",
+        "label": "Set GeoIP ",
+        "disabled": false,
+        "info": ""
     },
     {
         "id": "3c9fafa.7dd6a5",
@@ -415,17 +423,6 @@
         "hidden": false
     },
     {
-        "id": "6ad940d25e843c92",
-        "type": "ui_group",
-        "name": "Control API",
-        "tab": "ca67bd7dfaad900f",
-        "order": 2,
-        "disp": true,
-        "width": "6",
-        "collapse": false,
-        "className": ""
-    },
-    {
         "id": "d75bbc086071eb9d",
         "type": "ui_group",
         "name": "Control API",
@@ -444,101 +441,234 @@
         "save": true
     },
     {
-        "id": "0009bffaac1f5ef0",
+        "id": "b135e07a5560e403",
         "type": "ui_spacer",
-        "z": "8a2e636b056d7f63",
+        "z": "06ced7b1ad4ad468",
         "name": "spacer",
         "group": "d75bbc086071eb9d",
-        "order": 2,
-        "width": 3,
+        "order": 6,
+        "width": 6,
         "height": 1
     },
     {
-        "id": "bde56a9cf1a45bfe",
-        "type": "http request",
-        "z": "947a0edef36b62a9",
-        "name": "Lookup public IP address",
-        "method": "GET",
-        "ret": "txt",
-        "paytoqs": "ignore",
-        "url": "wgetip.com",
-        "tls": "",
-        "persist": false,
-        "proxy": "",
-        "authType": "",
-        "x": 210,
-        "y": 140,
-        "wires": [
-            [
-                "d69cc6b3304e4b61"
-            ]
-        ]
+        "id": "4055a6e5d90ff385",
+        "type": "ui_spacer",
+        "z": "06ced7b1ad4ad468",
+        "name": "spacer",
+        "group": "d75bbc086071eb9d",
+        "order": 7,
+        "width": 6,
+        "height": 1
     },
     {
-        "id": "d69cc6b3304e4b61",
+        "id": "0e8a412b0550aeb6",
+        "type": "ui_spacer",
+        "z": "06ced7b1ad4ad468",
+        "name": "spacer",
+        "group": "d75bbc086071eb9d",
+        "order": 8,
+        "width": 6,
+        "height": 1
+    },
+    {
+        "id": "8e6d295a98224839",
+        "type": "ui_spacer",
+        "z": "06ced7b1ad4ad468",
+        "name": "spacer",
+        "group": "d75bbc086071eb9d",
+        "order": 9,
+        "width": 6,
+        "height": 1
+    },
+    {
+        "id": "7eb74d1be30f1c31",
         "type": "template",
-        "z": "947a0edef36b62a9",
-        "name": "Format GeoIP Lookup",
-        "field": "url",
+        "z": "7a02b2e08f8601a0",
+        "name": "",
+        "field": "payload",
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "http://ip-api.com/json/{{payload}}",
+        "template": "https://api.sonos.com/login/v3/oauth?response_type={{payload.response_type}}&client_id={{global.client_id}}&state={{global.state}}&redirect_uri={{global.redirect_uri}}&scope={{global.scope}}",
         "output": "str",
-        "x": 200,
-        "y": 180,
+        "x": 80,
+        "y": 120,
         "wires": [
             [
-                "ed294e8b96cee74f"
+                "2c255e333abef37e"
             ]
         ]
     },
     {
-        "id": "ed294e8b96cee74f",
-        "type": "http request",
-        "z": "947a0edef36b62a9",
-        "name": "GeoIP Lookup",
-        "method": "GET",
-        "ret": "obj",
-        "paytoqs": "ignore",
-        "url": "",
-        "tls": "",
-        "persist": false,
-        "proxy": "",
-        "authType": "",
-        "x": 180,
-        "y": 220,
+        "id": "b46bf0e3befa5aec",
+        "type": "exec",
+        "z": "7a02b2e08f8601a0",
+        "command": "",
+        "addpay": "payload",
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "winHide": false,
+        "oldrc": false,
+        "name": "",
+        "x": 70,
+        "y": 360,
         "wires": [
             [
-                "b06e2b3aec47d28c"
+                "e8cb74abccca20a6",
+                "73b6adb002f084ad"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "f916928d946bad51",
+        "type": "template",
+        "z": "7a02b2e08f8601a0",
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "curl -X POST -H \"Content-Type: application/x-www-form-urlencoded;charset=utf-8\" -H \"Authorization: Basic {{{global.b64}}}\" \"https://api.sonos.com/login/v3/oauth/access\" -d \"grant_type=authorization_code&code={{payload.code}}&redirect_uri={{global.redirect_uri}}\"",
+        "output": "str",
+        "x": 80,
+        "y": 300,
+        "wires": [
+            [
+                "b46bf0e3befa5aec"
             ]
         ]
     },
     {
-        "id": "b06e2b3aec47d28c",
+        "id": "e8cb74abccca20a6",
+        "type": "json",
+        "z": "7a02b2e08f8601a0",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 70,
+        "y": 400,
+        "wires": [
+            [
+                "38d40a22084bde1f"
+            ]
+        ]
+    },
+    {
+        "id": "d4ecc658e4e457fd",
         "type": "change",
-        "z": "947a0edef36b62a9",
-        "name": "Set Global Variables ",
+        "z": "7a02b2e08f8601a0",
+        "name": "",
         "rules": [
             {
                 "t": "set",
-                "p": "regionName",
+                "p": "scope",
                 "pt": "global",
-                "to": "payload.regionName",
+                "to": "playback-control-all",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload.redirect_uri",
+                "pt": "msg",
+                "to": "https%3A%2F%2Fcollector.workshop.mqtttest.com%2Fcode",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload.response_type",
+                "pt": "msg",
+                "to": "code",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "client_id",
+                "pt": "global",
+                "to": "1a3d4110-70b6-4af4-a60a-528ef6526087",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "state",
+                "pt": "global",
+                "to": "payload.state",
                 "tot": "msg"
             },
             {
                 "t": "set",
-                "p": "countryCode",
+                "p": "secret",
                 "pt": "global",
-                "to": "payload.countryCode",
+                "to": "88b364fc-e5c0-41d5-a19d-e291d183830f",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "redirect_uri",
+                "pt": "global",
+                "to": "https%3A%2F%2Fcollector.workshop.mqtttest.com%2Fcode",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 100,
+        "y": 80,
+        "wires": [
+            [
+                "7eb74d1be30f1c31"
+            ]
+        ]
+    },
+    {
+        "id": "8bae6008255f4552",
+        "type": "change",
+        "z": "7a02b2e08f8601a0",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "b64",
+                "pt": "global",
+                "to": "MWEzZDQxMTAtNzBiNi00YWY0LWE2MGEtNTI4ZWY2NTI2MDg3Ojg4YjM2NGZjLWU1YzAtNDFkNS1hMTlkLWUyOTFkMTgzODMwZg==",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 640,
+        "y": 60,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "38d40a22084bde1f",
+        "type": "change",
+        "z": "7a02b2e08f8601a0",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "token",
+                "pt": "global",
+                "to": "payload.access_token",
                 "tot": "msg"
             },
             {
                 "t": "set",
-                "p": "org",
+                "p": "refresh_token",
                 "pt": "global",
-                "to": "payload.org",
+                "to": "payload.refresh_token",
                 "tot": "msg"
             }
         ],
@@ -547,50 +677,1353 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 200,
-        "y": 260,
+        "x": 100,
+        "y": 460,
         "wires": [
             []
         ]
     },
     {
-        "id": "73e8aecdc7fae88b",
-        "type": "inject",
-        "z": "947a0edef36b62a9",
-        "name": "",
-        "props": [
+        "id": "43c0b0509c000275",
+        "type": "ui_form",
+        "z": "7a02b2e08f8601a0",
+        "name": "1. Obtain Code from Integration",
+        "label": "1. Obtain Code from Integration - Generate Login URL (Enter a unique value for \"State\")",
+        "group": "26f4d1165fd20bba",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "options": [
             {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
+                "label": "State",
+                "value": "state",
+                "type": "text",
+                "required": true,
+                "rows": null
             }
         ],
-        "repeat": "",
-        "crontab": "",
-        "once": true,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payloadType": "date",
-        "x": 180,
-        "y": 80,
+        "formValue": {
+            "state": ""
+        },
+        "payload": "",
+        "submit": "submit",
+        "cancel": "cancel",
+        "topic": "topic",
+        "topicType": "msg",
+        "splitLayout": "",
+        "className": "",
+        "x": 150,
+        "y": 40,
         "wires": [
             [
-                "bde56a9cf1a45bfe"
+                "d4ecc658e4e457fd",
+                "8bae6008255f4552",
+                "26935634fa790f2d"
             ]
         ]
     },
     {
-        "id": "ee9b8bd2e9d41231",
-        "type": "mgrs",
-        "z": "947a0edef36b62a9",
-        "name": "Convert Lat/Lon to MGRS",
-        "precision": "5",
-        "x": 570,
+        "id": "2c255e333abef37e",
+        "type": "ui_text",
+        "z": "7a02b2e08f8601a0",
+        "group": "26f4d1165fd20bba",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "name": "Generated URL",
+        "label": "",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "className": "",
+        "x": 100,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "daed36bf6c491822",
+        "type": "ui_form",
+        "z": "7a02b2e08f8601a0",
+        "name": "2. Enter Code from Step 1 to generate Sonos API Token and load it into node-RED",
+        "label": "2. Enter Code from Step 1 to generate Sonos API Token and load it into node-RED",
+        "group": "26f4d1165fd20bba",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "options": [
+            {
+                "label": "code",
+                "value": "code",
+                "type": "text",
+                "required": true,
+                "rows": null
+            }
+        ],
+        "formValue": {
+            "code": ""
+        },
+        "payload": "",
+        "submit": "submit",
+        "cancel": "cancel",
+        "topic": "topic",
+        "topicType": "msg",
+        "splitLayout": "",
+        "className": "",
+        "x": 310,
+        "y": 260,
+        "wires": [
+            [
+                "f916928d946bad51"
+            ]
+        ]
+    },
+    {
+        "id": "73b6adb002f084ad",
+        "type": "ui_text",
+        "z": "7a02b2e08f8601a0",
+        "group": "26f4d1165fd20bba",
+        "order": 5,
+        "width": 0,
+        "height": 0,
+        "name": "Copy of Token ",
+        "label": "",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "className": "",
+        "x": 420,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "20f41fddd8f494b5",
+        "type": "ui_text",
+        "z": "7a02b2e08f8601a0",
+        "group": "26f4d1165fd20bba",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "className": "",
+        "x": 370,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "26935634fa790f2d",
+        "type": "template",
+        "z": "7a02b2e08f8601a0",
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Load the below URL. Login to Sonos, and allow the Integration to control your Sonos system. \nYou'll receive a response of \"{\"state\":{your state},\"code\":{code}}\nCopy the \"code\" value for the next step.",
+        "output": "str",
+        "x": 310,
+        "y": 120,
+        "wires": [
+            [
+                "20f41fddd8f494b5"
+            ]
+        ]
+    },
+    {
+        "id": "45a625d35fd66423",
+        "type": "template",
+        "z": "8a2e636b056d7f63",
+        "name": "Add Auth Header",
+        "field": "headers[\"Authorization\"]",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Bearer {{global.token}}",
+        "output": "str",
+        "x": 110,
+        "y": 240,
+        "wires": [
+            [
+                "76d82da4e1b0dad3"
+            ]
+        ]
+    },
+    {
+        "id": "76d82da4e1b0dad3",
+        "type": "http request",
+        "z": "8a2e636b056d7f63",
+        "name": "",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "81fc7724bb1fd349",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "senderr": false,
+        "x": 90,
+        "y": 280,
+        "wires": [
+            [
+                "7a45eb087b1c3fb4"
+            ]
+        ]
+    },
+    {
+        "id": "ecd8b9b299f31226",
+        "type": "template",
+        "z": "8a2e636b056d7f63",
+        "name": "Format URL",
+        "field": "url",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "https://api.ws.sonos.com/control/api/v1/{{{command}}}",
+        "output": "str",
+        "x": 390,
+        "y": 200,
+        "wires": [
+            [
+                "45a625d35fd66423"
+            ]
+        ]
+    },
+    {
+        "id": "7a45eb087b1c3fb4",
+        "type": "change",
+        "z": "8a2e636b056d7f63",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "households[0].id",
+                "pt": "global",
+                "to": "payload.households[0].id",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 140,
+        "y": 320,
+        "wires": [
+            [
+                "5189c087377e4bc4"
+            ]
+        ]
+    },
+    {
+        "id": "5189c087377e4bc4",
+        "type": "template",
+        "z": "8a2e636b056d7f63",
+        "name": "Set Command",
+        "field": "command",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "/households/{{global.households[\"0\"].id}}/groups",
+        "output": "str",
+        "x": 100,
+        "y": 360,
+        "wires": [
+            [
+                "ba9ad2e416164d64"
+            ]
+        ]
+    },
+    {
+        "id": "0e061768fb577b8e",
+        "type": "ui_button",
+        "z": "8a2e636b056d7f63",
+        "name": "",
+        "group": "d75bbc086071eb9d",
+        "order": 2,
+        "width": 6,
+        "height": 1,
+        "passthru": false,
+        "label": "Get Households, Groups, and Players",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 150,
+        "y": 140,
+        "wires": [
+            [
+                "932947b3b83accbf"
+            ]
+        ]
+    },
+    {
+        "id": "932947b3b83accbf",
+        "type": "template",
+        "z": "8a2e636b056d7f63",
+        "name": "Set Command = households",
+        "field": "command",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "/households",
+        "output": "str",
+        "x": 140,
+        "y": 200,
+        "wires": [
+            [
+                "ecd8b9b299f31226"
+            ]
+        ]
+    },
+    {
+        "id": "ba9ad2e416164d64",
+        "type": "template",
+        "z": "8a2e636b056d7f63",
+        "name": "Format URL",
+        "field": "url",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "https://api.ws.sonos.com/control/api/v1/{{{command}}}",
+        "output": "str",
+        "x": 90,
+        "y": 400,
+        "wires": [
+            [
+                "d68ac5003efe5ce2"
+            ]
+        ]
+    },
+    {
+        "id": "d68ac5003efe5ce2",
+        "type": "template",
+        "z": "8a2e636b056d7f63",
+        "name": "Add Auth Header",
+        "field": "headers[\"Authorization\"]",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Bearer {{global.token}}",
+        "output": "str",
+        "x": 110,
+        "y": 440,
+        "wires": [
+            [
+                "b07d33c13ff1af76"
+            ]
+        ]
+    },
+    {
+        "id": "b07d33c13ff1af76",
+        "type": "http request",
+        "z": "8a2e636b056d7f63",
+        "name": "",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "81fc7724bb1fd349",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "senderr": false,
+        "x": 90,
+        "y": 480,
+        "wires": [
+            [
+                "1baadcd75bd8bdc8",
+                "e870fe8c7cd81d90"
+            ]
+        ]
+    },
+    {
+        "id": "1baadcd75bd8bdc8",
+        "type": "contrib-json",
+        "z": "8a2e636b056d7f63",
+        "engine": "json-select",
+        "command": "",
+        "expr": "['groups', true, {name: true, id: true}]",
+        "complete": "property",
+        "prop": "payload",
+        "name": "",
+        "x": 170,
+        "y": 520,
+        "wires": [
+            [
+                "4f54b1248b8b7f13"
+            ]
+        ]
+    },
+    {
+        "id": "4f54b1248b8b7f13",
+        "type": "ui_table",
+        "z": "8a2e636b056d7f63",
+        "group": "d75bbc086071eb9d",
+        "name": "Group List",
+        "order": 1,
+        "width": 7,
+        "height": 8,
+        "columns": [],
+        "outputs": 1,
+        "cts": true,
+        "x": 110,
+        "y": 580,
+        "wires": [
+            [
+                "c6de4e82ee3273e3",
+                "c0913fbcd494f8d4"
+            ]
+        ]
+    },
+    {
+        "id": "2b02795e87aa99b5",
+        "type": "mqtt out",
+        "z": "8a2e636b056d7f63",
+        "name": "",
+        "topic": "",
+        "qos": "0",
+        "retain": "true",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "3c9fafa.7dd6a5",
+        "x": 490,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "e870fe8c7cd81d90",
+        "type": "template",
+        "z": "8a2e636b056d7f63",
+        "name": "",
+        "field": "topic",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "demo/{{global.households[0].id}}/state",
+        "output": "str",
+        "x": 340,
+        "y": 480,
+        "wires": [
+            [
+                "2b02795e87aa99b5"
+            ]
+        ]
+    },
+    {
+        "id": "c3e5cf025b1f3d76",
+        "type": "ui_button",
+        "z": "8a2e636b056d7f63",
+        "name": "Subscribe to Player and Group Events",
+        "group": "d75bbc086071eb9d",
+        "order": 5,
+        "width": 6,
+        "height": 1,
+        "passthru": false,
+        "label": "Subscribe to Player and Group Events",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 170,
+        "y": 640,
+        "wires": [
+            [
+                "f113bc8039876b1a"
+            ]
+        ]
+    },
+    {
+        "id": "f113bc8039876b1a",
+        "type": "template",
+        "z": "8a2e636b056d7f63",
+        "name": "Set Command",
+        "field": "command",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "/households/{{global.households[\"0\"].id}}/groups/subscription",
+        "output": "str",
+        "x": 140,
+        "y": 680,
+        "wires": [
+            [
+                "e8127a4b04ff48fa"
+            ]
+        ]
+    },
+    {
+        "id": "e8127a4b04ff48fa",
+        "type": "template",
+        "z": "8a2e636b056d7f63",
+        "name": "Format URL",
+        "field": "url",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "https://api.ws.sonos.com/control/api/v1/{{{command}}}",
+        "output": "str",
+        "x": 130,
+        "y": 720,
+        "wires": [
+            [
+                "49482208574f6d8d"
+            ]
+        ]
+    },
+    {
+        "id": "49482208574f6d8d",
+        "type": "template",
+        "z": "8a2e636b056d7f63",
+        "name": "Add Auth Header",
+        "field": "headers[\"Authorization\"]",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Bearer {{global.token}}",
+        "output": "str",
+        "x": 150,
+        "y": 760,
+        "wires": [
+            [
+                "889eabcb8e4dad7c"
+            ]
+        ]
+    },
+    {
+        "id": "889eabcb8e4dad7c",
+        "type": "http request",
+        "z": "8a2e636b056d7f63",
+        "name": "",
+        "method": "POST",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "81fc7724bb1fd349",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "senderr": false,
+        "x": 130,
+        "y": 800,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c6de4e82ee3273e3",
+        "type": "ui_form",
+        "z": "8a2e636b056d7f63",
+        "name": "",
+        "label": "Send Commands",
+        "group": "d75bbc086071eb9d",
+        "order": 3,
+        "width": 6,
+        "height": 1,
+        "options": [
+            {
+                "label": "id",
+                "value": "id",
+                "type": "text",
+                "required": true,
+                "rows": null
+            },
+            {
+                "label": "Action",
+                "value": "action",
+                "type": "text",
+                "required": true,
+                "rows": null
+            },
+            {
+                "label": "type",
+                "value": "type",
+                "type": "text",
+                "required": true,
+                "rows": null
+            }
+        ],
+        "formValue": {
+            "id": "",
+            "action": "",
+            "type": ""
+        },
+        "payload": "",
+        "submit": "submit",
+        "cancel": "cancel",
+        "topic": "topic",
+        "topicType": "msg",
+        "splitLayout": "",
+        "className": "",
+        "x": 470,
+        "y": 580,
+        "wires": [
+            [
+                "f0fcc0e10b6ed241"
+            ]
+        ]
+    },
+    {
+        "id": "f0fcc0e10b6ed241",
+        "type": "template",
+        "z": "8a2e636b056d7f63",
+        "name": "Set Command",
+        "field": "command",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "groups/{{payload.id}}/{{payload.type}}/{{payload.action}}",
+        "output": "str",
+        "x": 740,
+        "y": 580,
+        "wires": [
+            [
+                "2a60733f29b5ef43"
+            ]
+        ]
+    },
+    {
+        "id": "2a60733f29b5ef43",
+        "type": "template",
+        "z": "8a2e636b056d7f63",
+        "name": "Format URL",
+        "field": "url",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "https://api.ws.sonos.com/control/api/v1/{{{command}}}",
+        "output": "str",
+        "x": 730,
+        "y": 620,
+        "wires": [
+            [
+                "6e32ebcda9507870"
+            ]
+        ]
+    },
+    {
+        "id": "6e32ebcda9507870",
+        "type": "template",
+        "z": "8a2e636b056d7f63",
+        "name": "Add Auth Header",
+        "field": "headers[\"Authorization\"]",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Bearer {{global.token}}",
+        "output": "str",
+        "x": 750,
+        "y": 660,
+        "wires": [
+            [
+                "40270d8b6bdacb24"
+            ]
+        ]
+    },
+    {
+        "id": "40270d8b6bdacb24",
+        "type": "http request",
+        "z": "8a2e636b056d7f63",
+        "name": "",
+        "method": "POST",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "81fc7724bb1fd349",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "senderr": false,
+        "x": 730,
+        "y": 700,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c0913fbcd494f8d4",
+        "type": "ui_form",
+        "z": "8a2e636b056d7f63",
+        "name": "",
+        "label": "What's playing",
+        "group": "d75bbc086071eb9d",
+        "order": 4,
+        "width": 6,
+        "height": 1,
+        "options": [
+            {
+                "label": "id",
+                "value": "id",
+                "type": "text",
+                "required": true,
+                "rows": null
+            }
+        ],
+        "formValue": {
+            "id": ""
+        },
+        "payload": "",
+        "submit": "submit",
+        "cancel": "cancel",
+        "topic": "topic",
+        "topicType": "msg",
+        "splitLayout": "",
+        "className": "",
+        "x": 460,
+        "y": 640,
+        "wires": [
+            [
+                "8deb9ec966aa9592"
+            ]
+        ]
+    },
+    {
+        "id": "8deb9ec966aa9592",
+        "type": "template",
+        "z": "8a2e636b056d7f63",
+        "name": "Set Command",
+        "field": "command",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "groups/{{payload.id}}/playbackMetadata",
+        "output": "str",
+        "x": 500,
+        "y": 680,
+        "wires": [
+            [
+                "b420969b78eec049"
+            ]
+        ]
+    },
+    {
+        "id": "b420969b78eec049",
+        "type": "template",
+        "z": "8a2e636b056d7f63",
+        "name": "Format URL",
+        "field": "url",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "https://api.ws.sonos.com/control/api/v1/{{{command}}}",
+        "output": "str",
+        "x": 490,
+        "y": 720,
+        "wires": [
+            [
+                "a2d59a79a13504e3"
+            ]
+        ]
+    },
+    {
+        "id": "a2d59a79a13504e3",
+        "type": "template",
+        "z": "8a2e636b056d7f63",
+        "name": "Add Auth Header",
+        "field": "headers[\"Authorization\"]",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Bearer {{global.token}}",
+        "output": "str",
+        "x": 510,
+        "y": 760,
+        "wires": [
+            [
+                "0458cbb6db4393c0"
+            ]
+        ]
+    },
+    {
+        "id": "0458cbb6db4393c0",
+        "type": "http request",
+        "z": "8a2e636b056d7f63",
+        "name": "",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "81fc7724bb1fd349",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "senderr": false,
+        "x": 490,
+        "y": 800,
+        "wires": [
+            [
+                "ac557dc561d77832"
+            ]
+        ]
+    },
+    {
+        "id": "ac557dc561d77832",
+        "type": "template",
+        "z": "8a2e636b056d7f63",
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "[{\"name\":\"{{{payload.currentItem.track.name}}}\",\"artist\":\"{{{payload.currentItem.track.artist.name}}}\",\"album\":\"{{{payload.currentItem.track.album.name}}}\"}]",
+        "output": "json",
+        "x": 480,
+        "y": 840,
+        "wires": [
+            [
+                "0f749da47f6bd9cd"
+            ]
+        ]
+    },
+    {
+        "id": "0f749da47f6bd9cd",
+        "type": "ui_table",
+        "z": "8a2e636b056d7f63",
+        "group": "d75bbc086071eb9d",
+        "name": "Now Playing",
+        "order": 10,
+        "width": 13,
+        "height": 1,
+        "columns": [
+            {
+                "field": "name",
+                "title": "",
+                "width": "",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "artist",
+                "title": "",
+                "width": "",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "album",
+                "title": "",
+                "width": "",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            }
+        ],
+        "outputs": 1,
+        "cts": true,
+        "x": 490,
+        "y": 880,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e69e623c68223b18",
+        "type": "mqtt in",
+        "z": "06ced7b1ad4ad468",
+        "name": "",
+        "topic": "demo/sonos/event",
+        "qos": "2",
+        "datatype": "json",
+        "broker": "3c9fafa.7dd6a5",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 200,
+        "y": 200,
+        "wires": [
+            [
+                "340bd6e3f50f238e"
+            ]
+        ]
+    },
+    {
+        "id": "340bd6e3f50f238e",
+        "type": "template",
+        "z": "06ced7b1ad4ad468",
+        "name": "Set Command",
+        "field": "command",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "groups/{{payload.id}}/{{payload.type}}/{{payload.action}}",
+        "output": "str",
+        "x": 420,
+        "y": 200,
+        "wires": [
+            [
+                "6fc5aafd3e1ef270"
+            ]
+        ]
+    },
+    {
+        "id": "6fc5aafd3e1ef270",
+        "type": "template",
+        "z": "06ced7b1ad4ad468",
+        "name": "Format URL",
+        "field": "url",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "https://api.ws.sonos.com/control/api/v1/{{{command}}}",
+        "output": "str",
+        "x": 410,
+        "y": 240,
+        "wires": [
+            [
+                "dc308007edfa4be3"
+            ]
+        ]
+    },
+    {
+        "id": "dc308007edfa4be3",
+        "type": "template",
+        "z": "06ced7b1ad4ad468",
+        "name": "Add Auth Header",
+        "field": "headers[\"Authorization\"]",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Bearer {{global.token}}",
+        "output": "str",
+        "x": 430,
+        "y": 280,
+        "wires": [
+            [
+                "1a221048c979b588"
+            ]
+        ]
+    },
+    {
+        "id": "1a221048c979b588",
+        "type": "http request",
+        "z": "06ced7b1ad4ad468",
+        "name": "",
+        "method": "POST",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "81fc7724bb1fd349",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "senderr": false,
+        "x": 410,
         "y": 320,
         "wires": [
             []
+        ]
+    },
+    {
+        "id": "9b118d32bd7012d5",
+        "type": "http in",
+        "z": "06ced7b1ad4ad468",
+        "name": "",
+        "url": "/pubsub",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 130,
+        "y": 380,
+        "wires": [
+            [
+                "6673ba1eacc47899",
+                "200c8c6bbcf222a2",
+                "29edad088b527f5b"
+            ]
+        ]
+    },
+    {
+        "id": "6673ba1eacc47899",
+        "type": "mqtt out",
+        "z": "06ced7b1ad4ad468",
+        "name": "",
+        "topic": "demo/sonos/event",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "3c9fafa.7dd6a5",
+        "x": 440,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "200c8c6bbcf222a2",
+        "type": "debug",
+        "z": "06ced7b1ad4ad468",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 300,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "29edad088b527f5b",
+        "type": "http response",
+        "z": "06ced7b1ad4ad468",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 500,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "7078f21e8ae8ef0c",
+        "type": "comment",
+        "z": "d4c99f8432f4320d",
+        "name": "Listen for Connect, Close, LWT messages",
+        "info": "",
+        "x": 230,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "687cc0b7218c5488",
+        "type": "mqtt in",
+        "z": "d4c99f8432f4320d",
+        "name": "Listen for Connect Messages",
+        "topic": "demo/sie/state/connected",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "3c9fafa.7dd6a5",
+        "nl": false,
+        "rap": false,
+        "rh": "0",
+        "inputs": 0,
+        "x": 180,
+        "y": 160,
+        "wires": [
+            [
+                "6de63db006ed2b9a",
+                "742e450ac8633af4"
+            ]
+        ]
+    },
+    {
+        "id": "c347ac0b5fc2204b",
+        "type": "file",
+        "z": "d4c99f8432f4320d",
+        "name": "Write Client State File",
+        "filename": "",
+        "appendNewline": true,
+        "createDir": true,
+        "overwriteFile": "false",
+        "encoding": "none",
+        "x": 860,
+        "y": 160,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "6de63db006ed2b9a",
+        "type": "template",
+        "z": "d4c99f8432f4320d",
+        "name": "Set Filename",
+        "field": "filename",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "/data/clientstate/{{payload}}",
+        "output": "str",
+        "x": 470,
+        "y": 160,
+        "wires": [
+            [
+                "c347ac0b5fc2204b"
+            ]
+        ]
+    },
+    {
+        "id": "775fdfe9c337dcf7",
+        "type": "mqtt in",
+        "z": "d4c99f8432f4320d",
+        "name": "Listen for Close Messages",
+        "topic": "demo/sie/state/closed",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "3c9fafa.7dd6a5",
+        "nl": false,
+        "rap": false,
+        "rh": "0",
+        "inputs": 0,
+        "x": 170,
+        "y": 220,
+        "wires": [
+            [
+                "112fadba78f13fc9",
+                "742e450ac8633af4"
+            ]
+        ]
+    },
+    {
+        "id": "112fadba78f13fc9",
+        "type": "template",
+        "z": "d4c99f8432f4320d",
+        "name": "Set Filename",
+        "field": "filename",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "/data/clientstate/{{payload}}",
+        "output": "str",
+        "x": 470,
+        "y": 220,
+        "wires": [
+            [
+                "4dd76a24c0cee365"
+            ]
+        ]
+    },
+    {
+        "id": "08d131a8d0596ef0",
+        "type": "mqtt in",
+        "z": "d4c99f8432f4320d",
+        "name": "Listen for lwt Messages",
+        "topic": "demo/sie/state/lwt",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "3c9fafa.7dd6a5",
+        "nl": false,
+        "rap": false,
+        "rh": "0",
+        "inputs": 0,
+        "x": 160,
+        "y": 280,
+        "wires": [
+            [
+                "112fadba78f13fc9",
+                "ab1b4883aecc4719",
+                "742e450ac8633af4"
+            ]
+        ]
+    },
+    {
+        "id": "4dd76a24c0cee365",
+        "type": "file",
+        "z": "d4c99f8432f4320d",
+        "name": "Delete Client State File",
+        "filename": "",
+        "appendNewline": true,
+        "createDir": false,
+        "overwriteFile": "delete",
+        "encoding": "none",
+        "x": 860,
+        "y": 220,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "655dca9a651a965e",
+        "type": "file",
+        "z": "d4c99f8432f4320d",
+        "name": "Track LWT messages (Disconnect Monitor)",
+        "filename": "",
+        "appendNewline": true,
+        "createDir": true,
+        "overwriteFile": "true",
+        "encoding": "none",
+        "x": 930,
+        "y": 280,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ab1b4883aecc4719",
+        "type": "template",
+        "z": "d4c99f8432f4320d",
+        "name": "Set Filename",
+        "field": "filename",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "/data/disconnects/{{payload}}",
+        "output": "str",
+        "x": 470,
+        "y": 280,
+        "wires": [
+            [
+                "655dca9a651a965e"
+            ]
+        ]
+    },
+    {
+        "id": "3868f26c0e70dbb4",
+        "type": "ui_button",
+        "z": "d4c99f8432f4320d",
+        "name": "",
+        "group": "b039f0e61c731c39",
+        "order": 8,
+        "width": 8,
+        "height": 1,
+        "passthru": false,
+        "label": "Refresh Client State",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "",
+        "topicType": "str",
+        "x": 160,
+        "y": 420,
+        "wires": [
+            [
+                "e4964ba1e436a89f"
+            ]
+        ]
+    },
+    {
+        "id": "4507e35c500307d1",
+        "type": "template",
+        "z": "d4c99f8432f4320d",
+        "name": "form JSON of Active Clients",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "{\"title\":\"{{payload}}\",\"description\":\"Connected\",\"icon\":\"https://cdn1.iconfinder.com/data/icons/malware-and-threats/512/Botnet-01-512.png\"}",
+        "output": "json",
+        "x": 180,
+        "y": 540,
+        "wires": [
+            [
+                "5116513349bd2732"
+            ]
+        ]
+    },
+    {
+        "id": "5116513349bd2732",
+        "type": "join",
+        "z": "d4c99f8432f4320d",
+        "name": "Create Single Array of Active Clients",
+        "mode": "custom",
+        "build": "array",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": false,
+        "timeout": "2",
+        "count": "",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 210,
+        "y": 600,
+        "wires": [
+            [
+                "87e89e9cf70369e3"
+            ]
+        ]
+    },
+    {
+        "id": "d98556722b9df178",
+        "type": "comment",
+        "z": "d4c99f8432f4320d",
+        "name": "Build Client State Table",
+        "info": "",
+        "x": 160,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "742e450ac8633af4",
+        "type": "debug",
+        "z": "d4c99f8432f4320d",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 620,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "87e89e9cf70369e3",
+        "type": "ui_list",
+        "z": "d4c99f8432f4320d",
+        "group": "b039f0e61c731c39",
+        "name": "Client State Table",
+        "order": 1,
+        "width": 6,
+        "height": 14,
+        "lineType": "two",
+        "actionType": "click",
+        "allowHTML": false,
+        "outputs": 1,
+        "topic": "",
+        "x": 150,
+        "y": 660,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e4964ba1e436a89f",
+        "type": "fs-file-lister",
+        "z": "d4c99f8432f4320d",
+        "name": "Build List of Active Clients",
+        "start": "/data/clientstate",
+        "pattern": "*player*",
+        "folders": "*",
+        "hidden": false,
+        "lstype": "files",
+        "path": false,
+        "single": false,
+        "depth": 0,
+        "stat": false,
+        "showWarnings": false,
+        "x": 180,
+        "y": 480,
+        "wires": [
+            [
+                "4507e35c500307d1"
+            ]
         ]
     },
     {
@@ -963,1231 +2396,109 @@
         ]
     },
     {
-        "id": "7078f21e8ae8ef0c",
-        "type": "comment",
-        "z": "d4c99f8432f4320d",
-        "name": "Listen for Connect, Close, LWT messages",
-        "info": "",
-        "x": 230,
-        "y": 100,
-        "wires": []
-    },
-    {
-        "id": "687cc0b7218c5488",
-        "type": "mqtt in",
-        "z": "d4c99f8432f4320d",
-        "name": "Listen for Connect Messages",
-        "topic": "demo/sie/state/connected",
-        "qos": "2",
-        "datatype": "auto",
-        "broker": "3c9fafa.7dd6a5",
-        "nl": false,
-        "rap": false,
-        "rh": "0",
-        "inputs": 0,
-        "x": 180,
-        "y": 160,
-        "wires": [
-            [
-                "6de63db006ed2b9a",
-                "742e450ac8633af4"
-            ]
-        ]
-    },
-    {
-        "id": "c347ac0b5fc2204b",
-        "type": "file",
-        "z": "d4c99f8432f4320d",
-        "name": "Write Client State File",
-        "filename": "",
-        "appendNewline": true,
-        "createDir": true,
-        "overwriteFile": "false",
-        "encoding": "none",
-        "x": 860,
-        "y": 160,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "6de63db006ed2b9a",
-        "type": "template",
-        "z": "d4c99f8432f4320d",
-        "name": "Set Filename",
-        "field": "filename",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "/data/clientstate/{{payload}}",
-        "output": "str",
-        "x": 470,
-        "y": 160,
-        "wires": [
-            [
-                "c347ac0b5fc2204b"
-            ]
-        ]
-    },
-    {
-        "id": "775fdfe9c337dcf7",
-        "type": "mqtt in",
-        "z": "d4c99f8432f4320d",
-        "name": "Listen for Close Messages",
-        "topic": "demo/sie/state/closed",
-        "qos": "2",
-        "datatype": "auto",
-        "broker": "3c9fafa.7dd6a5",
-        "nl": false,
-        "rap": false,
-        "rh": "0",
-        "inputs": 0,
-        "x": 170,
-        "y": 220,
-        "wires": [
-            [
-                "112fadba78f13fc9",
-                "742e450ac8633af4"
-            ]
-        ]
-    },
-    {
-        "id": "112fadba78f13fc9",
-        "type": "template",
-        "z": "d4c99f8432f4320d",
-        "name": "Set Filename",
-        "field": "filename",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "/data/clientstate/{{payload}}",
-        "output": "str",
-        "x": 470,
-        "y": 220,
-        "wires": [
-            [
-                "4dd76a24c0cee365"
-            ]
-        ]
-    },
-    {
-        "id": "08d131a8d0596ef0",
-        "type": "mqtt in",
-        "z": "d4c99f8432f4320d",
-        "name": "Listen for lwt Messages",
-        "topic": "demo/sie/state/lwt",
-        "qos": "2",
-        "datatype": "auto",
-        "broker": "3c9fafa.7dd6a5",
-        "nl": false,
-        "rap": false,
-        "rh": "0",
-        "inputs": 0,
-        "x": 160,
-        "y": 280,
-        "wires": [
-            [
-                "112fadba78f13fc9",
-                "ab1b4883aecc4719",
-                "742e450ac8633af4"
-            ]
-        ]
-    },
-    {
-        "id": "4dd76a24c0cee365",
-        "type": "file",
-        "z": "d4c99f8432f4320d",
-        "name": "Delete Client State File",
-        "filename": "",
-        "appendNewline": true,
-        "createDir": false,
-        "overwriteFile": "delete",
-        "encoding": "none",
-        "x": 860,
-        "y": 220,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "655dca9a651a965e",
-        "type": "file",
-        "z": "d4c99f8432f4320d",
-        "name": "Track LWT messages (Disconnect Monitor)",
-        "filename": "",
-        "appendNewline": true,
-        "createDir": true,
-        "overwriteFile": "true",
-        "encoding": "none",
-        "x": 930,
-        "y": 280,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "ab1b4883aecc4719",
-        "type": "template",
-        "z": "d4c99f8432f4320d",
-        "name": "Set Filename",
-        "field": "filename",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "/data/disconnects/{{payload}}",
-        "output": "str",
-        "x": 470,
-        "y": 280,
-        "wires": [
-            [
-                "655dca9a651a965e"
-            ]
-        ]
-    },
-    {
-        "id": "3868f26c0e70dbb4",
-        "type": "ui_button",
-        "z": "d4c99f8432f4320d",
-        "name": "",
-        "group": "b039f0e61c731c39",
-        "order": 8,
-        "width": 8,
-        "height": 1,
-        "passthru": false,
-        "label": "Refresh Client State",
-        "tooltip": "",
-        "color": "",
-        "bgcolor": "",
-        "className": "",
-        "icon": "",
-        "payload": "",
-        "payloadType": "str",
-        "topic": "",
-        "topicType": "str",
-        "x": 160,
-        "y": 420,
-        "wires": [
-            [
-                "e4964ba1e436a89f"
-            ]
-        ]
-    },
-    {
-        "id": "4507e35c500307d1",
-        "type": "template",
-        "z": "d4c99f8432f4320d",
-        "name": "form JSON of Active Clients",
-        "field": "payload",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "{\"title\":\"{{payload}}\",\"description\":\"Connected\",\"icon\":\"https://cdn1.iconfinder.com/data/icons/malware-and-threats/512/Botnet-01-512.png\"}",
-        "output": "json",
-        "x": 180,
-        "y": 540,
-        "wires": [
-            [
-                "5116513349bd2732"
-            ]
-        ]
-    },
-    {
-        "id": "5116513349bd2732",
-        "type": "join",
-        "z": "d4c99f8432f4320d",
-        "name": "Create Single Array of Active Clients",
-        "mode": "custom",
-        "build": "array",
-        "property": "payload",
-        "propertyType": "msg",
-        "key": "topic",
-        "joiner": "\\n",
-        "joinerType": "str",
-        "accumulate": false,
-        "timeout": "2",
-        "count": "",
-        "reduceRight": false,
-        "reduceExp": "",
-        "reduceInit": "",
-        "reduceInitType": "",
-        "reduceFixup": "",
-        "x": 210,
-        "y": 600,
-        "wires": [
-            [
-                "87e89e9cf70369e3"
-            ]
-        ]
-    },
-    {
-        "id": "d98556722b9df178",
-        "type": "comment",
-        "z": "d4c99f8432f4320d",
-        "name": "Build Client State Table",
-        "info": "",
-        "x": 160,
-        "y": 380,
-        "wires": []
-    },
-    {
-        "id": "742e450ac8633af4",
-        "type": "debug",
-        "z": "d4c99f8432f4320d",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 620,
-        "y": 400,
-        "wires": []
-    },
-    {
-        "id": "87e89e9cf70369e3",
-        "type": "ui_list",
-        "z": "d4c99f8432f4320d",
-        "group": "b039f0e61c731c39",
-        "name": "Client State Table",
-        "order": 1,
-        "width": 6,
-        "height": 14,
-        "lineType": "two",
-        "actionType": "click",
-        "allowHTML": false,
-        "outputs": 1,
-        "topic": "",
-        "x": 150,
-        "y": 660,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "e4964ba1e436a89f",
-        "type": "fs-file-lister",
-        "z": "d4c99f8432f4320d",
-        "name": "Build List of Active Clients",
-        "start": "/data/clientstate",
-        "pattern": "*player*",
-        "folders": "*",
-        "hidden": false,
-        "lstype": "files",
-        "path": false,
-        "single": false,
-        "depth": 0,
-        "stat": false,
-        "showWarnings": false,
-        "x": 180,
-        "y": 480,
-        "wires": [
-            [
-                "4507e35c500307d1"
-            ]
-        ]
-    },
-    {
-        "id": "7eb74d1be30f1c31",
-        "type": "template",
-        "z": "7a02b2e08f8601a0",
-        "name": "",
-        "field": "payload",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "https://api.sonos.com/login/v3/oauth?response_type={{payload.response_type}}&client_id={{global.client_id}}&state={{global.state}}&redirect_uri={{global.redirect_uri}}&scope={{global.scope}}",
-        "output": "str",
-        "x": 80,
-        "y": 120,
-        "wires": [
-            [
-                "2c255e333abef37e"
-            ]
-        ]
-    },
-    {
-        "id": "b46bf0e3befa5aec",
-        "type": "exec",
-        "z": "7a02b2e08f8601a0",
-        "command": "",
-        "addpay": "payload",
-        "append": "",
-        "useSpawn": "false",
-        "timer": "",
-        "winHide": false,
-        "oldrc": false,
-        "name": "",
-        "x": 70,
-        "y": 360,
-        "wires": [
-            [
-                "e8cb74abccca20a6",
-                "73b6adb002f084ad"
-            ],
-            [],
-            []
-        ]
-    },
-    {
-        "id": "f916928d946bad51",
-        "type": "template",
-        "z": "7a02b2e08f8601a0",
-        "name": "",
-        "field": "payload",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "curl -X POST -H \"Content-Type: application/x-www-form-urlencoded;charset=utf-8\" -H \"Authorization: Basic {{{global.b64}}}\" \"https://api.sonos.com/login/v3/oauth/access\" -d \"grant_type=authorization_code&code={{payload.code}}&redirect_uri={{global.redirect_uri}}\"",
-        "output": "str",
-        "x": 80,
-        "y": 300,
-        "wires": [
-            [
-                "b46bf0e3befa5aec"
-            ]
-        ]
-    },
-    {
-        "id": "e8cb74abccca20a6",
-        "type": "json",
-        "z": "7a02b2e08f8601a0",
-        "name": "",
-        "property": "payload",
-        "action": "",
-        "pretty": false,
-        "x": 70,
-        "y": 400,
-        "wires": [
-            [
-                "38d40a22084bde1f"
-            ]
-        ]
-    },
-    {
-        "id": "d4ecc658e4e457fd",
-        "type": "change",
-        "z": "7a02b2e08f8601a0",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "scope",
-                "pt": "global",
-                "to": "playback-control-all",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "payload.redirect_uri",
-                "pt": "msg",
-                "to": "https%3A%2F%2Fcollector.workshop.mqtttest.com%2Fcode",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "payload.response_type",
-                "pt": "msg",
-                "to": "code",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "client_id",
-                "pt": "global",
-                "to": "1a3d4110-70b6-4af4-a60a-528ef6526087",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "state",
-                "pt": "global",
-                "to": "payload.state",
-                "tot": "msg"
-            },
-            {
-                "t": "set",
-                "p": "secret",
-                "pt": "global",
-                "to": "88b364fc-e5c0-41d5-a19d-e291d183830f",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "redirect_uri",
-                "pt": "global",
-                "to": "https%3A%2F%2Fcollector.workshop.mqtttest.com%2Fcode",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 100,
-        "y": 80,
-        "wires": [
-            [
-                "7eb74d1be30f1c31"
-            ]
-        ]
-    },
-    {
-        "id": "8bae6008255f4552",
-        "type": "change",
-        "z": "7a02b2e08f8601a0",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "b64",
-                "pt": "global",
-                "to": "MWEzZDQxMTAtNzBiNi00YWY0LWE2MGEtNTI4ZWY2NTI2MDg3Ojg4YjM2NGZjLWU1YzAtNDFkNS1hMTlkLWUyOTFkMTgzODMwZg==",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 640,
-        "y": 60,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "38d40a22084bde1f",
-        "type": "change",
-        "z": "7a02b2e08f8601a0",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "token",
-                "pt": "global",
-                "to": "payload.access_token",
-                "tot": "msg"
-            },
-            {
-                "t": "set",
-                "p": "refresh_token",
-                "pt": "global",
-                "to": "payload.refresh_token",
-                "tot": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 100,
-        "y": 460,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "43c0b0509c000275",
-        "type": "ui_form",
-        "z": "7a02b2e08f8601a0",
-        "name": "1. Obtain Code from Integration",
-        "label": "1. Obtain Code from Integration - Generate Login URL (Enter a unique value for \"State\")",
-        "group": "26f4d1165fd20bba",
-        "order": 1,
-        "width": 0,
-        "height": 0,
-        "options": [
-            {
-                "label": "State",
-                "value": "state",
-                "type": "text",
-                "required": true,
-                "rows": null
-            }
-        ],
-        "formValue": {
-            "state": ""
-        },
-        "payload": "",
-        "submit": "submit",
-        "cancel": "cancel",
-        "topic": "topic",
-        "topicType": "msg",
-        "splitLayout": "",
-        "className": "",
-        "x": 150,
-        "y": 40,
-        "wires": [
-            [
-                "d4ecc658e4e457fd",
-                "8bae6008255f4552"
-            ]
-        ]
-    },
-    {
-        "id": "2c255e333abef37e",
-        "type": "ui_text",
-        "z": "7a02b2e08f8601a0",
-        "group": "26f4d1165fd20bba",
-        "order": 2,
-        "width": 0,
-        "height": 0,
-        "name": "Generated URL",
-        "label": "",
-        "format": "{{msg.payload}}",
-        "layout": "col-center",
-        "className": "",
-        "x": 100,
-        "y": 160,
-        "wires": []
-    },
-    {
-        "id": "daed36bf6c491822",
-        "type": "ui_form",
-        "z": "7a02b2e08f8601a0",
-        "name": "2. Enter Code from Step 1 to generate Sonos API Token and load it into node-RED",
-        "label": "2. Enter Code from Step 1 to generate Sonos API Token and load it into node-RED",
-        "group": "26f4d1165fd20bba",
-        "order": 3,
-        "width": 0,
-        "height": 0,
-        "options": [
-            {
-                "label": "code",
-                "value": "code",
-                "type": "text",
-                "required": true,
-                "rows": null
-            }
-        ],
-        "formValue": {
-            "code": ""
-        },
-        "payload": "",
-        "submit": "submit",
-        "cancel": "cancel",
-        "topic": "topic",
-        "topicType": "msg",
-        "splitLayout": "",
-        "className": "",
-        "x": 310,
-        "y": 260,
-        "wires": [
-            [
-                "f916928d946bad51"
-            ]
-        ]
-    },
-    {
-        "id": "73b6adb002f084ad",
-        "type": "ui_text",
-        "z": "7a02b2e08f8601a0",
-        "group": "26f4d1165fd20bba",
-        "order": 4,
-        "width": 0,
-        "height": 0,
-        "name": "Copy of Token ",
-        "label": "",
-        "format": "{{msg.payload}}",
-        "layout": "col-center",
-        "className": "",
-        "x": 420,
-        "y": 340,
-        "wires": []
-    },
-    {
-        "id": "45a625d35fd66423",
-        "type": "template",
-        "z": "8a2e636b056d7f63",
-        "name": "Add Auth Header",
-        "field": "headers[\"Authorization\"]",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "Bearer {{global.token}}",
-        "output": "str",
-        "x": 110,
-        "y": 240,
-        "wires": [
-            [
-                "76d82da4e1b0dad3"
-            ]
-        ]
-    },
-    {
-        "id": "76d82da4e1b0dad3",
+        "id": "bde56a9cf1a45bfe",
         "type": "http request",
-        "z": "8a2e636b056d7f63",
-        "name": "",
+        "z": "947a0edef36b62a9",
+        "name": "Lookup public IP address",
         "method": "GET",
-        "ret": "obj",
+        "ret": "txt",
         "paytoqs": "ignore",
-        "url": "",
-        "tls": "81fc7724bb1fd349",
+        "url": "wgetip.com",
+        "tls": "",
         "persist": false,
         "proxy": "",
         "authType": "",
-        "senderr": false,
-        "x": 90,
-        "y": 280,
-        "wires": [
-            [
-                "7a45eb087b1c3fb4"
-            ]
-        ]
-    },
-    {
-        "id": "ecd8b9b299f31226",
-        "type": "template",
-        "z": "8a2e636b056d7f63",
-        "name": "Format URL",
-        "field": "url",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "https://api.ws.sonos.com/control/api/v1/{{{command}}}",
-        "output": "str",
-        "x": 390,
-        "y": 200,
-        "wires": [
-            [
-                "45a625d35fd66423"
-            ]
-        ]
-    },
-    {
-        "id": "7a45eb087b1c3fb4",
-        "type": "change",
-        "z": "8a2e636b056d7f63",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "households[0].id",
-                "pt": "global",
-                "to": "payload.households[0].id",
-                "tot": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 140,
-        "y": 320,
-        "wires": [
-            [
-                "5189c087377e4bc4"
-            ]
-        ]
-    },
-    {
-        "id": "5189c087377e4bc4",
-        "type": "template",
-        "z": "8a2e636b056d7f63",
-        "name": "Set Command",
-        "field": "command",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "/households/{{global.households[\"0\"].id}}/groups",
-        "output": "str",
-        "x": 100,
-        "y": 360,
-        "wires": [
-            [
-                "ba9ad2e416164d64"
-            ]
-        ]
-    },
-    {
-        "id": "0e061768fb577b8e",
-        "type": "ui_button",
-        "z": "8a2e636b056d7f63",
-        "name": "",
-        "group": "d75bbc086071eb9d",
-        "order": 1,
-        "width": 10,
-        "height": 1,
-        "passthru": false,
-        "label": "Get Households, Groups, and Players",
-        "tooltip": "",
-        "color": "",
-        "bgcolor": "",
-        "className": "",
-        "icon": "",
-        "payload": "",
-        "payloadType": "str",
-        "topic": "topic",
-        "topicType": "msg",
-        "x": 150,
+        "x": 210,
         "y": 140,
         "wires": [
             [
-                "932947b3b83accbf"
+                "d69cc6b3304e4b61"
             ]
         ]
     },
     {
-        "id": "932947b3b83accbf",
+        "id": "d69cc6b3304e4b61",
         "type": "template",
-        "z": "8a2e636b056d7f63",
-        "name": "Set Command = households",
-        "field": "command",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "/households",
-        "output": "str",
-        "x": 140,
-        "y": 200,
-        "wires": [
-            [
-                "ecd8b9b299f31226"
-            ]
-        ]
-    },
-    {
-        "id": "ba9ad2e416164d64",
-        "type": "template",
-        "z": "8a2e636b056d7f63",
-        "name": "Format URL",
+        "z": "947a0edef36b62a9",
+        "name": "Format GeoIP Lookup",
         "field": "url",
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "https://api.ws.sonos.com/control/api/v1/{{{command}}}",
+        "template": "http://ip-api.com/json/{{payload}}",
         "output": "str",
-        "x": 90,
-        "y": 400,
+        "x": 200,
+        "y": 180,
         "wires": [
             [
-                "d68ac5003efe5ce2"
+                "ed294e8b96cee74f"
             ]
         ]
     },
     {
-        "id": "d68ac5003efe5ce2",
-        "type": "template",
-        "z": "8a2e636b056d7f63",
-        "name": "Add Auth Header",
-        "field": "headers[\"Authorization\"]",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "Bearer {{global.token}}",
-        "output": "str",
-        "x": 110,
-        "y": 440,
-        "wires": [
-            [
-                "b07d33c13ff1af76"
-            ]
-        ]
-    },
-    {
-        "id": "b07d33c13ff1af76",
+        "id": "ed294e8b96cee74f",
         "type": "http request",
-        "z": "8a2e636b056d7f63",
-        "name": "",
+        "z": "947a0edef36b62a9",
+        "name": "GeoIP Lookup",
         "method": "GET",
         "ret": "obj",
         "paytoqs": "ignore",
         "url": "",
-        "tls": "81fc7724bb1fd349",
+        "tls": "",
         "persist": false,
         "proxy": "",
         "authType": "",
-        "senderr": false,
-        "x": 90,
-        "y": 480,
-        "wires": [
-            [
-                "1baadcd75bd8bdc8",
-                "e870fe8c7cd81d90"
-            ]
-        ]
-    },
-    {
-        "id": "1baadcd75bd8bdc8",
-        "type": "contrib-json",
-        "z": "8a2e636b056d7f63",
-        "engine": "json-select",
-        "command": "",
-        "expr": "['groups', true, {name: true, id: true}]",
-        "complete": "property",
-        "prop": "payload",
-        "name": "",
-        "x": 170,
-        "y": 520,
-        "wires": [
-            [
-                "4f54b1248b8b7f13"
-            ]
-        ]
-    },
-    {
-        "id": "4f54b1248b8b7f13",
-        "type": "ui_table",
-        "z": "8a2e636b056d7f63",
-        "group": "d75bbc086071eb9d",
-        "name": "Group List",
-        "order": 3,
-        "width": 7,
-        "height": 8,
-        "columns": [],
-        "outputs": 1,
-        "cts": true,
-        "x": 110,
-        "y": 580,
-        "wires": [
-            [
-                "c6de4e82ee3273e3"
-            ]
-        ]
-    },
-    {
-        "id": "2b02795e87aa99b5",
-        "type": "mqtt out",
-        "z": "8a2e636b056d7f63",
-        "name": "",
-        "topic": "",
-        "qos": "0",
-        "retain": "true",
-        "respTopic": "",
-        "contentType": "",
-        "userProps": "",
-        "correl": "",
-        "expiry": "",
-        "broker": "3c9fafa.7dd6a5",
-        "x": 610,
-        "y": 480,
-        "wires": []
-    },
-    {
-        "id": "e870fe8c7cd81d90",
-        "type": "template",
-        "z": "8a2e636b056d7f63",
-        "name": "",
-        "field": "topic",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "demo/{{global.households[0].id}}/state",
-        "output": "str",
-        "x": 420,
-        "y": 480,
-        "wires": [
-            [
-                "2b02795e87aa99b5",
-                "d3dbe28daeaf66d5"
-            ]
-        ]
-    },
-    {
-        "id": "d3dbe28daeaf66d5",
-        "type": "debug",
-        "z": "8a2e636b056d7f63",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 640,
-        "y": 340,
-        "wires": []
-    },
-    {
-        "id": "c3e5cf025b1f3d76",
-        "type": "ui_button",
-        "z": "8a2e636b056d7f63",
-        "name": "Subscribe to Player and Group Events",
-        "group": "d75bbc086071eb9d",
-        "order": 5,
-        "width": 13,
-        "height": 1,
-        "passthru": false,
-        "label": "Subscribe to Player and Group Events",
-        "tooltip": "",
-        "color": "",
-        "bgcolor": "",
-        "className": "",
-        "icon": "",
-        "payload": "",
-        "payloadType": "str",
-        "topic": "topic",
-        "topicType": "msg",
-        "x": 170,
-        "y": 620,
-        "wires": [
-            [
-                "f113bc8039876b1a"
-            ]
-        ]
-    },
-    {
-        "id": "f113bc8039876b1a",
-        "type": "template",
-        "z": "8a2e636b056d7f63",
-        "name": "Set Command",
-        "field": "command",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "/households/{{global.households[\"0\"].id}}/groups/subscription",
-        "output": "str",
-        "x": 140,
-        "y": 680,
-        "wires": [
-            [
-                "e8127a4b04ff48fa"
-            ]
-        ]
-    },
-    {
-        "id": "e8127a4b04ff48fa",
-        "type": "template",
-        "z": "8a2e636b056d7f63",
-        "name": "Format URL",
-        "field": "url",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "https://api.ws.sonos.com/control/api/v1/{{{command}}}",
-        "output": "str",
-        "x": 130,
-        "y": 720,
-        "wires": [
-            [
-                "49482208574f6d8d"
-            ]
-        ]
-    },
-    {
-        "id": "49482208574f6d8d",
-        "type": "template",
-        "z": "8a2e636b056d7f63",
-        "name": "Add Auth Header",
-        "field": "headers[\"Authorization\"]",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "Bearer {{global.token}}",
-        "output": "str",
-        "x": 150,
-        "y": 760,
-        "wires": [
-            [
-                "889eabcb8e4dad7c",
-                "07d5bf30f824210b"
-            ]
-        ]
-    },
-    {
-        "id": "889eabcb8e4dad7c",
-        "type": "http request",
-        "z": "8a2e636b056d7f63",
-        "name": "",
-        "method": "POST",
-        "ret": "obj",
-        "paytoqs": "ignore",
-        "url": "",
-        "tls": "81fc7724bb1fd349",
-        "persist": false,
-        "proxy": "",
-        "authType": "",
-        "senderr": false,
-        "x": 130,
-        "y": 800,
-        "wires": [
-            [
-                "12cbbf6aafee4af9"
-            ]
-        ]
-    },
-    {
-        "id": "12cbbf6aafee4af9",
-        "type": "debug",
-        "z": "8a2e636b056d7f63",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 390,
-        "y": 800,
-        "wires": []
-    },
-    {
-        "id": "2bc802d48a2d58e1",
-        "type": "inject",
-        "z": "8a2e636b056d7f63",
-        "name": "",
-        "props": [],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "x": 510,
-        "y": 740,
-        "wires": [
-            [
-                "f113bc8039876b1a"
-            ]
-        ]
-    },
-    {
-        "id": "07d5bf30f824210b",
-        "type": "debug",
-        "z": "8a2e636b056d7f63",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 360,
-        "y": 740,
-        "wires": []
-    },
-    {
-        "id": "e152519ada20df6f",
-        "type": "inject",
-        "z": "8a2e636b056d7f63",
-        "name": "",
-        "props": [],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "x": 530,
-        "y": 860,
-        "wires": [
-            [
-                "c75b6db38b356f0b"
-            ]
-        ]
-    },
-    {
-        "id": "c75b6db38b356f0b",
-        "type": "template",
-        "z": "8a2e636b056d7f63",
-        "name": "Set Command",
-        "field": "command",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "/groups/RINCON_000E5812484401400/playback/subscription",
-        "output": "str",
-        "x": 170,
-        "y": 940,
-        "wires": [
-            [
-                "878f6104877e1c56"
-            ]
-        ]
-    },
-    {
-        "id": "878f6104877e1c56",
-        "type": "template",
-        "z": "8a2e636b056d7f63",
-        "name": "Format URL",
-        "field": "url",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "https://api.ws.sonos.com/control/api/v1/{{{command}}}",
-        "output": "str",
-        "x": 160,
-        "y": 980,
-        "wires": [
-            [
-                "4a7d59c9afa80f0f"
-            ]
-        ]
-    },
-    {
-        "id": "4a7d59c9afa80f0f",
-        "type": "template",
-        "z": "8a2e636b056d7f63",
-        "name": "Add Auth Header",
-        "field": "headers[\"Authorization\"]",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "Bearer {{global.token}}",
-        "output": "str",
         "x": 180,
-        "y": 1020,
+        "y": 220,
         "wires": [
             [
-                "a717040ca6b8cb9a"
+                "b06e2b3aec47d28c"
             ]
         ]
     },
     {
-        "id": "a717040ca6b8cb9a",
-        "type": "http request",
-        "z": "8a2e636b056d7f63",
-        "name": "",
-        "method": "POST",
-        "ret": "obj",
-        "paytoqs": "ignore",
-        "url": "",
-        "tls": "81fc7724bb1fd349",
-        "persist": false,
-        "proxy": "",
-        "authType": "",
-        "senderr": false,
-        "x": 160,
-        "y": 1060,
+        "id": "b06e2b3aec47d28c",
+        "type": "change",
+        "z": "947a0edef36b62a9",
+        "name": "Set Global Variables ",
+        "rules": [
+            {
+                "t": "set",
+                "p": "regionName",
+                "pt": "global",
+                "to": "payload.regionName",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "countryCode",
+                "pt": "global",
+                "to": "payload.countryCode",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "org",
+                "pt": "global",
+                "to": "payload.org",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 200,
+        "y": 260,
         "wires": [
             []
         ]
     },
     {
-        "id": "c26f90bf6c753856",
-        "type": "http request",
-        "z": "8a2e636b056d7f63",
-        "name": "",
-        "method": "POST",
-        "ret": "txt",
-        "paytoqs": "ignore",
-        "url": "https://collector.workshop.mqtttest.com/post",
-        "tls": "81fc7724bb1fd349",
-        "persist": false,
-        "proxy": "",
-        "authType": "",
-        "senderr": false,
-        "x": 500,
-        "y": 960,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "b720b9900cd3ebe3",
+        "id": "73e8aecdc7fae88b",
         "type": "inject",
-        "z": "8a2e636b056d7f63",
+        "z": "947a0edef36b62a9",
         "name": "",
         "props": [
             {
@@ -2200,177 +2511,28 @@
         ],
         "repeat": "",
         "crontab": "",
-        "once": false,
+        "once": true,
         "onceDelay": 0.1,
         "topic": "",
-        "payload": "",
         "payloadType": "date",
-        "x": 450,
-        "y": 1040,
+        "x": 180,
+        "y": 80,
         "wires": [
             [
-                "c26f90bf6c753856"
+                "bde56a9cf1a45bfe"
             ]
         ]
     },
     {
-        "id": "2ba6ef24fb53acc8",
-        "type": "debug",
-        "z": "8a2e636b056d7f63",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
+        "id": "ee9b8bd2e9d41231",
+        "type": "mgrs",
+        "z": "947a0edef36b62a9",
+        "name": "Convert Lat/Lon to MGRS",
+        "precision": "5",
         "x": 570,
-        "y": 660,
-        "wires": []
-    },
-    {
-        "id": "c6de4e82ee3273e3",
-        "type": "ui_form",
-        "z": "8a2e636b056d7f63",
-        "name": "",
-        "label": "",
-        "group": "d75bbc086071eb9d",
-        "order": 4,
-        "width": 6,
-        "height": 8,
-        "options": [
-            {
-                "label": "id",
-                "value": "id",
-                "type": "text",
-                "required": true,
-                "rows": null
-            },
-            {
-                "label": "Action",
-                "value": "action",
-                "type": "text",
-                "required": true,
-                "rows": null
-            }
-        ],
-        "formValue": {
-            "id": "",
-            "action": ""
-        },
-        "payload": "",
-        "submit": "submit",
-        "cancel": "cancel",
-        "topic": "topic",
-        "topicType": "msg",
-        "splitLayout": "",
-        "className": "",
-        "x": 510,
-        "y": 580,
+        "y": 320,
         "wires": [
-            [
-                "2ba6ef24fb53acc8",
-                "f0fcc0e10b6ed241"
-            ]
+            []
         ]
-    },
-    {
-        "id": "f0fcc0e10b6ed241",
-        "type": "template",
-        "z": "8a2e636b056d7f63",
-        "name": "Set Command",
-        "field": "command",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "groups/{{payload.id}}/playback/{{payload.action}}",
-        "output": "str",
-        "x": 740,
-        "y": 580,
-        "wires": [
-            [
-                "2a60733f29b5ef43"
-            ]
-        ]
-    },
-    {
-        "id": "2a60733f29b5ef43",
-        "type": "template",
-        "z": "8a2e636b056d7f63",
-        "name": "Format URL",
-        "field": "url",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "https://api.ws.sonos.com/control/api/v1/{{{command}}}",
-        "output": "str",
-        "x": 910,
-        "y": 640,
-        "wires": [
-            [
-                "6e32ebcda9507870"
-            ]
-        ]
-    },
-    {
-        "id": "6e32ebcda9507870",
-        "type": "template",
-        "z": "8a2e636b056d7f63",
-        "name": "Add Auth Header",
-        "field": "headers[\"Authorization\"]",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "Bearer {{global.token}}",
-        "output": "str",
-        "x": 890,
-        "y": 700,
-        "wires": [
-            [
-                "40270d8b6bdacb24",
-                "3e047958ccf9e746"
-            ]
-        ]
-    },
-    {
-        "id": "40270d8b6bdacb24",
-        "type": "http request",
-        "z": "8a2e636b056d7f63",
-        "name": "",
-        "method": "POST",
-        "ret": "obj",
-        "paytoqs": "ignore",
-        "url": "",
-        "tls": "81fc7724bb1fd349",
-        "persist": false,
-        "proxy": "",
-        "authType": "",
-        "senderr": false,
-        "x": 870,
-        "y": 760,
-        "wires": [
-            [
-                "3e047958ccf9e746"
-            ]
-        ]
-    },
-    {
-        "id": "3e047958ccf9e746",
-        "type": "debug",
-        "z": "8a2e636b056d7f63",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 870,
-        "y": 840,
-        "wires": []
     }
 ]
