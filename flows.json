@@ -441,46 +441,6 @@
         "save": true
     },
     {
-        "id": "b135e07a5560e403",
-        "type": "ui_spacer",
-        "z": "06ced7b1ad4ad468",
-        "name": "spacer",
-        "group": "d75bbc086071eb9d",
-        "order": 6,
-        "width": 6,
-        "height": 1
-    },
-    {
-        "id": "4055a6e5d90ff385",
-        "type": "ui_spacer",
-        "z": "06ced7b1ad4ad468",
-        "name": "spacer",
-        "group": "d75bbc086071eb9d",
-        "order": 7,
-        "width": 6,
-        "height": 1
-    },
-    {
-        "id": "0e8a412b0550aeb6",
-        "type": "ui_spacer",
-        "z": "06ced7b1ad4ad468",
-        "name": "spacer",
-        "group": "d75bbc086071eb9d",
-        "order": 8,
-        "width": 6,
-        "height": 1
-    },
-    {
-        "id": "8e6d295a98224839",
-        "type": "ui_spacer",
-        "z": "06ced7b1ad4ad468",
-        "name": "spacer",
-        "group": "d75bbc086071eb9d",
-        "order": 9,
-        "width": 6,
-        "height": 1
-    },
-    {
         "id": "7eb74d1be30f1c31",
         "type": "template",
         "z": "7a02b2e08f8601a0",
@@ -1069,7 +1029,7 @@
         "name": "Group List",
         "order": 1,
         "width": 7,
-        "height": 8,
+        "height": 4,
         "columns": [],
         "outputs": 1,
         "cts": true,
@@ -1116,34 +1076,6 @@
         "wires": [
             [
                 "2b02795e87aa99b5"
-            ]
-        ]
-    },
-    {
-        "id": "c3e5cf025b1f3d76",
-        "type": "ui_button",
-        "z": "8a2e636b056d7f63",
-        "name": "Subscribe to Player and Group Events",
-        "group": "d75bbc086071eb9d",
-        "order": 5,
-        "width": 6,
-        "height": 1,
-        "passthru": false,
-        "label": "Subscribe to Player and Group Events",
-        "tooltip": "",
-        "color": "",
-        "bgcolor": "",
-        "className": "",
-        "icon": "",
-        "payload": "",
-        "payloadType": "str",
-        "topic": "topic",
-        "topicType": "msg",
-        "x": 170,
-        "y": 640,
-        "wires": [
-            [
-                "f113bc8039876b1a"
             ]
         ]
     },
@@ -1233,7 +1165,7 @@
         "group": "d75bbc086071eb9d",
         "order": 3,
         "width": 6,
-        "height": 1,
+        "height": 2,
         "options": [
             {
                 "label": "id",
@@ -1495,7 +1427,7 @@
         "z": "8a2e636b056d7f63",
         "group": "d75bbc086071eb9d",
         "name": "Now Playing",
-        "order": 10,
+        "order": 5,
         "width": 13,
         "height": 1,
         "columns": [
@@ -1535,8 +1467,127 @@
         "x": 490,
         "y": 880,
         "wires": [
-            []
+            [
+                "d8647b177e0fc56b",
+                "90cb5ffc1bcc6b3b"
+            ]
         ]
+    },
+    {
+        "id": "2003e15015b70b44",
+        "type": "http request",
+        "z": "8a2e636b056d7f63",
+        "name": "",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "81fc7724bb1fd349",
+        "persist": false,
+        "proxy": "",
+        "authType": "bearer",
+        "senderr": false,
+        "x": 450,
+        "y": 980,
+        "wires": [
+            [
+                "0ebc9332c9519e60"
+            ]
+        ]
+    },
+    {
+        "id": "d8647b177e0fc56b",
+        "type": "template",
+        "z": "8a2e636b056d7f63",
+        "name": "",
+        "field": "url",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "https://api.genius.com/search?q={{payload.artist}},{{payload.name}}",
+        "output": "str",
+        "x": 480,
+        "y": 920,
+        "wires": [
+            [
+                "2003e15015b70b44",
+                "7ac5b1b494a8a67a"
+            ]
+        ]
+    },
+    {
+        "id": "90cb5ffc1bcc6b3b",
+        "type": "debug",
+        "z": "8a2e636b056d7f63",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 650,
+        "y": 860,
+        "wires": []
+    },
+    {
+        "id": "7ac5b1b494a8a67a",
+        "type": "debug",
+        "z": "8a2e636b056d7f63",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 650,
+        "y": 920,
+        "wires": []
+    },
+    {
+        "id": "0ebc9332c9519e60",
+        "type": "ui_template",
+        "z": "8a2e636b056d7f63",
+        "group": "d75bbc086071eb9d",
+        "name": "",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "format": "<img src=\"{{msg.payload.response.hits[0].result.song_art_image_url}}\"</img>",
+        "storeOutMessages": true,
+        "fwdInMessages": false,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 490,
+        "y": 1040,
+        "wires": [
+            [
+                "19c90e7c72aa9eb6"
+            ]
+        ]
+    },
+    {
+        "id": "19c90e7c72aa9eb6",
+        "type": "debug",
+        "z": "8a2e636b056d7f63",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 650,
+        "y": 1040,
+        "wires": []
     },
     {
         "id": "e69e623c68223b18",
