@@ -33,5 +33,5 @@ From the UI URL, there are two tabs, Auth API and Control API. Use the top left 
 
 3. Once permission is granted, 
 
-<img width="396" alt="image" src="https://user-images.githubusercontent.com/19197357/194882813-87957a48-79c5-4c1e-9918-a2577190a9cf.png">
+
 
