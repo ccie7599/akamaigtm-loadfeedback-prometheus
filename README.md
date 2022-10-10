@@ -48,6 +48,9 @@ NOTE- the token expires after 24 hours, and there is no refresh routine at prese
 
 ## Using the Control UI
 
+Once an authentication token is loaded, the Control UI can be used to execute some basic Sonos APIs, and explore possible service integrations. Navigate to the Control UI table via the top left menu.
+
+<img width="579" alt="image" src="https://user-images.githubusercontent.com/19197357/194901720-18e1b8e6-430f-4d40-a0c0-80453720c806.png">
 
 
 
