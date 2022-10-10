@@ -72,4 +72,4 @@ The node-RED pallette can be accessed via the root of the service- i.e., http://
 
 <img width="1366" alt="image" src="https://user-images.githubusercontent.com/19197357/194905474-b22764c1-f8ab-476d-8ea0-3f14cb476cc8.png">
 
-
+Within the node-RED pallette, tabs can be seen for the Auth and Control API services 
