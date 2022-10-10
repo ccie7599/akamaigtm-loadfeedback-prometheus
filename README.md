@@ -13,7 +13,7 @@ repo is synced with docker hub at brianapley/sonos-api-nocode.
 docker run -it -p 1880:1880 -v nrdata:/data --name sonos-api-nocode brianapley/sonos-api-nocode
 ```
 
-Once launched, UI can be accessed via http://host:1880/.
+Once launched, UI can be accessed via http://host:1880/ui. The node-RED pallete can be accessed via http://host:1880/. 
 
 ### How to Use
 
