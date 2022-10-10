@@ -52,5 +52,16 @@ Once an authentication token is loaded, the Control UI can be used to execute so
 
 <img width="579" alt="image" src="https://user-images.githubusercontent.com/19197357/194901720-18e1b8e6-430f-4d40-a0c0-80453720c806.png">
 
+Select "Get Households, Groups, and Players" - This loads objects from the Sonos Cloud API for discovering information about controlled Sonos system. The left table should populate with a list of group names and their ID.
+
+<img width="302" alt="image" src="https://user-images.githubusercontent.com/19197357/194902349-cfcd4504-8a8d-49c0-b12e-dcd40a67b591.png">
+
+Selecting an entry in the table will populate that ID value of the group loads into the "Send Command" and "What's Playing" services. 
+
+Submitting the ID in the "What's Playing" form will populate the below table with the artist, track, and album of the currently playing track in that group. Selecting that track table entry will then make an API call to genius.com, and return the first playlist art object returned in the search.
+
+![image](https://user-images.githubusercontent.com/19197357/194904413-ca7fe10a-9990-442d-8ad6-d4a745580089.jpeg)
+
+
 
 
