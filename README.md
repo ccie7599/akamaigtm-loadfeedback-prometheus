@@ -72,4 +72,6 @@ The node-RED pallette can be accessed via the root of the service- i.e., http://
 
 <img width="1366" alt="image" src="https://user-images.githubusercontent.com/19197357/194905474-b22764c1-f8ab-476d-8ea0-3f14cb476cc8.png">
 
-Within the node-RED pallette, tabs can be seen for the Auth and Control API services 
+Within the node-RED pallette, tabs can be seen for the Auth and Control API services explained above. These services can be used as reference for building further services and integrations with the Sonos Cloud APIs.
+
+There are also tabs for "Pub/Sub Integrations" (showing Sonos integration with an event-based pub/sub messaging platform), and reference applications for managing client state across a distributed system, measuring publish-to-subscribe latency across a messaging platform, and a basic Geo IP lookup service. 
