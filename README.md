@@ -41,6 +41,12 @@ From the UI URL, there are two tabs, Auth API and Control API. Use the top left 
 
 <img width="1068" alt="image" src="https://user-images.githubusercontent.com/19197357/194895687-5a41e5c8-287a-4a80-92c1-0b148996c011.png">
 
-4. Navigate back to the sonos-api-nocode UI, and paste the code value into 
+4. Navigate back to the sonos-api-nocode UI, and paste the code value into the form on step 2. Hit "Submit," and a Sonos API token will be retrieved, and loaded into the application.
+
+NOTE- the token expires after 24 hours, and there is no refresh routine at present.
+
+## Using the Control UI
+
+
 
 
