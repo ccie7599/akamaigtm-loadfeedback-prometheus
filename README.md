@@ -62,6 +62,14 @@ Submitting the ID in the "What's Playing" form will populate the below table wit
 
 ![image](https://user-images.githubusercontent.com/19197357/194904413-ca7fe10a-9990-442d-8ad6-d4a745580089.jpeg)
 
+The "Send Command" form can be used to send POST API commands to group IDs. A "type" value (such as playback), and an "action" value (such as play or pause) can be sent.
 
+<img width="265" alt="image" src="https://user-images.githubusercontent.com/19197357/194905180-89499483-4065-48df-aec8-7aebf9fad8ff.png">
+
+## Using the node-RED pallette to design services and integrations
+
+The node-RED pallette can be accessed via the root of the service- i.e., http://host:1880/.
+
+<img width="1366" alt="image" src="https://user-images.githubusercontent.com/19197357/194905474-b22764c1-f8ab-476d-8ea0-3f14cb476cc8.png">
 
 
