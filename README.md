@@ -21,6 +21,8 @@ From the UI URL, there are two tabs, Auth API and Control API. Use the top left 
 
 ## Initial Authentication
 
+Navigate to the Auth API tab for the intial authentication. 
+
 <img width="794" alt="image" src="https://user-images.githubusercontent.com/19197357/194899356-71fe902b-35b3-4348-8a02-4b897ac9d9b7.png">
 
 1. From the Auth API, first enter a unique value for "State" in the top form field and hit "submit." The text below the form should update with the login URL (you should see your "state" entered as a query string argument).
