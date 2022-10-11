@@ -60,6 +60,8 @@ Selecting an entry in the table will populate that ID value of the group loads i
 
 Submitting the ID in the "What's Playing" form will populate the below table with the artist, track, and album of the currently playing track in that group. Selecting that track table entry will then make an API call to genius.com, and return the first playlist art object returned in the search.
 
+NOTE- a genius.com API key must be obtained and loaded into the env for this functionality to work. 
+
 ![image](https://user-images.githubusercontent.com/19197357/194904413-ca7fe10a-9990-442d-8ad6-d4a745580089.jpeg)
 
 The "Send Command" form can be used to send POST API commands to group IDs. A "type" value (such as playback), and an "action" value (such as play or pause) can be sent.
@@ -75,3 +77,4 @@ The node-RED pallette can be accessed via the root of the service- i.e., http://
 Within the node-RED pallette, tabs can be seen for the Auth and Control API services explained above. These services can be used as reference for building further services and integrations with the Sonos Cloud APIs.
 
 There are also tabs for "Pub/Sub Integrations" (showing Sonos integration with an event-based pub/sub messaging platform), and reference applications for managing client state across a distributed system, measuring publish-to-subscribe latency across a messaging platform, and a basic Geo IP lookup service. 
+
