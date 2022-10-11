@@ -27,7 +27,7 @@ Navigate to the Auth API tab for the intial authentication.
 
 1. From the Auth API, first enter a unique value for "State" in the top form field and hit "submit." The text below the form should update with the login URL (you should see your "state" entered as a query string argument).
 
-<img width="796" alt="image" src="https://user-images.githubusercontent.com/19197357/194899714-7a3b4833-ce2a-40bb-92ff-ae2de81be111.png">
+<img width="700" alt="image" src="https://user-images.githubusercontent.com/19197357/195092591-15e0a3d4-abf8-41e2-9ff2-d21004968c5d.png">
 
 2. Copy that login URL value and load it into a new browser window. You'll be prompted to login to Sonos, and will be asked to give permission to the Linode Workshop Integration to control your system. 
 
