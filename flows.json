@@ -2,7 +2,15 @@
     {
         "id": "06ced7b1ad4ad468",
         "type": "tab",
-        "label": "Pub Sub Integration",
+        "label": "Processor",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "e567b4ceea25909e",
+        "type": "tab",
+        "label": "Generate Test Traffic and see output ",
         "disabled": false,
         "info": "",
         "env": []
@@ -429,7 +437,7 @@
         "type": "debug",
         "z": "06ced7b1ad4ad468",
         "name": "",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -475,96 +483,11 @@
         ]
     },
     {
-        "id": "12c2a498e51ed0f4",
-        "type": "inject",
-        "z": "06ced7b1ad4ad468",
-        "name": "",
-        "props": [
-            {
-                "p": "payload.status",
-                "v": "",
-                "vt": "date"
-            },
-            {
-                "p": "payload.type",
-                "v": "aircon",
-                "vt": "str"
-            },
-            {
-                "p": "payload.model",
-                "v": "PureAir300",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "x": 130,
-        "y": 280,
-        "wires": [
-            [
-                "68b30491a07231ae"
-            ]
-        ]
-    },
-    {
-        "id": "68b30491a07231ae",
-        "type": "base64",
-        "z": "06ced7b1ad4ad468",
-        "name": "",
-        "action": "str",
-        "property": "payload",
-        "x": 210,
-        "y": 360,
-        "wires": [
-            [
-                "1bb87fad76f4e8ce",
-                "40d52fd6efc57c3e"
-            ]
-        ]
-    },
-    {
-        "id": "1bb87fad76f4e8ce",
-        "type": "debug",
-        "z": "06ced7b1ad4ad468",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 500,
-        "y": 380,
-        "wires": []
-    },
-    {
-        "id": "40d52fd6efc57c3e",
-        "type": "mqtt out",
-        "z": "06ced7b1ad4ad468",
-        "name": "",
-        "topic": "demo/electrolux/in",
-        "qos": "",
-        "retain": "",
-        "respTopic": "",
-        "contentType": "",
-        "userProps": "",
-        "correl": "",
-        "expiry": "",
-        "broker": "3c9fafa.7dd6a5",
-        "x": 470,
-        "y": 460,
-        "wires": []
-    },
-    {
         "id": "455e54b29df31d40",
         "type": "debug",
         "z": "06ced7b1ad4ad468",
         "name": "",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -597,7 +520,7 @@
         "type": "debug",
         "z": "06ced7b1ad4ad468",
         "name": "",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -606,6 +529,148 @@
         "statusType": "auto",
         "x": 570,
         "y": 200,
+        "wires": []
+    },
+    {
+        "id": "2509492becaec517",
+        "type": "inject",
+        "z": "e567b4ceea25909e",
+        "name": "",
+        "props": [
+            {
+                "p": "payload.status",
+                "v": "",
+                "vt": "date"
+            },
+            {
+                "p": "payload.type",
+                "v": "aircon",
+                "vt": "str"
+            },
+            {
+                "p": "payload.model",
+                "v": "PureAir300",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 150,
+        "y": 140,
+        "wires": [
+            [
+                "af22c269fc69f502"
+            ]
+        ]
+    },
+    {
+        "id": "af22c269fc69f502",
+        "type": "base64",
+        "z": "e567b4ceea25909e",
+        "name": "",
+        "action": "str",
+        "property": "payload",
+        "x": 190,
+        "y": 180,
+        "wires": [
+            [
+                "f2839a3495fbccce",
+                "ca4f21ea2134e3d3"
+            ]
+        ]
+    },
+    {
+        "id": "f2839a3495fbccce",
+        "type": "debug",
+        "z": "e567b4ceea25909e",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 480,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "ca4f21ea2134e3d3",
+        "type": "mqtt out",
+        "z": "e567b4ceea25909e",
+        "name": "",
+        "topic": "demo/electrolux/in",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "3c9fafa.7dd6a5",
+        "x": 450,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "0d32bc84c41f2e4c",
+        "type": "comment",
+        "z": "e567b4ceea25909e",
+        "name": "Generate Test Traffic (Appliance Simulation)",
+        "info": "",
+        "x": 270,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "305ac224fc73a031",
+        "type": "comment",
+        "z": "e567b4ceea25909e",
+        "name": "View processed output ",
+        "info": "",
+        "x": 200,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "f000b8bb5353e18e",
+        "type": "mqtt in",
+        "z": "e567b4ceea25909e",
+        "name": "",
+        "topic": "demo/electrolux/out",
+        "qos": "2",
+        "datatype": "json",
+        "broker": "3c9fafa.7dd6a5",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 170,
+        "y": 460,
+        "wires": [
+            [
+                "7c83b6a909b59844"
+            ]
+        ]
+    },
+    {
+        "id": "7c83b6a909b59844",
+        "type": "debug",
+        "z": "e567b4ceea25909e",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 460,
+        "y": 460,
         "wires": []
     }
 ]
