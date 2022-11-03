@@ -480,7 +480,7 @@
         "paytoqs": "ignore",
         "url": "https://hk-lke-ingress-api.akamaized.net/info",
         "tls": "",
-        "persist": false,
+        "persist": true,
         "proxy": "",
         "authType": "",
         "senderr": false,
