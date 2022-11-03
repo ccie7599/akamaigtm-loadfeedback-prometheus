@@ -1,16 +1,8 @@
 [
     {
-        "id": "06ced7b1ad4ad468",
+        "id": "b70042ad02b1be41",
         "type": "tab",
-        "label": "Processor",
-        "disabled": false,
-        "info": "",
-        "env": []
-    },
-    {
-        "id": "e567b4ceea25909e",
-        "type": "tab",
-        "label": "Generate Test Traffic and see output ",
+        "label": "http test",
         "disabled": false,
         "info": "",
         "env": []
@@ -411,199 +403,178 @@
         "save": true
     },
     {
-        "id": "6f90fb369a7ee8f0",
-        "type": "mqtt in",
-        "z": "06ced7b1ad4ad468",
-        "name": "",
-        "topic": "demo/electrolux/in",
-        "qos": "2",
-        "datatype": "auto",
-        "broker": "3c9fafa.7dd6a5",
-        "nl": false,
-        "rap": true,
-        "rh": 0,
-        "inputs": 0,
-        "x": 150,
-        "y": 100,
-        "wires": [
-            [
-                "7288f3d45c05bd2b",
-                "ab5725718a86f843"
-            ]
-        ]
+        "id": "a52aea342cfdf954",
+        "type": "tls-config",
+        "name": "MTLS",
+        "cert": "",
+        "key": "",
+        "ca": "",
+        "certname": "client1.pem",
+        "keyname": "client1.key",
+        "caname": "app.pem",
+        "servername": "mqtt.levelup.edge-cloud.io",
+        "verifyservercert": false,
+        "alpnprotocol": ""
     },
     {
-        "id": "7288f3d45c05bd2b",
-        "type": "debug",
-        "z": "06ced7b1ad4ad468",
+        "id": "156a9461a74957ad",
+        "type": "mqtt-broker",
         "name": "",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 490,
-        "y": 100,
-        "wires": []
+        "broker": "mqtt.levelup.edge-cloud.io",
+        "port": "8883",
+        "tls": "a52aea342cfdf954",
+        "clientid": "99cabb332942b5ab",
+        "autoConnect": true,
+        "usetls": true,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "sessionExpiry": ""
     },
     {
-        "id": "bda1e2a51507a38b",
-        "type": "mqtt out",
-        "z": "06ced7b1ad4ad468",
-        "name": "",
-        "topic": "demo/electrolux/out",
-        "qos": "",
-        "retain": "",
-        "respTopic": "",
-        "contentType": "",
-        "userProps": "",
-        "correl": "",
-        "expiry": "",
-        "broker": "3c9fafa.7dd6a5",
-        "x": 560,
-        "y": 280,
-        "wires": []
-    },
-    {
-        "id": "ab5725718a86f843",
-        "type": "base64",
-        "z": "06ced7b1ad4ad468",
-        "name": "",
-        "action": "b64",
-        "property": "payload",
-        "x": 260,
-        "y": 200,
-        "wires": [
-            [
-                "455e54b29df31d40",
-                "c15be454c0184ef2"
-            ]
-        ]
-    },
-    {
-        "id": "455e54b29df31d40",
-        "type": "debug",
-        "z": "06ced7b1ad4ad468",
-        "name": "",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 530,
-        "y": 160,
-        "wires": []
-    },
-    {
-        "id": "c15be454c0184ef2",
-        "type": "json",
-        "z": "06ced7b1ad4ad468",
-        "name": "",
-        "property": "payload",
-        "action": "",
-        "pretty": false,
-        "x": 400,
-        "y": 240,
-        "wires": [
-            [
-                "bda1e2a51507a38b",
-                "645fcc1fa89fbd84"
-            ]
-        ]
-    },
-    {
-        "id": "645fcc1fa89fbd84",
-        "type": "debug",
-        "z": "06ced7b1ad4ad468",
-        "name": "",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 570,
-        "y": 200,
-        "wires": []
-    },
-    {
-        "id": "2509492becaec517",
+        "id": "771277b80ff4693a",
         "type": "inject",
-        "z": "e567b4ceea25909e",
+        "z": "b70042ad02b1be41",
         "name": "",
         "props": [
             {
-                "p": "payload.status",
-                "v": "",
-                "vt": "date"
-            },
-            {
-                "p": "payload.type",
-                "v": "aircon",
-                "vt": "str"
-            },
-            {
-                "p": "payload.model",
-                "v": "PureAir300",
+                "p": "topic",
                 "vt": "str"
             }
         ],
-        "repeat": "",
+        "repeat": "1",
         "crontab": "",
-        "once": false,
+        "once": true,
         "onceDelay": 0.1,
         "topic": "",
-        "x": 150,
-        "y": 140,
+        "x": 130,
+        "y": 120,
         "wires": [
             [
-                "af22c269fc69f502"
+                "192c88684923a328"
             ]
         ]
     },
     {
-        "id": "af22c269fc69f502",
-        "type": "base64",
-        "z": "e567b4ceea25909e",
+        "id": "dc6572c67cd2eded",
+        "type": "http request",
+        "z": "b70042ad02b1be41",
         "name": "",
-        "action": "str",
-        "property": "payload",
-        "x": 190,
-        "y": 180,
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "https://hk-lke-ingress-api.akamaized.net/info",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "senderr": false,
+        "x": 330,
+        "y": 300,
         "wires": [
             [
-                "f2839a3495fbccce",
-                "ca4f21ea2134e3d3"
+                "7b62d1b1c4b3227e"
             ]
         ]
     },
     {
-        "id": "f2839a3495fbccce",
-        "type": "debug",
-        "z": "e567b4ceea25909e",
+        "id": "192c88684923a328",
+        "type": "change",
+        "z": "b70042ad02b1be41",
         "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 480,
+        "rules": [
+            {
+                "t": "set",
+                "p": "timestamp",
+                "pt": "msg",
+                "to": "",
+                "tot": "date"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 280,
         "y": 200,
-        "wires": []
+        "wires": [
+            [
+                "dc6572c67cd2eded"
+            ]
+        ]
     },
     {
-        "id": "ca4f21ea2134e3d3",
-        "type": "mqtt out",
-        "z": "e567b4ceea25909e",
+        "id": "7b62d1b1c4b3227e",
+        "type": "function",
+        "z": "b70042ad02b1be41",
         "name": "",
-        "topic": "demo/electrolux/in",
+        "func": "var now = Date.now();\nvar then = msg.timestamp;\nmsg.latency = now - then;\nreturn msg",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 240,
+        "y": 420,
+        "wires": [
+            [
+                "7b65a2b4c3d99f16"
+            ]
+        ]
+    },
+    {
+        "id": "7b65a2b4c3d99f16",
+        "type": "switch",
+        "z": "b70042ad02b1be41",
+        "name": "",
+        "property": "statusCode",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "200",
+                "vt": "num"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 270,
+        "y": 500,
+        "wires": [
+            [
+                "286c6682f009826d"
+            ],
+            [
+                "e77ed5559482628c"
+            ]
+        ]
+    },
+    {
+        "id": "235d1ca584429b9b",
+        "type": "mqtt out",
+        "z": "b70042ad02b1be41",
+        "name": "",
+        "topic": "",
         "qos": "",
         "retain": "",
         "respTopic": "",
@@ -612,65 +583,81 @@
         "correl": "",
         "expiry": "",
         "broker": "3c9fafa.7dd6a5",
-        "x": 450,
-        "y": 280,
+        "x": 650,
+        "y": 400,
         "wires": []
     },
     {
-        "id": "0d32bc84c41f2e4c",
-        "type": "comment",
-        "z": "e567b4ceea25909e",
-        "name": "Generate Test Traffic (Appliance Simulation)",
-        "info": "",
-        "x": 270,
-        "y": 100,
-        "wires": []
-    },
-    {
-        "id": "305ac224fc73a031",
-        "type": "comment",
-        "z": "e567b4ceea25909e",
-        "name": "View processed output ",
-        "info": "",
-        "x": 200,
-        "y": 380,
-        "wires": []
-    },
-    {
-        "id": "f000b8bb5353e18e",
-        "type": "mqtt in",
-        "z": "e567b4ceea25909e",
+        "id": "1c65e104a5604656",
+        "type": "template",
+        "z": "b70042ad02b1be41",
         "name": "",
-        "topic": "demo/electrolux/out",
-        "qos": "2",
-        "datatype": "json",
-        "broker": "3c9fafa.7dd6a5",
-        "nl": false,
-        "rap": true,
-        "rh": 0,
-        "inputs": 0,
-        "x": 170,
-        "y": 460,
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "{\"Latency\":{{latency}},\"statuscode\":{{statusCode}}}",
+        "output": "json",
+        "x": 640,
+        "y": 500,
         "wires": [
             [
-                "7c83b6a909b59844"
+                "235d1ca584429b9b"
             ]
         ]
     },
     {
-        "id": "7c83b6a909b59844",
-        "type": "debug",
-        "z": "e567b4ceea25909e",
+        "id": "286c6682f009826d",
+        "type": "change",
+        "z": "b70042ad02b1be41",
         "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "demo/peloton/success",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
         "x": 460,
         "y": 460,
-        "wires": []
+        "wires": [
+            [
+                "1c65e104a5604656"
+            ]
+        ]
+    },
+    {
+        "id": "e77ed5559482628c",
+        "type": "change",
+        "z": "b70042ad02b1be41",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "demo/peloton/failure",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 440,
+        "y": 520,
+        "wires": [
+            [
+                "1c65e104a5604656"
+            ]
+        ]
     }
 ]
