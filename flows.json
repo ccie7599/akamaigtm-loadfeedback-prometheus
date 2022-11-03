@@ -457,7 +457,7 @@
                 "vt": "str"
             }
         ],
-        "repeat": "1",
+        "repeat": ".333333",
         "crontab": "",
         "once": true,
         "onceDelay": 0.1,
@@ -659,5 +659,65 @@
                 "1c65e104a5604656"
             ]
         ]
+    },
+    {
+        "id": "35b0749b97a4d6d6",
+        "type": "mqtt in",
+        "z": "b70042ad02b1be41",
+        "d": true,
+        "name": "",
+        "topic": "demo/peloton/success",
+        "qos": "2",
+        "datatype": "json",
+        "broker": "3c9fafa.7dd6a5",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 360,
+        "y": 60,
+        "wires": [
+            [
+                "525a8456b4f38f03"
+            ]
+        ]
+    },
+    {
+        "id": "204028f2de230e83",
+        "type": "mqtt in",
+        "z": "b70042ad02b1be41",
+        "d": true,
+        "name": "",
+        "topic": "demo/peloton/failure",
+        "qos": "2",
+        "datatype": "json",
+        "broker": "3c9fafa.7dd6a5",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 350,
+        "y": 100,
+        "wires": [
+            [
+                "525a8456b4f38f03"
+            ]
+        ]
+    },
+    {
+        "id": "525a8456b4f38f03",
+        "type": "debug",
+        "z": "b70042ad02b1be41",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 640,
+        "y": 120,
+        "wires": []
     }
 ]
