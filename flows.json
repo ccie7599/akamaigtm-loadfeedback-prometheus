@@ -534,38 +534,7 @@
         "y": 420,
         "wires": [
             [
-                "7b65a2b4c3d99f16"
-            ]
-        ]
-    },
-    {
-        "id": "7b65a2b4c3d99f16",
-        "type": "switch",
-        "z": "b70042ad02b1be41",
-        "name": "",
-        "property": "statusCode",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "eq",
-                "v": "200",
-                "vt": "num"
-            },
-            {
-                "t": "else"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 2,
-        "x": 270,
-        "y": 500,
-        "wires": [
-            [
                 "286c6682f009826d"
-            ],
-            [
-                "e77ed5559482628c"
             ]
         ]
     },
@@ -583,8 +552,8 @@
         "correl": "",
         "expiry": "",
         "broker": "3c9fafa.7dd6a5",
-        "x": 650,
-        "y": 400,
+        "x": 670,
+        "y": 300,
         "wires": []
     },
     {
@@ -602,7 +571,7 @@
         "y": 500,
         "wires": [
             [
-                "235d1ca584429b9b"
+                "fd8cf4e2bdf20cf1"
             ]
         ]
     },
@@ -616,34 +585,7 @@
                 "t": "set",
                 "p": "topic",
                 "pt": "msg",
-                "to": "demo/peloton/success",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 460,
-        "y": 460,
-        "wires": [
-            [
-                "1c65e104a5604656"
-            ]
-        ]
-    },
-    {
-        "id": "e77ed5559482628c",
-        "type": "change",
-        "z": "b70042ad02b1be41",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "topic",
-                "pt": "msg",
-                "to": "demo/peloton/failure",
+                "to": "demo/peloton/result",
                 "tot": "str"
             }
         ],
@@ -653,32 +595,10 @@
         "to": "",
         "reg": false,
         "x": 440,
-        "y": 520,
+        "y": 480,
         "wires": [
             [
                 "1c65e104a5604656"
-            ]
-        ]
-    },
-    {
-        "id": "35b0749b97a4d6d6",
-        "type": "mqtt in",
-        "z": "b70042ad02b1be41",
-        "d": true,
-        "name": "",
-        "topic": "demo/peloton/success",
-        "qos": "2",
-        "datatype": "json",
-        "broker": "3c9fafa.7dd6a5",
-        "nl": false,
-        "rap": true,
-        "rh": 0,
-        "inputs": 0,
-        "x": 360,
-        "y": 60,
-        "wires": [
-            [
-                "525a8456b4f38f03"
             ]
         ]
     },
@@ -688,7 +608,7 @@
         "z": "b70042ad02b1be41",
         "d": true,
         "name": "",
-        "topic": "demo/peloton/failure",
+        "topic": "demo/peloton/result",
         "qos": "2",
         "datatype": "json",
         "broker": "3c9fafa.7dd6a5",
@@ -709,7 +629,7 @@
         "type": "debug",
         "z": "b70042ad02b1be41",
         "name": "",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -718,6 +638,51 @@
         "statusType": "auto",
         "x": 640,
         "y": 120,
+        "wires": []
+    },
+    {
+        "id": "fd8cf4e2bdf20cf1",
+        "type": "join",
+        "z": "b70042ad02b1be41",
+        "name": "",
+        "mode": "custom",
+        "build": "array",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": false,
+        "timeout": "30",
+        "count": "",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 560,
+        "y": 380,
+        "wires": [
+            [
+                "235d1ca584429b9b",
+                "36b187097bf63a08"
+            ]
+        ]
+    },
+    {
+        "id": "36b187097bf63a08",
+        "type": "debug",
+        "z": "b70042ad02b1be41",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 630,
+        "y": 220,
         "wires": []
     }
 ]
