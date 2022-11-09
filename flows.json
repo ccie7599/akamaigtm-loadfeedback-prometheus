@@ -882,7 +882,7 @@
         "rules": [
             {
                 "t": "set",
-                "p": "headers[\"req_start_time\"]",
+                "p": "headers['req_start_time']",
                 "pt": "msg",
                 "to": "",
                 "tot": "date"
@@ -893,7 +893,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 330,
+        "x": 200,
         "y": 260,
         "wires": [
             [
