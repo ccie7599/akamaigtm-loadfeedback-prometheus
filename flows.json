@@ -515,7 +515,7 @@
         "y": 200,
         "wires": [
             [
-                "dc6572c67cd2eded"
+                "9299b52bea9895ce"
             ]
         ]
     },
@@ -566,7 +566,7 @@
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "{\"latency\":{{latency}},\"statuscode\":{{statusCode}},\"backendtime\":{{backend}}}",
+        "template": "{\"latency\":{{latency}},\"statuscode\":{{statusCode}},\"backendtime\":{{backend}},\"akstarttime\":{{akstart}}}",
         "output": "json",
         "x": 660,
         "y": 540,
@@ -595,6 +595,13 @@
                 "p": "backend",
                 "pt": "msg",
                 "to": "headers[\"x-backend-time-ms\"]",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "akstart",
+                "pt": "msg",
+                "to": "headers[\"x-ak_start_time-s\"]",
                 "tot": "msg"
             }
         ],
@@ -685,7 +692,7 @@
         "type": "debug",
         "z": "b70042ad02b1be41",
         "name": "",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -765,7 +772,7 @@
         "type": "debug",
         "z": "b70042ad02b1be41",
         "name": "",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -853,17 +860,44 @@
         "rate": "1",
         "nbRateUnits": "1",
         "rateUnits": "second",
-        "randomFirst": "1",
+        "randomFirst": "20",
         "randomLast": "60",
         "randomUnits": "seconds",
         "drop": false,
         "allowrate": false,
         "outputs": 1,
-        "x": 720,
+        "x": 780,
         "y": 340,
         "wires": [
             [
                 "235d1ca584429b9b"
+            ]
+        ]
+    },
+    {
+        "id": "9299b52bea9895ce",
+        "type": "change",
+        "z": "b70042ad02b1be41",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "headers[\"req_start_time\"]",
+                "pt": "msg",
+                "to": "",
+                "tot": "date"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 330,
+        "y": 260,
+        "wires": [
+            [
+                "dc6572c67cd2eded"
             ]
         ]
     }
