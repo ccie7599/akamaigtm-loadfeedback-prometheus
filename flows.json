@@ -447,6 +447,20 @@
         "sessionExpiry": ""
     },
     {
+        "id": "ca6e3cb9d17f6f26",
+        "type": "tls-config",
+        "name": "",
+        "cert": "",
+        "key": "",
+        "ca": "",
+        "certname": "",
+        "keyname": "",
+        "caname": "",
+        "servername": "",
+        "verifyservercert": false,
+        "alpnprotocol": ""
+    },
+    {
         "id": "771277b80ff4693a",
         "type": "inject",
         "z": "b70042ad02b1be41",
@@ -462,8 +476,8 @@
         "once": true,
         "onceDelay": 0.1,
         "topic": "",
-        "x": 110,
-        "y": 100,
+        "x": 230,
+        "y": 40,
         "wires": [
             [
                 "192c88684923a328"
@@ -478,8 +492,8 @@
         "method": "GET",
         "ret": "txt",
         "paytoqs": "ignore",
-        "url": "https://hk-lke-ingress-api.akamaized.net/info",
-        "tls": "",
+        "url": "https://newark.edge-cloud.io.akadns.net/info",
+        "tls": "ca6e3cb9d17f6f26",
         "persist": true,
         "proxy": "",
         "authType": "",
@@ -566,7 +580,7 @@
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "{\"latency\":{{latency}},\"statuscode\":{{statusCode}},\"backendtime\":{{backend}},\"akstarttime\":{{akstart}}}",
+        "template": "{\"latency\":{{latency}}}",
         "output": "json",
         "x": 660,
         "y": 540,
@@ -595,13 +609,6 @@
                 "p": "backend",
                 "pt": "msg",
                 "to": "headers[\"x-backend-time-ms\"]",
-                "tot": "msg"
-            },
-            {
-                "t": "set",
-                "p": "akstart",
-                "pt": "msg",
-                "to": "headers[\"x-ak_start_time-s\"]",
                 "tot": "msg"
             }
         ],
@@ -647,7 +654,7 @@
         "type": "debug",
         "z": "b70042ad02b1be41",
         "name": "",
-        "active": false,
+        "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
