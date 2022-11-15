@@ -492,7 +492,7 @@
         "method": "GET",
         "ret": "txt",
         "paytoqs": "ignore",
-        "url": "http://dallas.edge-cloud.io.akadns.net/info",
+        "url": "http://newark.edge-cloud.io.akadns.net/info",
         "tls": "",
         "persist": true,
         "proxy": "",
