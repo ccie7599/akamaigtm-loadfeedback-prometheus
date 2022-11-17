@@ -492,7 +492,7 @@
         "method": "GET",
         "ret": "txt",
         "paytoqs": "ignore",
-        "url": "http://newark.edge-cloud.io.akadns.net/info",
+        "url": "http://hk-lke-ingress-api.akamaized.net/info",
         "tls": "",
         "persist": true,
         "proxy": "",
