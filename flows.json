@@ -1,517 +1,101 @@
 [
     {
-        "id": "b70042ad02b1be41",
+        "id": "f6f2187d.f17ca8",
         "type": "tab",
-        "label": "http test",
+        "label": "Flow 1",
         "disabled": false,
-        "info": "",
-        "env": []
+        "info": ""
     },
     {
-        "id": "3c9fafa.7dd6a5",
-        "type": "mqtt-broker",
-        "name": "",
-        "broker": "demo.mqtttest.com",
-        "port": "8883",
-        "tls": "2d748829.2503d8",
-        "clientid": "$(CLIENTID)",
-        "autoConnect": true,
-        "usetls": true,
-        "compatmode": false,
-        "protocolVersion": "4",
-        "keepalive": "60",
-        "cleansession": false,
-        "birthTopic": "demo/phonepe/clientstate/connected",
-        "birthQos": "0",
-        "birthRetain": "false",
-        "birthPayload": "$(CLIENTID)",
-        "birthMsg": {},
-        "closeTopic": "demo/phonepe/clientstate/closed",
-        "closeQos": "0",
-        "closeRetain": "false",
-        "closePayload": "$(CLIENTID)",
-        "closeMsg": {},
-        "willTopic": "demo/phonepe/clientstate/lastwill",
-        "willQos": "0",
-        "willRetain": "false",
-        "willPayload": "$(CLIENTID)",
-        "willMsg": {},
-        "sessionExpiry": ""
+        "id": "8f456ebab12234f7",
+        "type": "http request",
+        "z": "f6f2187d.f17ca8",
+        "name": "Query Prometheus for Current CPU Utliization (Load)",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "http://prometheus-server.default.svc.cluster.local/api/v1/query?query=sum(container_cpu_load_average_10s)",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 260,
+        "y": 340,
+        "wires": [
+            [
+                "59a44ca6124e67fc"
+            ]
+        ]
     },
     {
-        "id": "2d748829.2503d8",
-        "type": "tls-config",
-        "name": "demo.mqtttest.com",
-        "cert": "",
-        "key": "",
-        "ca": "",
-        "certname": "",
-        "keyname": "",
-        "caname": "",
-        "servername": "demo.mqtttest.com",
-        "verifyservercert": false,
-        "alpnprotocol": ""
-    },
-    {
-        "id": "cb978cdcbb341010",
-        "type": "ui_base",
-        "theme": {
-            "name": "theme-light",
-            "lightTheme": {
-                "default": "#0094CE",
-                "baseColor": "#0094CE",
-                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
-                "edited": true,
-                "reset": false
-            },
-            "darkTheme": {
-                "default": "#097479",
-                "baseColor": "#097479",
-                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
-                "edited": false
-            },
-            "customTheme": {
-                "name": "Untitled Theme 1",
-                "default": "#4B7930",
-                "baseColor": "#4B7930",
-                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
-            },
-            "themeState": {
-                "base-color": {
-                    "default": "#0094CE",
-                    "value": "#0094CE",
-                    "edited": false
-                },
-                "page-titlebar-backgroundColor": {
-                    "value": "#0094CE",
-                    "edited": false
-                },
-                "page-backgroundColor": {
-                    "value": "#fafafa",
-                    "edited": false
-                },
-                "page-sidebar-backgroundColor": {
-                    "value": "#ffffff",
-                    "edited": false
-                },
-                "group-textColor": {
-                    "value": "#1bbfff",
-                    "edited": false
-                },
-                "group-borderColor": {
-                    "value": "#ffffff",
-                    "edited": false
-                },
-                "group-backgroundColor": {
-                    "value": "#ffffff",
-                    "edited": false
-                },
-                "widget-textColor": {
-                    "value": "#111111",
-                    "edited": false
-                },
-                "widget-backgroundColor": {
-                    "value": "#0094ce",
-                    "edited": false
-                },
-                "widget-borderColor": {
-                    "value": "#ffffff",
-                    "edited": false
-                },
-                "base-font": {
-                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
-                }
-            },
-            "angularTheme": {
-                "primary": "indigo",
-                "accents": "blue",
-                "warn": "red",
-                "background": "grey",
-                "palette": "light"
-            }
-        },
-        "site": {
-            "name": "Node-RED Dashboard",
-            "hideToolbar": "false",
-            "allowSwipe": "false",
-            "lockMenu": "false",
-            "allowTempTheme": "true",
-            "dateFormat": "DD/MM/YYYY",
-            "sizes": {
-                "sx": 48,
-                "sy": 48,
-                "gx": 6,
-                "gy": 6,
-                "cx": 6,
-                "cy": 6,
-                "px": 0,
-                "py": 0
-            }
-        }
-    },
-    {
-        "id": "fde17ba4e8f07cec",
-        "type": "gauth",
-        "name": "node-red@fluted-sentry-260301.iam.gserviceaccount.com"
-    },
-    {
-        "id": "a4089a2e.e45d68",
-        "type": "tls-config",
-        "name": "demo-na.mqtttest.com",
-        "cert": "",
-        "key": "",
-        "ca": "",
-        "certname": "",
-        "keyname": "",
-        "caname": "",
-        "servername": "demo-na.mqtttest.com",
-        "verifyservercert": true
-    },
-    {
-        "id": "26f4d1165fd20bba",
-        "type": "ui_group",
-        "name": "Linode Workshop- Authorization API",
-        "tab": "ca67bd7dfaad900f",
-        "order": 1,
-        "disp": true,
-        "width": "20",
-        "collapse": true,
-        "className": ""
-    },
-    {
-        "id": "ca67bd7dfaad900f",
-        "type": "ui_tab",
-        "name": "Auth API ",
-        "icon": "dashboard",
-        "disabled": false,
-        "hidden": false
-    },
-    {
-        "id": "80bef3743ca28f1f",
-        "type": "ui_group",
-        "name": "Security Masters Demo",
-        "tab": "d5759354530745c7",
-        "order": 1,
-        "disp": true,
-        "width": "20",
-        "collapse": false
-    },
-    {
-        "id": "d5759354530745c7",
-        "type": "ui_tab",
-        "name": "Home",
-        "icon": "dashboard",
-        "disabled": false,
-        "hidden": false
-    },
-    {
-        "id": "54e197d8.7f7fe8",
-        "type": "ui_tab",
-        "name": "Home",
-        "icon": "dashboard",
-        "order": 1,
-        "disabled": false,
-        "hidden": false
-    },
-    {
-        "id": "81fc7724bb1fd349",
-        "type": "tls-config",
-        "name": "",
-        "cert": "",
-        "key": "",
-        "ca": "",
-        "certname": "",
-        "keyname": "",
-        "caname": "",
-        "servername": "",
-        "verifyservercert": false,
-        "alpnprotocol": ""
-    },
-    {
-        "id": "d328eaed2d818008",
-        "type": "tls-config",
-        "name": "",
-        "cert": "",
-        "key": "",
-        "ca": "",
-        "certname": "",
-        "keyname": "",
-        "caname": "",
-        "servername": "api.ipify.org",
-        "verifyservercert": false
-    },
-    {
-        "id": "2f351a87b59f115a",
-        "type": "tls-config",
-        "name": "demo-na.mqtttest.com",
-        "cert": "",
-        "key": "",
-        "ca": "",
-        "certname": "",
-        "keyname": "",
-        "caname": "",
-        "servername": "demo-na.mqtttest.com",
-        "verifyservercert": false
-    },
-    {
-        "id": "e4eabf1d7cbac13c",
-        "type": "gauth"
-    },
-    {
-        "id": "7ff7b2e0594f946c",
-        "type": "gauth"
-    },
-    {
-        "id": "86a017a36036cd51",
-        "type": "gauth"
-    },
-    {
-        "id": "ca6ef322ad7c2325",
-        "type": "ui_group",
-        "name": "Security Masters Demo",
-        "tab": "",
-        "order": 1,
-        "disp": true,
-        "width": "20",
-        "collapse": false,
-        "className": ""
-    },
-    {
-        "id": "38f957767413f424",
-        "type": "ui_group",
-        "name": "Latency",
-        "tab": "",
-        "order": 1,
-        "disp": false,
-        "width": "18",
-        "collapse": false
-    },
-    {
-        "id": "85ffacbf904db61d",
-        "type": "ui_group",
-        "name": "Security Masters Demo",
-        "tab": "5bbbfc930baf97d5",
-        "order": 1,
-        "disp": true,
-        "width": "20",
-        "collapse": false
-    },
-    {
-        "id": "5bbbfc930baf97d5",
-        "type": "ui_tab",
-        "name": "Home",
-        "icon": "dashboard",
-        "disabled": false,
-        "hidden": false
-    },
-    {
-        "id": "3b9b4975b762caaf",
-        "type": "mqtt-broker",
-        "name": "",
-        "broker": "demo.mqtttest.com",
-        "port": "8883",
-        "tls": "353bb6547d30ac52",
-        "clientid": "otademo",
-        "usetls": true,
-        "compatmode": false,
-        "keepalive": "60",
-        "cleansession": true,
-        "birthTopic": "",
-        "birthQos": "0",
-        "birthPayload": "",
-        "closeTopic": "",
-        "closeQos": "0",
-        "closePayload": "",
-        "willTopic": "",
-        "willQos": "0",
-        "willPayload": ""
-    },
-    {
-        "id": "b039f0e61c731c39",
-        "type": "ui_group",
-        "name": "Client State Table",
-        "tab": "",
-        "order": 2,
-        "disp": true,
-        "width": "6",
-        "collapse": false
-    },
-    {
-        "id": "353bb6547d30ac52",
-        "type": "tls-config",
-        "name": "demo.mqtttest.com",
-        "cert": "",
-        "key": "",
-        "ca": "",
-        "certname": "",
-        "keyname": "",
-        "caname": "",
-        "servername": "demo.mqtttest.com",
-        "verifyservercert": true
-    },
-    {
-        "id": "7c2b4036fb692de4",
-        "type": "gauth",
-        "name": "hay-ocr@hay-ocr.iam.gserviceaccount.com"
-    },
-    {
-        "id": "02d8fbe38790357d",
-        "type": "ui_group",
-        "name": "Client State Table",
-        "tab": "",
-        "order": 2,
-        "disp": true,
-        "width": "6",
-        "collapse": false
-    },
-    {
-        "id": "13706161fd4d8ae4",
-        "type": "ui_group",
-        "name": "Worldmap",
-        "tab": "",
-        "order": 4,
-        "disp": true,
-        "width": "20",
-        "collapse": false,
-        "className": ""
-    },
-    {
-        "id": "63e3198df54cd292",
-        "type": "ui_tab",
-        "name": "Control API ",
-        "icon": "dashboard",
-        "order": 5,
-        "disabled": false,
-        "hidden": false
-    },
-    {
-        "id": "d75bbc086071eb9d",
-        "type": "ui_group",
-        "name": "Control API",
-        "tab": "63e3198df54cd292",
-        "order": 1,
-        "disp": true,
-        "width": "13",
-        "collapse": false,
-        "className": ""
-    },
-    {
-        "id": "7fe0890455aa4d6f",
-        "type": "json-db-collection",
-        "name": "",
-        "collection": "test",
-        "save": true
-    },
-    {
-        "id": "a52aea342cfdf954",
-        "type": "tls-config",
-        "name": "MTLS",
-        "cert": "",
-        "key": "",
-        "ca": "",
-        "certname": "client1.pem",
-        "keyname": "client1.key",
-        "caname": "app.pem",
-        "servername": "mqtt.levelup.edge-cloud.io",
-        "verifyservercert": false,
-        "alpnprotocol": ""
-    },
-    {
-        "id": "156a9461a74957ad",
-        "type": "mqtt-broker",
-        "name": "",
-        "broker": "mqtt.levelup.edge-cloud.io",
-        "port": "8883",
-        "tls": "a52aea342cfdf954",
-        "clientid": "99cabb332942b5ab",
-        "autoConnect": true,
-        "usetls": true,
-        "protocolVersion": "4",
-        "keepalive": "60",
-        "cleansession": true,
-        "birthTopic": "",
-        "birthQos": "0",
-        "birthRetain": "false",
-        "birthPayload": "",
-        "birthMsg": {},
-        "closeTopic": "",
-        "closeQos": "0",
-        "closeRetain": "false",
-        "closePayload": "",
-        "closeMsg": {},
-        "willTopic": "",
-        "willQos": "0",
-        "willRetain": "false",
-        "willPayload": "",
-        "willMsg": {},
-        "sessionExpiry": ""
-    },
-    {
-        "id": "ca6e3cb9d17f6f26",
-        "type": "tls-config",
-        "name": "",
-        "cert": "",
-        "key": "",
-        "ca": "",
-        "certname": "",
-        "keyname": "",
-        "caname": "",
-        "servername": "",
-        "verifyservercert": false,
-        "alpnprotocol": ""
-    },
-    {
-        "id": "771277b80ff4693a",
+        "id": "68d73c089fecb368",
         "type": "inject",
-        "z": "b70042ad02b1be41",
-        "name": "",
+        "z": "f6f2187d.f17ca8",
+        "name": "Update Load Object every 5 seconds",
         "props": [
+            {
+                "p": "payload"
+            },
             {
                 "p": "topic",
                 "vt": "str"
             }
         ],
-        "repeat": ".1",
+        "repeat": "5",
         "crontab": "",
-        "once": true,
+        "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "x": 230,
-        "y": 40,
+        "payload": "",
+        "payloadType": "date",
+        "x": 210,
+        "y": 180,
         "wires": [
             [
-                "192c88684923a328"
+                "ac35b5c60ebb482e"
             ]
         ]
     },
     {
-        "id": "dc6572c67cd2eded",
+        "id": "ac35b5c60ebb482e",
         "type": "http request",
-        "z": "b70042ad02b1be41",
-        "name": "",
+        "z": "f6f2187d.f17ca8",
+        "name": "Query Prometheus for # of CPUs in cluster (Capacity)",
         "method": "GET",
-        "ret": "txt",
+        "ret": "obj",
         "paytoqs": "ignore",
-        "url": "http://hk-lke-ingress-api.akamaized.net/info",
+        "url": "http://prometheus-server.default.svc.cluster.local/api/v1/query?query=sum(machine_cpu_cores)*100",
         "tls": "",
-        "persist": true,
+        "persist": false,
         "proxy": "",
+        "insecureHTTPParser": false,
         "authType": "",
         "senderr": false,
-        "x": 250,
-        "y": 320,
+        "headers": [],
+        "x": 260,
+        "y": 220,
         "wires": [
             [
-                "7b62d1b1c4b3227e"
+                "3fb1d1b4ac1e2f06"
             ]
         ]
     },
     {
-        "id": "192c88684923a328",
+        "id": "59a44ca6124e67fc",
         "type": "change",
-        "z": "b70042ad02b1be41",
-        "name": "",
+        "z": "f6f2187d.f17ca8",
+        "name": "Set Load and Timestamp Variables",
         "rules": [
+            {
+                "t": "set",
+                "p": "load",
+                "pt": "msg",
+                "to": "payload.data.result[0].value[1]",
+                "tot": "msg"
+            },
             {
                 "t": "set",
                 "p": "timestamp",
@@ -525,90 +109,25 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 250,
-        "y": 200,
+        "x": 200,
+        "y": 380,
         "wires": [
             [
-                "9299b52bea9895ce"
+                "414224bedb4b72a6"
             ]
         ]
     },
     {
-        "id": "7b62d1b1c4b3227e",
-        "type": "function",
-        "z": "b70042ad02b1be41",
-        "name": "",
-        "func": "var now = Date.now();\nvar then = msg.timestamp;\nmsg.latency = now - then;\nreturn msg",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 240,
-        "y": 420,
-        "wires": [
-            [
-                "286c6682f009826d",
-                "e87e434811a19b77"
-            ]
-        ]
-    },
-    {
-        "id": "235d1ca584429b9b",
-        "type": "mqtt out",
-        "z": "b70042ad02b1be41",
-        "name": "",
-        "topic": "",
-        "qos": "1",
-        "retain": "",
-        "respTopic": "",
-        "contentType": "",
-        "userProps": "",
-        "correl": "",
-        "expiry": "",
-        "broker": "3c9fafa.7dd6a5",
-        "x": 830,
-        "y": 260,
-        "wires": []
-    },
-    {
-        "id": "1c65e104a5604656",
-        "type": "template",
-        "z": "b70042ad02b1be41",
-        "name": "",
-        "field": "payload",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "{\"latency\":{{latency}}}",
-        "output": "json",
-        "x": 660,
-        "y": 540,
-        "wires": [
-            [
-                "fd8cf4e2bdf20cf1",
-                "c482328559eac7f0"
-            ]
-        ]
-    },
-    {
-        "id": "286c6682f009826d",
+        "id": "3fb9773c00b9e504",
         "type": "change",
-        "z": "b70042ad02b1be41",
-        "name": "",
+        "z": "f6f2187d.f17ca8",
+        "name": "Set Capacity Variable",
         "rules": [
             {
                 "t": "set",
-                "p": "topic",
+                "p": "capacity",
                 "pt": "msg",
-                "to": "demo/peloton/result",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "backend",
-                "pt": "msg",
-                "to": "headers[\"x-backend-time-ms\"]",
+                "to": "payload.data.result[0].value[1]",
                 "tot": "msg"
             }
         ],
@@ -617,295 +136,150 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 440,
-        "y": 480,
+        "x": 160,
+        "y": 300,
         "wires": [
             [
-                "1c65e104a5604656",
-                "4d3e2c422bfe4f4a"
+                "8f456ebab12234f7"
             ]
         ]
     },
     {
-        "id": "204028f2de230e83",
-        "type": "mqtt in",
-        "z": "b70042ad02b1be41",
-        "d": true,
-        "name": "",
-        "topic": "demo/peloton/result",
-        "qos": "2",
-        "datatype": "json",
-        "broker": "3c9fafa.7dd6a5",
-        "nl": false,
-        "rap": true,
-        "rh": 0,
-        "inputs": 0,
-        "x": 350,
-        "y": 100,
+        "id": "3fb1d1b4ac1e2f06",
+        "type": "function",
+        "z": "f6f2187d.f17ca8",
+        "name": "Determine Target by Capacity x desired target %",
+        "func": "msg.target = Number(msg.payload.data.result[0].value[1]);  \nmsg.target = msg.target*.75; \nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 250,
+        "y": 260,
         "wires": [
             [
-                "525a8456b4f38f03",
-                "f63339f95ee59603"
+                "3fb9773c00b9e504"
             ]
         ]
     },
     {
-        "id": "525a8456b4f38f03",
-        "type": "debug",
-        "z": "b70042ad02b1be41",
-        "name": "",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 550,
-        "y": 160,
-        "wires": []
-    },
-    {
-        "id": "fd8cf4e2bdf20cf1",
-        "type": "join",
-        "z": "b70042ad02b1be41",
-        "name": "",
-        "mode": "custom",
-        "build": "array",
-        "property": "payload",
-        "propertyType": "msg",
-        "key": "topic",
-        "joiner": "\\n",
-        "joinerType": "str",
-        "accumulate": false,
-        "timeout": "20",
-        "count": "",
-        "reduceRight": false,
-        "reduceExp": "",
-        "reduceInit": "",
-        "reduceInitType": "num",
-        "reduceFixup": "",
-        "x": 560,
-        "y": 380,
+        "id": "23e7710e960f86b3",
+        "type": "template",
+        "z": "f6f2187d.f17ca8",
+        "name": "Build XML LoadObject ",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "<load-object domain=\"edge-cloud.io.akadns.net\"\n          version=\"1\"\n          xmlns=\"http://www.akamai.com/Traffic Management/load-balancing\"\n          timestamp=\"{{timestamp}}\"\n          tag=\"12345\" >\n      <datacenter datacenterId=\"1\">\n          <resource name=\"http_load\">\n              <current-load>\n                  {{load}}\n              </current-load>\n              <target-load>\n                  {{target}}\n              </target-load>\n              <capacity>\n                  {{capacity}}\n              </capacity>\n          </resource>\n       </datacenter>\n      </load-object>",
+        "output": "str",
+        "x": 160,
+        "y": 460,
         "wires": [
             [
-                "36b187097bf63a08",
-                "e4fb643ca3f279ba"
+                "65cbf996ccb66aa2"
             ]
         ]
     },
     {
-        "id": "36b187097bf63a08",
-        "type": "debug",
-        "z": "b70042ad02b1be41",
+        "id": "414224bedb4b72a6",
+        "type": "moment",
+        "z": "f6f2187d.f17ca8",
         "name": "",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 630,
-        "y": 220,
-        "wires": []
+        "topic": "",
+        "input": "timestamp",
+        "inputType": "msg",
+        "inTz": "Africa/Abidjan",
+        "adjAmount": 0,
+        "adjType": "days",
+        "adjDir": "add",
+        "format": "",
+        "locale": "en-US",
+        "output": "timestamp",
+        "outputType": "msg",
+        "outTz": "Africa/Abidjan",
+        "x": 160,
+        "y": 420,
+        "wires": [
+            [
+                "23e7710e960f86b3"
+            ]
+        ]
     },
     {
-        "id": "f63339f95ee59603",
+        "id": "65cbf996ccb66aa2",
         "type": "file",
-        "z": "b70042ad02b1be41",
-        "name": "",
-        "filename": "/data/result",
-        "appendNewline": false,
+        "z": "f6f2187d.f17ca8",
+        "name": "Write load object to disk ",
+        "filename": "/data/loadobject",
+        "filenameType": "str",
+        "appendNewline": true,
         "createDir": false,
-        "overwriteFile": "false",
+        "overwriteFile": "true",
         "encoding": "none",
-        "x": 500,
-        "y": 40,
+        "x": 170,
+        "y": 500,
         "wires": [
             []
         ]
     },
     {
-        "id": "914275e7e9ef4c34",
+        "id": "ba8b0809285c1e56",
+        "type": "http in",
+        "z": "f6f2187d.f17ca8",
+        "name": "HTTP endpoint /loadobject ",
+        "url": "/loadobject",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 170,
+        "y": 580,
+        "wires": [
+            [
+                "1b0b901514eab1fd"
+            ]
+        ]
+    },
+    {
+        "id": "1b0b901514eab1fd",
         "type": "file in",
-        "z": "b70042ad02b1be41",
-        "name": "",
-        "filename": "/data/result1",
+        "z": "f6f2187d.f17ca8",
+        "name": "Read from loadobject file ",
+        "filename": "/data/loadobject",
+        "filenameType": "str",
         "format": "utf8",
         "chunk": false,
         "sendError": false,
         "encoding": "none",
         "allProps": false,
-        "x": 200,
-        "y": 640,
+        "x": 170,
+        "y": 620,
         "wires": [
             [
-                "e425d767436aa045"
+                "878335ddf5f5530a"
             ]
         ]
     },
     {
-        "id": "3b6847512909de88",
-        "type": "inject",
-        "z": "b70042ad02b1be41",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 90,
-        "y": 540,
-        "wires": [
-            [
-                "914275e7e9ef4c34"
-            ]
-        ]
-    },
-    {
-        "id": "8cd98f34b20f01ab",
-        "type": "debug",
-        "z": "b70042ad02b1be41",
-        "name": "",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 530,
-        "y": 640,
+        "id": "878335ddf5f5530a",
+        "type": "http response",
+        "z": "f6f2187d.f17ca8",
+        "name": "Serve loadobject ",
+        "statusCode": "",
+        "headers": {},
+        "x": 150,
+        "y": 660,
         "wires": []
     },
     {
-        "id": "e425d767436aa045",
-        "type": "json",
-        "z": "b70042ad02b1be41",
-        "name": "",
-        "property": "payload",
-        "action": "",
-        "pretty": false,
-        "x": 380,
-        "y": 600,
-        "wires": [
-            [
-                "8cd98f34b20f01ab"
-            ]
-        ]
-    },
-    {
-        "id": "c482328559eac7f0",
-        "type": "debug",
-        "z": "b70042ad02b1be41",
-        "name": "",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 470,
-        "y": 300,
+        "id": "5470668fbe08ef7c",
+        "type": "comment",
+        "z": "f6f2187d.f17ca8",
+        "name": "Instructions for per-env configuration-\\n  1. Within \"Determine Target by Capacity x desired target %\" node, enter the target percentage in the function (i.e. 75% target would mean multiplying capacity by 0.75) \\n 2. Within \"Build XML LoadObject\" node, change the domain, data center ID, and resource name values per the specific GTM configuration.",
+        "info": "Instructions for per-env configuration-\n\n1. Within \"Determine Target by Capacity x desired target %\" node, enter the target percentage in the function (i.e. 75% target would mean multiplying capacity by 0.75)\n\n2. Within \"Build XML LoadObject\" node, change the domain, data center ID, and resource name values per the specific GTM configuration.",
+        "x": 610,
+        "y": 80,
         "wires": []
-    },
-    {
-        "id": "e87e434811a19b77",
-        "type": "debug",
-        "z": "b70042ad02b1be41",
-        "name": "",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 390,
-        "y": 360,
-        "wires": []
-    },
-    {
-        "id": "4d3e2c422bfe4f4a",
-        "type": "debug",
-        "z": "b70042ad02b1be41",
-        "name": "",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 690,
-        "y": 400,
-        "wires": []
-    },
-    {
-        "id": "e4fb643ca3f279ba",
-        "type": "delay",
-        "z": "b70042ad02b1be41",
-        "name": "",
-        "pauseType": "random",
-        "timeout": "5",
-        "timeoutUnits": "seconds",
-        "rate": "1",
-        "nbRateUnits": "1",
-        "rateUnits": "second",
-        "randomFirst": "20",
-        "randomLast": "60",
-        "randomUnits": "seconds",
-        "drop": false,
-        "allowrate": false,
-        "outputs": 1,
-        "x": 780,
-        "y": 340,
-        "wires": [
-            [
-                "235d1ca584429b9b"
-            ]
-        ]
-    },
-    {
-        "id": "9299b52bea9895ce",
-        "type": "change",
-        "z": "b70042ad02b1be41",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "headers['req_start_time']",
-                "pt": "msg",
-                "to": "",
-                "tot": "date"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 200,
-        "y": 260,
-        "wires": [
-            [
-                "dc6572c67cd2eded"
-            ]
-        ]
     }
 ]
