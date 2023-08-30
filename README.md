@@ -22,6 +22,12 @@ kubectl create svc loadbalancer sidecar --tcp=80:1880
 
 3. By default, the service will poll Prometheus every 5 seconds for updated metrics. The load object can be accessed via http://{loadbalancerIP}/loadobject.
 
+## Implementation Details 
+
+* Capacity is determined via the api/v1/query?query=sum(machine_cpu_cores) Prometheus query.
+* Load is determined via the api/v1/query?query=sum(container_cpu_load_average_10s) Prometheus query.
+* Target is determined by the Capacity x target %. 
+
 ## To-Dos
 
 1. Hardening of the service itself
