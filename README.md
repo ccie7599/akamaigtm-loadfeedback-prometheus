@@ -10,7 +10,7 @@ This specific implementation requires Prometheus and metrics-server to be instal
 
 ## Getting Started
 
-1. This repository is synced with the brianapley/akamaigtm-loadfeedback-prometheus repository in docker hub. The service can be added to your k8s cluster in a number of ways. Below is an example of creating the service deployment via imperative kubectl commands.
+1. This repository is synced with the brianapley/akamaigtm-loadfeedback-prometheus repository in docker hub. The service can be added to your K8s cluster in a number of ways. Below is an example of creating the service deployment via imperative kubectl commands.
 
 ```
 kubectl create deploy sidecar --image brianapley/akamaigtm-loadfeedback-prometheus --port=1880
