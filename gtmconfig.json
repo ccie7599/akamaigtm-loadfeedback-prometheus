@@ -1,0 +1,290 @@
+{
+  "cnameCoalescingEnabled": false,
+  "defaultErrorPenalty": 75,
+  "defaultHealthMax": null,
+  "defaultHealthMultiplier": null,
+  "defaultHealthThreshold": null,
+  "defaultMaxUnreachablePenalty": null,
+  "defaultSslClientCertificate": null,
+  "defaultSslClientPrivateKey": null,
+  "defaultTimeoutPenalty": 25,
+  "defaultUnreachableThreshold": null,
+  "deleteRequestId": null,
+  "emailNotificationList": [
+    "name@example.com"
+  ],
+  "endUserMappingEnabled": false,
+  "lastModified": "2023-08-31T14:13:38.000+00:00",
+  "lastModifiedBy": "",
+  "loadFeedback": true,
+  "mapUpdateInterval": 600,
+  "maxProperties": 100,
+  "maxResources": 512,
+  "maxTestTimeout": 60,
+  "maxTTL": 172800,
+  "minPingableRegionFraction": null,
+  "minTestInterval": 10,
+  "minTTL": 30,
+  "modificationComments": "Changes for domain connected-cloud.io.akadns.net:",
+  "name": "connected-cloud.io.akadns.net",
+  "pingInterval": null,
+  "pingPacketSize": null,
+  "roundRobinPrefix": null,
+  "servermonitorLivenessCount": null,
+  "servermonitorLoadCount": null,
+  "servermonitorPool": null,
+  "signAndServe": false,
+  "signAndServeAlgorithm": null,
+  "type": "basic",
+  "status": {
+    "message": "Current configuration has been propagated to all GTM nameservers",
+    "changeId": "3580f953-6ec1-4798-8131-3ac3fbd1b9d6",
+    "propagationStatus": "COMPLETE",
+    "propagationStatusDate": "2023-08-31T14:14:00.000+00:00",
+    "passingValidation": true,
+    "links": [
+      {
+        "rel": "self",
+        "href": "https://control.akamai.com/config-gtm-api/v1/domains/connected-cloud.io.akadns.net/status/current"
+      }
+    ]
+  },
+  "loadImbalancePercentage": 0,
+  "domainVersionId": "",
+  "resources": [
+    {
+      "aggregationType": "latest",
+      "constrainedProperty": "loadfeedback",
+      "decayRate": null,
+      "description": "http_load",
+      "hostHeader": "www.akamai.com",
+      "leaderString": null,
+      "leastSquaresDecay": null,
+      "loadImbalancePercentage": null,
+      "maxUMultiplicativeIncrement": null,
+      "name": "http_load",
+      "resourceInstances": [
+        {
+          "loadObject": "/loadobject",
+          "loadObjectPort": 80,
+          "loadServers": [
+            "172.232.18.252"
+          ],
+          "datacenterId": 1,
+          "useDefaultLoadObject": false
+        },
+        {
+          "loadObject": "/loadobject",
+          "loadObjectPort": 80,
+          "loadServers": [
+            "139.144.223.132"
+          ],
+          "datacenterId": 2,
+          "useDefaultLoadObject": true
+        }
+      ],
+      "type": "XML load object via HTTP",
+      "upperBound": 0,
+      "links": [
+        {
+          "rel": "self",
+          "href": "https://control.akamai.com/config-gtm-api/v1/domains/connected-cloud.io.akadns.net/resources/http_load"
+        }
+      ]
+    }
+  ],
+  "properties": [
+    {
+      "backupCName": null,
+      "backupIp": null,
+      "balanceByDownloadScore": false,
+      "cname": null,
+      "comments": null,
+      "dynamicTTL": 30,
+      "failoverDelay": 0,
+      "failbackDelay": 0,
+      "ghostDemandReporting": false,
+      "handoutMode": "normal",
+      "handoutLimit": 0,
+      "healthMax": null,
+      "healthMultiplier": null,
+      "healthThreshold": null,
+      "lastModified": null,
+      "livenessTests": [
+        {
+          "answersRequired": false,
+          "disabled": false,
+          "disableNonstandardPortWarning": false,
+          "errorPenalty": null,
+          "hostHeader": null,
+          "httpHeaders": [],
+          "httpError3xx": false,
+          "httpError4xx": true,
+          "httpError5xx": true,
+          "httpMethod": "GET",
+          "httpRequestBody": null,
+          "name": "HTTP",
+          "peerCertificateVerification": false,
+          "requestString": null,
+          "responseString": null,
+          "resourceType": null,
+          "recursionRequested": false,
+          "testInterval": 60,
+          "testObject": "/",
+          "testObjectPort": 80,
+          "testObjectProtocol": "HTTP",
+          "testObjectUsername": null,
+          "testObjectPassword": null,
+          "testTimeout": 10,
+          "timeoutPenalty": null,
+          "sslClientCertificate": null,
+          "sslClientPrivateKey": null,
+          "alternateCACertificates": []
+        }
+      ],
+      "loadImbalancePercentage": 0,
+      "mapName": null,
+      "maxUnreachablePenalty": null,
+      "minLiveFraction": null,
+      "mxRecords": [],
+      "name": "loadfeedback",
+      "scoreAggregationType": "worst",
+      "stickinessBonusConstant": 0,
+      "stickinessBonusPercentage": 0,
+      "staticTTL": null,
+      "staticRRSets": [],
+      "trafficTargets": [
+        {
+          "datacenterId": 1,
+          "enabled": true,
+          "weight": 0,
+          "precedence": null,
+          "handoutCName": null,
+          "name": null,
+          "servers": [
+            "172.232.16.78"
+          ]
+        },
+        {
+          "datacenterId": 2,
+          "enabled": true,
+          "weight": 0,
+          "precedence": null,
+          "handoutCName": null,
+          "name": null,
+          "servers": [
+            "139.144.223.60"
+          ]
+        }
+      ],
+      "type": "performance",
+      "unreachableThreshold": null,
+      "useComputedTargets": false,
+      "weightedHashBitsForIPv4": null,
+      "weightedHashBitsForIPv6": null,
+      "ipv6": false,
+      "links": [
+        {
+          "rel": "self",
+          "href": "https://control.akamai.com/config-gtm-api/v1/domains/connected-cloud.io.akadns.net/properties/loadfeedback"
+        }
+      ]
+    }
+  ],
+  "datacenters": [
+    {
+      "datacenterId": 1,
+      "nickname": "ORD",
+      "scorePenalty": 0,
+      "city": "Chicago",
+      "stateOrProvince": "IL",
+      "country": "US",
+      "latitude": 41.88323,
+      "longitude": -87.6324,
+      "cloneOf": null,
+      "defaultLoadObject": null,
+      "continent": null,
+      "servermonitorPool": null,
+      "servermonitorLivenessCount": null,
+      "servermonitorLoadCount": null,
+      "pingInterval": null,
+      "pingPacketSize": null,
+      "cloudServerTargeting": false,
+      "cloudServerHostHeaderOverride": false,
+      "virtual": true,
+      "links": [
+        {
+          "rel": "self",
+          "href": "https://control.akamai.com/config-gtm-api/v1/domains/connected-cloud.io.akadns.net/datacenters/1"
+        }
+      ]
+    },
+    {
+      "datacenterId": 2,
+      "nickname": "IAD",
+      "scorePenalty": 0,
+      "city": "Ashburn",
+      "stateOrProvince": "VA",
+      "country": "US",
+      "latitude": 39.04707,
+      "longitude": -77.50205,
+      "cloneOf": null,
+      "defaultLoadObject": {
+        "loadObject": "/loadobject",
+        "loadObjectPort": 80,
+        "loadServers": [
+          "139.144.223.132"
+        ]
+      },
+      "continent": null,
+      "servermonitorPool": null,
+      "servermonitorLivenessCount": null,
+      "servermonitorLoadCount": null,
+      "pingInterval": null,
+      "pingPacketSize": null,
+      "cloudServerTargeting": false,
+      "cloudServerHostHeaderOverride": false,
+      "virtual": true,
+      "links": [
+        {
+          "rel": "self",
+          "href": "https://control.akamai.com/config-gtm-api/v1/domains/connected-cloud.io.akadns.net/datacenters/2"
+        }
+      ]
+    }
+  ],
+  "geographicMaps": [],
+  "cidrMaps": [],
+  "asMaps": [],
+  "links": [
+    {
+      "rel": "self",
+      "href": "https://control.akamai.com/config-gtm-api/v1/domains/connected-cloud.io.akadns.net"
+    },
+    {
+      "rel": "datacenters",
+      "href": "https://control.akamai.com/config-gtm-api/v1/domains/connected-cloud.io.akadns.net/datacenters"
+    },
+    {
+      "rel": "properties",
+      "href": "https://control.akamai.com/config-gtm-api/v1/domains/connected-cloud.io.akadns.net/properties"
+    },
+    {
+      "rel": "geographic-maps",
+      "href": "https://control.akamai.com/config-gtm-api/v1/domains/connected-cloud.io.akadns.net/geographic-maps"
+    },
+    {
+      "rel": "cidr-maps",
+      "href": "https://control.akamai.com/config-gtm-api/v1/domains/connected-cloud.io.akadns.net/cidr-maps"
+    },
+    {
+      "rel": "resources",
+      "href": "https://control.akamai.com/config-gtm-api/v1/domains/connected-cloud.io.akadns.net/resources"
+    },
+    {
+      "rel": "as-maps",
+      "href": "https://control.akamai.com/config-gtm-api/v1/domains/connected-cloud.io.akadns.net/as-maps"
+    }
+  ],
+  "etag": "3580f953-6ec1-4798-8131-3ac3fbd1b9d6"
+}
