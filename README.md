@@ -28,6 +28,16 @@ kubectl create svc loadbalancer sidecar --tcp=80:1880
 * Load is determined via the sum(rate(node_cpu_seconds_total{mode!="idle"}[2m]))*100 Prometheus query.
 * Target is determined by the Capacity x target %. 
 
+## Akamai GTM Configuration
+
+Details on Akamai GTM can be found here - https://techdocs.akamai.com/gtm/docs. A sample Akamai GTM Performance with Load Feedback config is included in this repository (gtmconfig.json).
+
+## Integration with Grafana 
+
+A sample grafana dashboard is included in this repository (dashboard.json). This dashboard includes panes that report on the current Capacity, Load, and Target metrics.
+
+![image](https://github.com/ccie7599/akamaigtm-loadfeedback-prometheus/assets/19197357/b7db658c-d579-4799-8719-4145761ca405)
+
 ## To-Dos
 
 1. Hardening of the service itself
