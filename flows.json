@@ -14,7 +14,7 @@
         "method": "GET",
         "ret": "obj",
         "paytoqs": "ignore",
-        "url": "http://prometheus-server.default.svc.cluster.local/api/v1/query?query=sum(container_cpu_load_average_10s)",
+        "url": "http://prometheus-server.default.svc.cluster.local/api/v1/query?query=sum(rate(node_cpu_seconds_total{mode!=%22idle%22}[2m]))*100",
         "tls": "",
         "persist": false,
         "proxy": "",
@@ -172,13 +172,14 @@
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "<load-object domain=\"edge-cloud.io.akadns.net\"\n          version=\"1\"\n          xmlns=\"http://www.akamai.com/Traffic Management/load-balancing\"\n          timestamp=\"{{timestamp}}\"\n          tag=\"12345\" >\n      <datacenter datacenterId=\"1\">\n          <resource name=\"http_load\">\n              <current-load>\n                  {{load}}\n              </current-load>\n              <target-load>\n                  {{target}}\n              </target-load>\n              <capacity>\n                  {{capacity}}\n              </capacity>\n          </resource>\n       </datacenter>\n      </load-object>",
+        "template": "<load-object domain=\"connected-cloud.io.akadns.net\"\n          version=\"1\"\n          xmlns=\"http://www.akamai.com/Traffic Management/load-balancing\"\n          timestamp=\"{{timestamp}}\"\n          tag=\"12345\" >\n      <datacenter datacenterId=\"2\">\n          <resource name=\"http_load\">\n              <current-load>\n                  {{load}}\n              </current-load>\n              <target-load>\n                  {{target}}\n              </target-load>\n              <capacity>\n                  {{capacity}}\n              </capacity>\n          </resource>\n       </datacenter>\n      </load-object>",
         "output": "str",
         "x": 160,
         "y": 460,
         "wires": [
             [
-                "65cbf996ccb66aa2"
+                "65cbf996ccb66aa2",
+                "578fd9544a663a1a"
             ]
         ]
     },
@@ -237,7 +238,8 @@
         "y": 580,
         "wires": [
             [
-                "1b0b901514eab1fd"
+                "1b0b901514eab1fd",
+                "0d1c9a82e8b14f92"
             ]
         ]
     },
@@ -280,6 +282,39 @@
         "info": "Instructions for per-env configuration-\n\n1. Within \"Determine Target by Capacity x desired target %\" node, enter the target percentage in the function (i.e. 75% target would mean multiplying capacity by 0.75)\n\n2. Within \"Build XML LoadObject\" node, change the domain, data center ID, and resource name values per the specific GTM configuration.",
         "x": 610,
         "y": 80,
+        "wires": []
+    },
+    {
+        "id": "578fd9544a663a1a",
+        "type": "debug",
+        "z": "f6f2187d.f17ca8",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 700,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "0d1c9a82e8b14f92",
+        "type": "debug",
+        "z": "f6f2187d.f17ca8",
+        "name": "debug 2",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 680,
+        "y": 560,
         "wires": []
     }
 ]
