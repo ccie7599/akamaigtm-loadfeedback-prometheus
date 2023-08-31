@@ -24,8 +24,8 @@ kubectl create svc loadbalancer sidecar --tcp=80:1880
 
 ## Implementation Details 
 
-* Capacity is determined via the api/v1/query?query=sum(machine_cpu_cores) Prometheus query.
-* Load is determined via the api/v1/query?query=sum(container_cpu_load_average_10s) Prometheus query.
+* Capacity is determined via the sum(machine_cpu_cores) Prometheus query.
+* Load is determined via the sum(rate(node_cpu_seconds_total{mode!="idle"}[2m]))*100 Prometheus query.
 * Target is determined by the Capacity x target %. 
 
 ## To-Dos
